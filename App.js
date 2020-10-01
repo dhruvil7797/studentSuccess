@@ -1,22 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { Animated, StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
+import AnimatedForm from 'react-native-animated-form';
+import styles from './style';
+import image from './assets/CSS.jpg'
 
-export default function App() {
+const AnimatedInput = Animated.createAnimatedComponent(TextInput);
+
+export default class App extends Component {
+  render(){
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text>Welcome to Student Success</Text>
+      <Image style={styles.image} source={image} />
+      <AnimatedForm style={styles.animatedForm} delay={250} distance={5}>
+        <AnimatedInput style={styles.animatedInput} placeholder='User name' />
+        <AnimatedInput secureTextEntry={true} style={styles.animatedInput} placeholder='Password' />
+        <TouchableOpacity> 
+          <Animated.View style={styles.button}>               
+            <Text style={{color: '#ffffff', fontSize:25, fontStyle:''}}>LOGIN</Text>
+          </Animated.View>
+        </TouchableOpacity>
+      </AnimatedForm>
       <StatusBar style="auto" />
     </View>
   );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
