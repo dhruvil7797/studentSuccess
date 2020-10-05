@@ -13,25 +13,24 @@ export default class App extends Component {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS == "ios" ? "padding" : "height"}
-      style={styles.container}
-    >
-      <TouchableWithoutFeedback style={styles.animatedInput} onPress={Keyboard.dismiss}>
-      <View style={styles.container}>
-      <Image style={styles.image} source={image} />
-      <AnimatedForm style={styles.animatedForm} delay={250} distance={5}>
-        <AnimatedInput style={styles.animatedInput} placeholder='User name' />
-        <AnimatedInput secureTextEntry={true} style={styles.animatedInput} placeholder='Password' />
-        <TouchableOpacity> 
-          <Animated.View style={styles.button}>               
-            <Button title="LOGIN" onPress={() => null}  style={{color: '#000000', fontSize:25} }></Button>
-          </Animated.View>
-        </TouchableOpacity>
-      </AnimatedForm>
-      <StatusBar style="auto" />
-    </View>
-    </TouchableWithoutFeedback>
+      style={styles.container}    >
+          <TouchableWithoutFeedback style={styles.animatedInput} onPress={Keyboard.dismiss}>
+            <View style={styles.container}>
+            <Image style={styles.image} source={image} />
+            <AnimatedForm style={styles.animatedForm} delay={250} distance={5}>
+              <AnimatedInput style={styles.animatedInput} placeholder='User name' />
+              <AnimatedInput secureTextEntry={true} style={styles.animatedInput} placeholder='Password' />
+              <TouchableOpacity> 
+                <Animated.View style={styles.button}>               
+                  <Button title="LOGIN" onPress={() => null} style={styles.button}/>
+                </Animated.View>
+              </TouchableOpacity>
+            </AnimatedForm>
+            <StatusBar style="auto" />
+          </View>
+        </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
-    
+
   );
   }
 }
