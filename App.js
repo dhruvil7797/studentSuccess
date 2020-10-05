@@ -22,7 +22,7 @@ export default class App extends Component {
               <AnimatedInput secureTextEntry={true} style={styles.animatedInput} placeholder='Password' />
               <TouchableOpacity> 
                 <Animated.View style={styles.button}>               
-                  <Button title="LOGIN" onPress={() => null} style={styles.button}/>
+                  <Button title="LOGIN" onPress={() => null} style={styles.button?}/>
                 </Animated.View>
               </TouchableOpacity>
             </AnimatedForm>
