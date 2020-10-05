@@ -7,6 +7,7 @@ export default StyleSheet.create({
       backgroundColor: '#ffffff',
       alignItems: 'center',
       justifyContent: 'center',
+      width: '100%',
     },
     text: {
       width: '90%',
@@ -25,7 +26,6 @@ export default StyleSheet.create({
       width:  '100%',
       height: 50,
       fontSize: 20,
-      fontFamily:'Open Sans',
       paddingHorizontal: 10,
       marginVertical: 5,
       borderWidth: 1,
