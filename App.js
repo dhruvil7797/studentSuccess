@@ -1,38 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Animated,KeyboardAvoidingView, StyleSheet, Text, TextInput, View, Image, TouchableOpacity, Button, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import AnimatedForm from 'react-native-animated-form';
-import styles from './style';
-import image from './assets/CSS.jpg'
+import 'react-native-gesture-handler';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './Home';
+import Login from './Login';
 
-const AnimatedInput = Animated.createAnimatedComponent(TextInput);
+const Stack = createStackNavigator();
 
-export default class App extends Component {
-  render(){
-  return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS == "ios" ? "padding" : "height"}
-      style={styles.container}    >
-          <TouchableWithoutFeedback style={styles.animatedInput} onPress={Keyboard.dismiss}>
-            <View style={styles.container}>
-            <Image style={styles.image} source={image} />
-            <AnimatedForm style={styles.animatedForm} delay={250} distance={5}>
-              <AnimatedInput style={styles.animatedInput} placeholder='User name' />
-              <AnimatedInput secureTextEntry={true} style={styles.animatedInput} placeholder='Password' />
-              <TouchableOpacity> 
-                <Animated.View style={styles.button}>               
-                  <Button title="LOGIN" onPress={() => null} style={styles.button}/>
-                </Animated.View>
-              </TouchableOpacity>
-            </AnimatedForm>
-            <StatusBar style="auto" />
-          </View>
-        </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
-
-  );
+class App extends React.Component {
+    render() {
+      return (
+        <NavigationContainer>
+          <Stack.Navigator>
+          <Stack.Screen
+            name="Login"
+            component={Login}
+          />
+          <Stack.Screen
+            name="Home"
+            component={Home}
+          />
+           
+          </Stack.Navigator>
+        </NavigationContainer>
+      );
+    }
   }
-}
-
-
+  export default App;
