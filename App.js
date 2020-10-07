@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home';
 import Login from './Login';
+import YourAdvisor from './YourAdvisor';
 
 const Stack = createStackNavigator();
 
@@ -14,13 +15,25 @@ class App extends React.Component {
         <NavigationContainer>
           <Stack.Navigator>
           <Stack.Screen
-            name="Login"
-            component={Login}
-          />
-          <Stack.Screen
-            name="Home"
-            component={Home}
-          />
+              name="YourAdvisor"
+              component={YourAdvisor}
+              options={{
+                headerShown: false
+              }}
+              
+            />
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{
+                headerShown: false
+              }}
+              
+            />
+            <Stack.Screen
+              name="Home"
+              component={Home}
+            />
            
           </Stack.Navigator>
         </NavigationContainer>

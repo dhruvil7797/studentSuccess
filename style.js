@@ -1,7 +1,8 @@
 
 import { StyleSheet } from "react-native"
-
+const fontSize = 14
 export default StyleSheet.create({
+
     container: {
       flex: 1,
       backgroundColor: '#ffffff',
@@ -20,7 +21,6 @@ export default StyleSheet.create({
       color: "#333",
       backgroundColor: "#ffffff",
       
-
     },
     animatedInput: {
       width:  '100%',
@@ -52,18 +52,43 @@ export default StyleSheet.create({
       marginTop : 30,
       alignItems:'center',
       justifyContent:'center',
-      backgroundColor: "#dadada",
+      
       borderRadius: 5,
       height:50,
       width:'100%',
     },
     appButtonContainer: {
       elevation: 8,
-      backgroundColor: "#009688",
+      backgroundColor: "#4facf6",
+      alignItems:'center',
       borderRadius: 10,
       paddingVertical: 10,
       paddingHorizontal: 12,
       width:200
+    },
+    titleText:{
+      fontSize: 20,
+      fontWeight: "bold"
+    },
+
+    paraText:{
+      fontSize: fontSize,
+      width: '100%',
+      height: 500,
+      textAlign: "justify",
+      paddingHorizontal: 30,
+      marginVertical: 3,
+      borderWidth: 1,
+      borderRadius: 3,
+      borderColor: "#ffffff",
+      color: "#333",
+      backgroundColor: "#ffffff", 
+    },
+
+    initial:
+    {
+      fontSize: fontSize * 2,
     }
+
   
   });

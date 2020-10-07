@@ -20,7 +20,7 @@ class Login extends Component {
               <AnimatedInput style={styles.animatedInput} placeholder='User name' />
               <AnimatedInput secureTextEntry={true} style={styles.animatedInput} placeholder='Password' />
               <TouchableOpacity onPress={ () => NULL } style={styles.appButtonContainer}>
-                    <Text style={styles.appButtonText}>title</Text>
+                    <Text style={styles.appButtonText}>LOGIN</Text>
               </TouchableOpacity>
             </AnimatedForm>
             
