@@ -52,10 +52,18 @@ export default StyleSheet.create({
       marginTop : 30,
       alignItems:'center',
       justifyContent:'center',
-      backgroundColor: "#ffffff",
+      backgroundColor: "#dadada",
       borderRadius: 5,
       height:50,
       width:'100%',
+    },
+    appButtonContainer: {
+      elevation: 8,
+      backgroundColor: "#009688",
+      borderRadius: 10,
+      paddingVertical: 10,
+      paddingHorizontal: 12,
+      width:200
     }
   
   });

@@ -19,13 +19,12 @@ class Login extends Component {
             <AnimatedForm style={styles.animatedForm} delay={250} distance={5}>
               <AnimatedInput style={styles.animatedInput} placeholder='User name' />
               <AnimatedInput secureTextEntry={true} style={styles.animatedInput} placeholder='Password' />
-              <TouchableOpacity> 
-                <Animated.View style={styles.button}>               
-                  <Button title="LOGIN" onPress={() => null} style={styles.button}/>
-                </Animated.View>
+              <TouchableOpacity onPress={ () => NULL } style={styles.appButtonContainer}>
+                    <Text style={styles.appButtonText}>title</Text>
               </TouchableOpacity>
             </AnimatedForm>
-            <StatusBar style="auto" />
+            
+            
           </View>
         </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
