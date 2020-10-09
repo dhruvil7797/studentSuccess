@@ -7,11 +7,12 @@ import Home from './Home';
 import Login from './Login';
 import YourAdvisor from './YourAdvisor';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator(); //variable declaration
 
 class App extends React.Component {
     render() {
       return (
+        //Screen navigator
         <NavigationContainer>
           <Stack.Navigator>
           <Stack.Screen
