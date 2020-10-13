@@ -11,6 +11,14 @@ export default StyleSheet.create({
       justifyContent: 'center',
       width: '100%',
     },
+    pageContainer:
+    {
+      flex: 1,
+      backgroundColor: '#ffffff',
+      alignItems: 'center',
+      width: '100%',
+    },
+
     text: {
       width: '90%',
       height: 65,
@@ -46,7 +54,7 @@ export default StyleSheet.create({
       height: 150,
       resizeMode: 'stretch',
       paddingHorizontal: 150,
-      marginVertical: 90,
+      marginVertical: 30,
     },
       
     button: {
@@ -59,15 +67,16 @@ export default StyleSheet.create({
       width:'100%',
     },
     appButtonContainer: {
-      elevation: 8,
+      elevation: 16,
       backgroundColor: "#4facf6",
       alignItems:'center',
       borderRadius: 10,
-      paddingVertical: 10,
-      paddingHorizontal: 12,
+      paddingVertical: 20,
+      paddingHorizontal: 24,
       width:200
     },
     titleText:{
+
       fontSize: 24,
       fontWeight: "bold",
       justifyContent:"center",
@@ -85,10 +94,10 @@ export default StyleSheet.create({
     paraText:{
       fontSize: 16,
       width: '100%',
-      height: 500,
+      flexWrap: 'wrap',
       textAlign: "justify",
       paddingHorizontal: 30,
-      marginVertical: 3,
+      marginVertical: 1,
       borderWidth: 1,
       borderRadius: 3,
       borderColor: "#ffffff",

@@ -18,11 +18,12 @@ import Contact from './Contact';
 import MyWellness1 from './MyWellness1';
 
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator(); //variable declaration
 
 class App extends React.Component {
     render() {
       return (
+        //Screen navigator
         <NavigationContainer>
           <Stack.Navigator>
           <Stack.Screen
