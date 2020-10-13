@@ -16,6 +16,14 @@ class App extends React.Component {
         <NavigationContainer>
           <Stack.Navigator>
           <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{
+                headerShown: false
+              }}
+              
+            />  
+          <Stack.Screen
               name="YourAdvisor"
               component={YourAdvisor}
               options={{
@@ -23,14 +31,7 @@ class App extends React.Component {
               }}
               
             />
-            <Stack.Screen
-              name="Login"
-              component={Login}
-              options={{
-                headerShown: false
-              }}
-              
-            />
+            
             <Stack.Screen
               name="Home"
               component={Home}
