@@ -18,7 +18,6 @@ import Contact from './Contact';
 import MyWellness1 from './MyWellness1';
 import dashboard from './dashboard'
 
-
 const Stack = createStackNavigator(); //variable declaration
 
 class App extends React.Component {
