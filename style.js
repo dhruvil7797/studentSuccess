@@ -119,7 +119,7 @@ export default StyleSheet.create({
       height:330
     },
     scrollviewset:
-    {marginTop:-350,
+    {marginTop:100,
       justifyContent:'space-between'
     },
     viewset:
@@ -162,14 +162,6 @@ export default StyleSheet.create({
       bottom: 16,
       zIndex: 99,
     },
-    imageview1:
-    {
-      resizeMode: 'contain',
-      position: 'absolute',
-      right: 0,
-      bottom: 0,
-    },
-  
     Header: {
       justifyContent: 'center',
       alignItems: 'center',
