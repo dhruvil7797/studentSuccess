@@ -101,17 +101,17 @@ export default class MyWellness1 extends Component
                         >
                         </Animated.Image>
                  </Animated.View>
-                 
+                
                 <ScrollView
                   scrollEventThrottle={16}
                   contentContainerStyle={{ paddingTop: Header_Max_Height }}
                   onScroll={Animated.event([
                     { nativeEvent: { contentOffset: { y: this.state.AnimatedHeader } } },
                   ])}
-                  scrollEventThrottle={16}
+                //  scrollEventThrottle={16}
                   >  
-                  {this.props.children}
-                  <View style = {styles.container}>
+                     {this.props.children}
+                     <View style = {styles.container}>
                 <Text style={styles.titleText}>myWellness!</Text>
                   <Text style={styles.paraText}>
                         <Text style={styles.initial}>C</Text>
@@ -169,9 +169,9 @@ export default class MyWellness1 extends Component
                </ScrollView>
                </View>
                 </View> 
-              </View>                        
+            </View>                        
         </ScrollView>
-        
+       
            
      </View>
      
