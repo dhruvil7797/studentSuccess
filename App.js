@@ -16,6 +16,7 @@ import HelpStudent from './Help_Student';
 import HealthInsurance from './HealthInsurance';
 import Contact from './Contact';
 import MyWellness1 from './MyWellness1';
+import dashboard from './dashboard'
 
 
 const Stack = createStackNavigator(); //variable declaration
@@ -26,6 +27,13 @@ class App extends React.Component {
         //Screen navigator
         <NavigationContainer>
           <Stack.Navigator>
+          <Stack.Screen
+              name="dashboard"
+              component={dashboard}
+              options={{
+                headerShown: false
+              }}
+            />
           <Stack.Screen
               name="MyWellness1"
               component={MyWellness1}
