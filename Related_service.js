@@ -8,7 +8,7 @@ class RelatedService extends Component {
       
               <View style={styles.container}>
 
-                  <Text style={styles.titleText}>Know Your Advisor!</Text>
+                  <Text style={styles.titleText}>Related Services and Resources</Text>
                   <Text style={styles.paraText}>
                         <Text style={styles.initial}>S</Text>
                         <Text> 

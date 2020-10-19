@@ -8,7 +8,7 @@ class MentalHealth extends Component {
       
               <View style={styles.container}>
 
-                  <Text style={styles.titleText}>Know Your Advisor!</Text>
+                  <Text style={styles.titleText}>MentalHealth</Text>
                   <Text style={styles.paraText}>
                         <Text style={styles.initial}>S</Text>
                         <Text> 

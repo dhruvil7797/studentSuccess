@@ -18,6 +18,11 @@ export default StyleSheet.create({
       alignItems: 'center',
       width: '100%',
     },
+    HeaderInsideText: {
+    
+      width:"100%",
+      
+    },
 
     text: {
       width: '90%',
@@ -80,7 +85,7 @@ export default StyleSheet.create({
       fontSize: 24,
       fontWeight: "bold",
       justifyContent:"center",
-      paddingTop:10
+      paddingTop:30
     },
     titleText1:
       { 
@@ -88,8 +93,19 @@ export default StyleSheet.create({
       fontWeight: "bold",
       justifyContent:"center",
       marginLeft:80,
-      flexWrap:'wrap'
+      flexWrap:'wrap',
+      paddingTop:5
       },
+      titleText2:
+      { 
+      fontSize: 24,
+      fontWeight: "bold",
+      justifyContent:"center",
+      marginLeft:150,
+      flexWrap:'wrap',
+      paddingTop:30
+      },
+
 
     paraText:{
       fontSize: 16,
@@ -103,6 +119,19 @@ export default StyleSheet.create({
       borderColor: "#ffffff",
       color: "#333",
       backgroundColor: "#ffffff", 
+    },
+    paraText1:{
+      fontSize:20,
+      paddingTop:5,
+      textAlign:'center',
+    },
+    paraText2:{
+      fontSize:20,
+      textAlign:'justify',
+      paddingTop:5,
+      paddingBottom:130,
+      marginLeft:10,
+      marginRight:10
     },
 
     initial:
@@ -119,8 +148,9 @@ export default StyleSheet.create({
       height:330
     },
     scrollviewset:
-    {marginTop:100,
-      justifyContent:'space-between'
+    {marginTop:50,
+      justifyContent:'space-between',
+      marginBottom:10
     },
     viewset:
     { height:150,
@@ -129,6 +159,7 @@ export default StyleSheet.create({
     imageview:
     {
       height:150, marginLeft:-60
+      
     },
     imageview1:
     {
@@ -143,7 +174,8 @@ export default StyleSheet.create({
     },
     imageprop:
     {
-      flex:1,width:250,height:250,resizeMode:'cover'
+      flex:1,width:250,height:250,resizeMode:'cover',
+      paddingBottom:-20
     },
     MainContainer: {
       flex: 1,
