@@ -20,7 +20,6 @@ import dashboard from './dashboard'
 import collapsedTool from './collapsedTool';
 
 
-
 const Stack = createStackNavigator(); //variable declaration
 
 class App extends React.Component {
