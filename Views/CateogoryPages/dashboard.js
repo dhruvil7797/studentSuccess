@@ -23,7 +23,7 @@ const dashboard = () => {
           Alert.alert('The Chameleon is Pressed');
         }}
       >
-        <Card.Cover source={require('./assets/kya.jpg')} />
+        <Card.Cover source={require('../../assets/kya.jpg')} />
         <Card.Title title="Know Your Advisor" />
         <Card.Content>
           <Paragraph>
@@ -38,7 +38,7 @@ const dashboard = () => {
           Alert.alert('The Chameleon is Pressed');
         }}
       >
-        <Card.Cover source={require('./assets/res/CSS.jpg')} />
+        <Card.Cover source={require('../../assets/res/CSS.jpg')} />
         <Card.Title title="Pressable Chameleon" />
         <Card.Content>
           <Paragraph>

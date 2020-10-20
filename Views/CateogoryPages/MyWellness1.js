@@ -3,7 +3,7 @@ import {Text,StyleSheet, View,ScrollView,Image,Animated,Dimensions} from 'react-
 import { Link, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Component } from 'react';
-import styles from './style';
+import styles from '../../style';
 import { BorderlessButton, FlatList } from 'react-native-gesture-handler';
 import {Platform} from 'react-native';
 import CollapsibleToolbar from 'react-native-collapsible-toolbar';
@@ -32,7 +32,7 @@ export default class MyWellness1 extends Component
         <CollapsibleToolbar
             title={'MyWellness'}
             headerColor={Colors.primary}
-            imagepreview={require('./assets/res/bg1.jpg')}>
+            imagepreview={require('../../assets/res/bg1.jpg')}>
         </CollapsibleToolbar>
         const HeaderHeight= this.state.AnimatedHeader.interpolate
         ({
@@ -125,43 +125,43 @@ export default class MyWellness1 extends Component
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <Link to ='/MentalHealth'>
                             <View style={styles.imageview}>
-                                <Image source={require('./assets/res/mental_health.png')}
+                                <Image source={require('../../assets/res/mental_health.png')}
                                 style={styles.imageprop}></Image>
                             </View>
                         </Link>
                         <Link to ='/Medical_Care'>
                             <View style={styles.imageview}>
-                            <   Image source={require('./assets/res/medical_care.png')}
+                            <   Image source={require('../../assets/res/medical_care.png')}
                                 style={styles.imageprop}></Image>
                             </View>
                         </Link>
                         <Link to ='/Counselling'>
                         <View style={styles.imageview}>
-                            <Image source={require('./assets/res/counselling.png')}
+                            <Image source={require('../../assets/res/counselling.png')}
                             style={styles.imageprop}></Image>
                         </View>
                         </Link>
                         <Link to ='/HealthInsurance'>
                         <View style={styles.imageview}>
-                            <Image source={require('./assets/res/health_insurance.png')}
+                            <Image source={require('../../assets/res/health_insurance.png')}
                             style={styles.imageprop}></Image>
                         </View>
                         </Link>
                         <Link to ='/Related_service'>
                         <View style={styles.imageview}>
-                            <Image source={require('./assets/res/related_resources.png')}
+                            <Image source={require('../../assets/res/related_resources.png')}
                             style={styles.imageprop}></Image>
                         </View>
                         </Link>
                         <Link to ='/Help_Student'>
                         <View style={styles.imageview}>
-                            <Image source={require('./assets/res/help_student.png')}
+                            <Image source={require('../../assets/res/help_student.png')}
                             style={styles.imageprop}></Image>
                         </View>
                         </Link>
                         <Link to ='/Contact'>
                         <View style={styles.imageview1}>
-                            <Image source={require('./assets/res/contact.png')}
+                            <Image source={require('../../assets/res/contact.png')}
                             style={styles.imageprop}></Image>
                         </View>
                     </Link>

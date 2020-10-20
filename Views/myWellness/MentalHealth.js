@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Animated,KeyboardAvoidingView, StyleSheet, Text, TextInput, View, Image, TouchableOpacity, Button, TouchableWithoutFeedback, Keyboard, Linking} from 'react-native';
-import styles from './style';
+import styles from '../../style';
 const mailSubject = 'Mobile Solution Development!!!'
 class MentalHealth extends Component {
     render(){

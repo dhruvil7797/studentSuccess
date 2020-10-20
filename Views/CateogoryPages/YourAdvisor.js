@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Text, View, Image, Button, Linking, Platform} from 'react-native';
 import {Avatar, Accessory} from 'react-native-elements';
 import CollapsibleToolbar from 'react-native-collapsible-toolbar';
-import styles from '../style';
-import image from './assets/kya.jpg';
-import advisorImage from './assets/alan.jpg';
+import styles from '../../style';
+//import * from '../../assets';
+//import advisorImage from './assets/alan.jpg';
 
 const mailSubject = 'Mobile Solution Development!!!';
 class YourAdvisor extends Component {

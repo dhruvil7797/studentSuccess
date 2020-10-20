@@ -2,8 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { Animated,KeyboardAvoidingView, Text, TextInput, View, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import AnimatedForm from 'react-native-animated-form';
-import styles from '../style';
-import image from './assets/CSS.jpg'; 
+import styles from '../../style';
+//import image from './assets/CSS.jpg'; 
 
 const AnimatedInput = Animated.createAnimatedComponent(TextInput);
 
