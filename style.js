@@ -100,8 +100,8 @@ export default StyleSheet.create({
       { 
       fontSize: 24,
       fontWeight: "bold",
+      textAlign:'center',
       justifyContent:"center",
-      marginLeft:150,
       flexWrap:'wrap',
       paddingTop:30
       },
@@ -128,8 +128,9 @@ export default StyleSheet.create({
     paraText2:{
       fontSize:20,
       textAlign:'justify',
+      textAlign:'center',
       paddingTop:5,
-      paddingBottom:130,
+      paddingBottom:150,
       marginLeft:10,
       marginRight:10
     },
