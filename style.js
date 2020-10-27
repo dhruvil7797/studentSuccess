@@ -160,7 +160,7 @@ export default StyleSheet.create({
       marginBottom:10
     },
     viewset:
-    { height:150,
+    { height:180,
       marginTop: 15
     },
     imageview:

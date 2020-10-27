@@ -8,7 +8,7 @@ class Counselling extends Component {
       
               <View style={styles.container}>
 
-                  <Text style={styles.titleText}>Academic Testion And Accommodation</Text>
+                  <Text style={styles.titleText}>ML Academic Testion And Accommodation</Text>
                   <Text style={styles.paraText}>
                         <Text style={styles.initial}>S</Text>
                         <Text> 

@@ -9,11 +9,12 @@ import {
 } from "react-native";
 import { Link, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import CardView from "react-native-cardview";
 import { Component } from "react";
 import styles from "../../style";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { Platform } from "react-native";
-
+import Unorderedlist from "react-native-unordered-list";
 
 const Header_Max_Height = 170;
 const Header_Min_Height = 50;
@@ -49,108 +50,207 @@ export default class MyWellness extends Component {
           ])}
         >
           <View style={styles.container}>
-            <Text style={styles.titleText}>myLearning!</Text>
-            <Text style={styles.paraText}>
-              <Text style={styles.initial}>C</Text>
-              <Text>
-                onestoga College offers a variety of services that support your
-                wellness. Students currently living in Ontario can access the
-                college’s remote medical care and mental health supports to
-                discuss any physical and mental health issues they are
-                experiencing.
+            <CardView
+              cardElevation={4}
+              cardMaxElevation={4}
+              style={{
+                marginLeft: 20,
+                marginRight: 20,
+                backgroundColor: "#eff0f1",
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 5,
+                  height: 5,
+                },
+                shadowOpacity: 0.5,
+                shadowRadius: 3.84,
+                elevation: 5,
+              }}
+            >
+              <Text style={styles.titleText}>myLearning!</Text>
+              <Text style={styles1.paragraph}>
+                <Text style={styles.initial}>C</Text>
+                <Text>
+                  onestoga College offers a variety of services that support
+                  your wellness. Students currently living in Ontario can access
+                  the college’s remote medical care and mental health supports
+                  to discuss any physical and mental health issues they are
+                  experiencing.
+                </Text>
               </Text>
-            </Text>
+            </CardView>
 
             <View style={styles.scrollviewset}>
-              <Text style={styles.titleText1}>Our Services + Supports</Text>
-              <View style={styles.viewset}>
-                <ScrollView
-                  horizontal={true}
-                  showsHorizontalScrollIndicator={false}
+              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5}>
+                <Text style={styles.titleText1}>Our Services + Supports</Text>
+                <View style={styles.viewset}>
+                  <ScrollView
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                  >
+                    <Link to="/AcademicTesting">
+                      <View style={styles1.imageview}>
+                        <Image
+                          source={require("../../assets/res/myLearning/icon-testing-grey.png")}
+                          style={styles1.imageprop}
+                        ></Image>
+                      </View>
+                    </Link>
+                    <Link to="/ServiceAndSupport">
+                      <View style={styles1.imageview}>
+                        <Image
+                          source={require("../../assets/res/myLearning/serviceAndSupport.png")}
+                          style={styles1.imageprop}
+                        ></Image>
+                      </View>
+                    </Link>
+                    <Link to="/Tutoring">
+                      <View style={styles1.imageview}>
+                        <Image
+                          source={require("../../assets/res/myLearning/tuitoring.png")}
+                          style={styles1.imageprop}
+                        ></Image>
+                      </View>
+                    </Link>
+                    <Link to="/Transition">
+                      <View style={styles1.imageview}>
+                        <Image
+                          source={require("../../assets/res/myLearning/transition.png")}
+                          style={styles1.imageprop}
+                        ></Image>
+                      </View>
+                    </Link>
+                    <Link to="/mlRelatedService">
+                      <View style={styles1.imageview}>
+                        <Image
+                          source={require("../../assets/res/myLearning/relatedServie.png")}
+                          style={styles1.imageprop}
+                        ></Image>
+                      </View>
+                    </Link>
+
+                    <Link to="/mlContact">
+                      <View style={styles1.imageview1}>
+                        <Image
+                          source={require("../../assets/res/myLearning/contact.png")}
+                          style={styles1.imageprop}
+                        ></Image>
+                      </View>
+                    </Link>
+                  </ScrollView>
+                </View>
+              </CardView>
+
+              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5}>
+                <Text style={styles.titleText2}>We Support</Text>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/myLearning/AcademicTesting">
-                    <View style={styles.imageview}>
-                      <Image
-                        source={require("../../assets/res/myLearning/icon-testing-grey.png")}
-                        style={styles.imageprop}
-                      ></Image>
+                  <Link to="/MathHelp">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}>
+                        Math, Accounting and Statistics help
+                      </Text>
                     </View>
                   </Link>
-                  <Link to="/ServiceAndSupport">
-                    <View style={styles.imageview}>
-                      <Image
-                        source={require("../../assets/res/myLearning/serviceAndSupport.png")}
-                        style={styles.imageprop}
-                      ></Image>
-                    </View>
-                  </Link>
-                  <Link to="/Tutoring">
-                    <View style={styles.imageview}>
-                      <Image
-                        source={require("../../assets/res/myLearning/tuitoring.png")}
-                        style={styles.imageprop}
-                      ></Image>
-                    </View>
-                  </Link>
-                  <Link to="/Transition">
-                    <View style={styles.imageview}>
-                      <Image
-                        source={require("../../assets/res/myLearning/transition.png")}
-                        style={styles.imageprop}
-                      ></Image>
-                    </View>
-                  </Link>
-                  <Link to="/RelatedService">
-                    <View style={styles.imageview}>
-                      <Image
-                        source={require("../../assets/res/myLearning/relatedServie.png")}
-                        style={styles.imageprop}
-                      ></Image>
-                    </View>
-                  </Link>
+                </Unorderedlist>
 
-                  <Link to="/Contact">
-                    <View style={styles.imageview1}>
-                      <Image
-                        source={require("../../assets/res/myLearning/contact.png")}
-                        style={styles.imageprop}
-                      ></Image>
+                <View style={styles1.lineStyle}></View>
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Link to="/WritingHelp">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}>Writing and Citing</Text>
                     </View>
                   </Link>
-                </ScrollView>
-              </View>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
 
-              <Text style={styles.titleText2}>We Support</Text>
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Link to="/Research">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}>Research</Text>
+                    </View>
+                  </Link>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
 
-              <Text style={styles1.paraText1}
-                onPress={() => Linking.openURL("http://google.com")}
-              >
-                Math, Accounting and Statistics help</Text>
-              <Text style={styles1.paraText1}
-                onPress={() => Linking.openURL("http://google.com")}
-              >
-                Writing and Citing</Text>
-                <Text style={styles1.paraText1}
-                onPress={() => Linking.openURL("http://google.com")}
-              >
-                Research</Text>
-                <Text style={styles1.paraText1}
-                onPress={() => Linking.openURL("http://google.com")}
-              >
-                Academic Integrity</Text>
-                <Text style={styles1.paraText1}
-                onPress={() => Linking.openURL("http://google.com")}
-              >
-                Learning Skill and Tutoring</Text>
-                <Text style={styles1.paraText1}
-                onPress={() => Linking.openURL("http://google.com")}
-              >
-                Accessible Learning and Accomodation </Text>
-                <Text style={styles1.paraText1}
-                onPress={() => Linking.openURL("http://google.com")}
-              >
-                Learning and Assitive Technology</Text>
-              
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Link to="/AcademicIntegrity">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}>Academic Integrity</Text>
+                    </View>
+                  </Link>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Link to="/LearnSkill">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}>
+                          Learning Skills and Tutoring
+                      </Text>
+                    </View>
+                  </Link>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Link to="/AccessibleLearning">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}>
+                      Accessible Learning and Accommodation
+                      </Text>
+                    </View>
+                  </Link>
+                  </Unorderedlist>
+                  <View style={styles1.lineStyle}></View>
+
+                  <Unorderedlist
+                    bulletUnicode={0x2022}
+                    style={{ fontSize: 22, marginLeft: 20 }}
+                  >
+                    <Link to="/LearningAndAssitive">
+                      <View style={styles1.imageview}>
+                        <Text style={styles.paraText1}>
+                          Learning and Assistive Technology
+                        </Text>
+                      </View>
+                    </Link>
+                  </Unorderedlist>
+                  <View style={styles1.lineStyle}></View>
+
+                  <Unorderedlist
+                    bulletUnicode={0x2022}
+                    style={{ fontSize: 22, marginLeft: 20 }}
+                  >
+                    <Link to="/TechSupport">
+                      <View style={styles1.imageview}>
+                        <Text style={styles.paraText1}>
+                          Tech Support
+                        </Text>
+                      </View>
+                    </Link>
+                  </Unorderedlist>
+                
+              </CardView>
+              <View style={{ marginBottom: 125 }}></View>
             </View>
           </View>
         </ScrollView>
@@ -192,11 +292,16 @@ const styles1 = StyleSheet.create({
     top: Platform.OS == "ios" ? 20 : 0,
   },
 
-  paraText1:{
-    fontSize:20,
-    paddingTop:5,
-    textAlign:'center',
-    
+  paraText1: {
+    fontSize: 20,
+    paddingTop: 5,
+    textAlign: "center",
+  },
+
+  paraText2: {
+    fontSize: 20,
+    paddingTop: 5,
+    textAlign: "center",
   },
 
   HeaderInsideText: {
@@ -213,5 +318,36 @@ const styles1 = StyleSheet.create({
   imageprop1: {
     backgroundColor: "#ffffff",
     height: Header_Min_Height,
+  },
+  imageprop: {
+    marginLeft: -30,
+    marginRight: -30,
+    flex: 1,
+    width: 230,
+    height: 230,
+    resizeMode: "cover",
+    paddingBottom: -20,
+    shadowOpacity: 0.05,
+    shadowRadius: 1,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 10,
+      height: 10,
+    },
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    textAlign: "justify",
+    justifyContent: "center",
+    color: "#34495e",
+  },
+  lineStyle: {
+    borderWidth: 0.5,
+    borderColor: "black",
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 10,
+    marginTop: 10,
   },
 });
