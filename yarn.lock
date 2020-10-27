@@ -5713,6 +5713,11 @@ react-native-status-bar-height@^2.5.0:
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.5.0.tgz#bc0fb85230603850aab9667ee8111a62954de90c"
   integrity sha512-sYBCPYA/NapBSHkdm/IVL4ID3LLlIuLqINi2FBDyMkc2BU9pfSGOtkz9yfxoK39mYJuTrlTOQ7mManARUsYDSA==
 
+react-native-unordered-list@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-unordered-list/-/react-native-unordered-list-1.0.4.tgz#7ee48968e6da9ad0fcb8cfddfa2bea4c943ea57b"
+  integrity sha512-fLQxuE0xVeqxNiJMWIU1owpshZUJHmvgUF0z50qVjKZ8O8e9jiHPdr7us3SVghWYNws0qd/InGJCsz3VrNBu5w==
+
 react-native-web@~0.13.12:
   version "0.13.14"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.13.14.tgz#6a9144ffd2bcae07116efee827b99b20c9a0623d"

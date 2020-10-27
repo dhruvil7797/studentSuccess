@@ -1,5 +1,5 @@
 
-import { StyleSheet } from "react-native"
+import { Platform, StyleSheet } from "react-native"
 import { ScrollView } from "react-native-gesture-handler";
 const fontSize = 14
 export default StyleSheet.create({
@@ -20,7 +20,7 @@ export default StyleSheet.create({
     },
     HeaderInsideText: {
     
-      width:"100%",
+      flex:1,
       
     },
 
@@ -84,6 +84,7 @@ export default StyleSheet.create({
 
       fontSize: 24,
       fontWeight: "bold",
+      textAlign:'center',
       justifyContent:"center",
       paddingTop:30
     },
@@ -92,9 +93,10 @@ export default StyleSheet.create({
       fontSize: 24,
       fontWeight: "bold",
       justifyContent:"center",
-      marginLeft:80,
+      textAlign:'center',
       flexWrap:'wrap',
-      paddingTop:5
+      paddingTop:5,
+      marginBottom:10
       },
       titleText2:
       { 
@@ -103,7 +105,8 @@ export default StyleSheet.create({
       textAlign:'center',
       justifyContent:"center",
       flexWrap:'wrap',
-      paddingTop:30
+      paddingTop:30,
+      marginBottom:20
       },
 
 
@@ -122,8 +125,8 @@ export default StyleSheet.create({
     },
     paraText1:{
       fontSize:20,
-      paddingTop:5,
-      textAlign:'center',
+      flex:1
+      
     },
     
     paraText2:{
@@ -133,7 +136,9 @@ export default StyleSheet.create({
       paddingTop:5,
       paddingBottom:150,
       marginLeft:10,
-      marginRight:10
+      marginRight:10,
+      marginBottom:20,
+      
     },
 
     initial:
@@ -160,7 +165,11 @@ export default StyleSheet.create({
     },
     imageview:
     {
-      height:150, marginLeft:-60
+      height:150,
+      
+      
+    
+      //marginLeft:Platform.OS =='ios' ? -60 : -80
       
     },
     imageview1:
@@ -176,8 +185,16 @@ export default StyleSheet.create({
     },
     imageprop:
     {
+      marginLeft:-30,
+      marginRight:-30,
       flex:1,width:250,height:250,resizeMode:'cover',
-      paddingBottom:-20
+      paddingBottom:-20,
+      shadowOpacity:0.05,
+      shadowRadius:1,
+      shadowColor: "#000",
+            shadowOffset: {
+              width: 10,
+              height: 10}
     },
     MainContainer: {
       flex: 1,
