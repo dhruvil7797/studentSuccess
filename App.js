@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './Views/CateogoryPages/Login';
 import YourAdvisor from './Views/CateogoryPages/YourAdvisor';
 import MyWellness from './Views/CateogoryPages/MyWellness';
+import MyLearning from './Views/CateogoryPages/MyLearning';
 import MentalHealth from './Views/myWellness/MentalHealth';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import MedicalCare from './Views/myWellness/Medical_Care';
@@ -28,7 +29,15 @@ class App extends React.Component {
       //Screen navigator
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
+        <Stack.Screen
+            name="MyLearning"
+            component={MyLearning}
+            options={{
+              headerShown: false
+            }}
+
+          />
+        <Stack.Screen
             name="MyWellness"
             component={MyWellness}
             options={{
@@ -36,6 +45,16 @@ class App extends React.Component {
             }}
 
           />
+        
+        <Stack.Screen
+            name="dashboard"
+            component={dashboard}
+            options={{
+              headerShown: false
+            }}
+          />
+
+          
           <Stack.Screen
             name="MentalHealth"
             component={MentalHealth}
@@ -109,13 +128,7 @@ class App extends React.Component {
           />
 
 
-          <Stack.Screen
-            name="dashboard"
-            component={dashboard}
-            options={{
-              headerShown: false
-            }}
-          />
+          
 
           <Stack.Screen
             name="Login"

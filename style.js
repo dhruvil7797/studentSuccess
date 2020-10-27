@@ -125,6 +125,7 @@ export default StyleSheet.create({
       paddingTop:5,
       textAlign:'center',
     },
+    
     paraText2:{
       fontSize:20,
       textAlign:'justify',

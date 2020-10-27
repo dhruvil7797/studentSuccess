@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, ScrollView, StyleSheet } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Animated } from 'react-native';
 import {
   Paragraph,
   Card,
@@ -20,14 +20,13 @@ const dashboard = () => {
       <Card
         style={styles.card}
         onPress={() => {
-          Alert.alert('The Chameleon is Pressed');
+          Alert.alert('Know Your Advidor');
         }}
       >
         <Card.Cover source={require('../../assets/kya.jpg')} />
         <Card.Title title="Know Your Advisor" />
         <Card.Content>
           <Paragraph>
-            ABCD This is a pressable chameleon. If you press me, I will alert.
           </Paragraph>
         </Card.Content>
       </Card>
@@ -35,14 +34,59 @@ const dashboard = () => {
       <Card
         style={styles.card}
         onPress={() => {
-          Alert.alert('The Chameleon is Pressed');
+          Alert.alert('Book an Appointment');
         }}
       >
-        <Card.Cover source={require('../../assets/res/CSS.jpg')} />
-        <Card.Title title="Pressable Chameleon" />
+        <Card.Cover source={require('../../assets/res/bookappointment.png')} />
+        <Card.Title title="Book an Appointment" />
         <Card.Content>
           <Paragraph>
-            ABCD This is a pressable chameleon. If you press me, I will alert.
+
+          </Paragraph>
+        </Card.Content>
+      </Card>
+
+      <Card
+        style={styles.card}
+        onPress={() => {
+          Alert.alert('myWellness');
+        }}
+      >
+        <Card.Cover source={require('../../assets/res/bg1.jpg')} />
+        <Card.Title title="myWellness" />
+        <Card.Content>
+          <Paragraph>
+
+          </Paragraph>
+        </Card.Content>
+      </Card>
+
+      <Card
+        style={styles.card}
+        onPress={() => {
+          Alert.alert('myLearning');
+        }}
+      >
+        <Card.Cover source={require('../../assets/res/myLearning.png')} />
+        <Card.Title title="myLearning" />
+        <Card.Content>
+          <Paragraph>
+
+          </Paragraph>
+        </Card.Content>
+      </Card>
+
+      <Card
+        style={styles.card}
+        onPress={() => {
+          Alert.alert('myCareer');
+        }}
+      >
+        <Card.Cover source={require('../../assets/res/myCareer.png')} />
+        <Card.Title title="myCareer" />
+        <Card.Content>
+          <Paragraph>
+
           </Paragraph>
         </Card.Content>
       </Card>
