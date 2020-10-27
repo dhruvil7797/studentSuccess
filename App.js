@@ -30,14 +30,6 @@ class App extends React.Component {
       <NavigationContainer>
         <Stack.Navigator>
         <Stack.Screen
-            name="MyLearning"
-            component={MyLearning}
-            options={{
-              headerShown: false
-            }}
-
-          />
-        <Stack.Screen
             name="MyWellness"
             component={MyWellness}
             options={{
@@ -45,6 +37,15 @@ class App extends React.Component {
             }}
 
           />
+        <Stack.Screen
+            name="MyLearning"
+            component={MyLearning}
+            options={{
+              headerShown: false
+            }}
+
+          />
+        
         
         <Stack.Screen
             name="dashboard"
