@@ -112,32 +112,35 @@ export default StyleSheet.create({
 
     paraText:{
       fontSize: 16,
-      width: '100%',
-      flexWrap: 'wrap',
+      //width: '100%',
+     
       textAlign: "justify",
-      paddingHorizontal: 30,
+     // paddingHorizontal: 30,
       marginVertical: 1,
-      borderWidth: 1,
-      borderRadius: 3,
-      borderColor: "#ffffff",
-      color: "#333",
+     // borderWidth: 1,
+     // borderRadius: 3,
+      //borderColor: "#ffffff",
+      //color: "#333",
       backgroundColor: "#ffffff", 
+      flex:1
     },
     paraText1:{
       fontSize:20,
       flex:1
       
     },
+    flipcard:
+    {
+      width: '100%',
+      height: '100%',
+     
+    },
     
     paraText2:{
       fontSize:20,
-      textAlign:'justify',
-      textAlign:'center',
       paddingTop:5,
-      paddingBottom:150,
-      marginLeft:10,
-      marginRight:10,
-      marginBottom:20,
+      paddingBottom:20,
+      
       
     },
 

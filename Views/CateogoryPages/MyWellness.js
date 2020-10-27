@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, StyleSheet, View, ScrollView, Image, Animated } from 'react-native';
+import { Text, StyleSheet, View, ScrollView, Image, Animated,SafeAreaView } from 'react-native';
 import { Link, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Component } from 'react';
@@ -11,8 +11,8 @@ import CardView from 'react-native-cardview';
 import { Card } from 'react-native-elements';
 import Unorderedlist from 'react-native-unordered-list';
 
-const Header_Max_Height = 170;
-const Header_Min_Height = 80;
+const Header_Max_Height = 130;
+const Header_Min_Height = 20;
 
 export default class MyWellness extends Component {
   constructor() {
@@ -31,7 +31,7 @@ export default class MyWellness extends Component {
     });
 
     return (
-
+     <SafeAreaView >
       <View style={[styles.MainContent],{backgroundColor:"#ffffff"}}>
         <Text style={styles.titleText}>myWellness!</Text>
         <ScrollView
@@ -185,7 +185,8 @@ export default class MyWellness extends Component {
 
 
         </Animated.View>
-      </View>
+        </View>
+      </SafeAreaView>
     );
   }
 }
@@ -200,7 +201,7 @@ const styles1 = StyleSheet.create({
     marginLeft:20,
     marginRight:20,
     marginBottom:10,
-    marginTop:10
+    marginTop:5
 },
 
   Header: {
@@ -215,6 +216,7 @@ const styles1 = StyleSheet.create({
   HeaderInsideText: {
 
     width: "100%",
+    height:200
 
   },
 
