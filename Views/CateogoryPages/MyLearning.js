@@ -6,6 +6,7 @@ import {
   ScrollView,
   Image,
   Animated,
+  StatusBar
 } from "react-native";
 import { Link, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -16,38 +17,32 @@ import { BorderlessButton } from "react-native-gesture-handler";
 import { Platform } from "react-native";
 import Unorderedlist from "react-native-unordered-list";
 
-const Header_Max_Height = 170;
-const Header_Min_Height = 50;
-
 export default class MyWellness extends Component {
   constructor() {
     super();
-    this.AnimatedHeader = new Animated.Value(0);
+    this.scrollYAnimatedValue = new Animated.Value(0);
   }
 
   render() {
-    const AnimatedHeaderBackgroundColor = this.AnimatedHeader.interpolate({
-      inputRange: [0, Header_Max_Height - Header_Min_Height],
-      outputRange: ["#ffffff", "#ffffff"],
-      extrapolate: "clamp",
-    });
-    const AnimateHeaderHeight = this.AnimatedHeader.interpolate({
-      inputRange: [0, Header_Max_Height - Header_Min_Height],
-      outputRange: [Header_Max_Height, 0],
-      extrapolate: "clamp",
-    });
+    const HEADER_MAX_HEIGHT = 250;
+    const HEADER_MIN_HEIGHT = 100;
+    const headerHeight = this.scrollYAnimatedValue.interpolate(
+      {
+        inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
+        outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
+        extrapolate: 'clamp'
+      });
 
     return (
-      <View style={[styles.MainContent,{backgroundColor:"#ffffff"}]}>
-        <Text style={styles.titleText}>myLearning!</Text>
+      <View style={[styles.MainContent, { backgroundColor: "#ffffff" }]}>
+        <StatusBar barStyle="dark-content" />
         <ScrollView
           scrollEventThrottle={16}
-          contentContainerStyle={{
-            paddingTop: Header_Max_Height - Header_Min_Height,
-          }}
-          onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { y: this.AnimatedHeader } } },
-          ])}
+          contentContainerStyle={[styles.content, { paddingTop: HEADER_MAX_HEIGHT }]}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: this.scrollYAnimatedValue } } }]
+          )}
+          style={{ backgroundColor: "white", marginTop: 30 }}
         >
           <View style={styles.container}>
             <CardView
@@ -141,7 +136,7 @@ export default class MyWellness extends Component {
                 </View>
               </CardView>
 
-              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5} style={{marginBottom: 125}}>
+              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5} style={{ marginBottom: 125 }}>
                 <Text style={styles.titleText2}>We Support</Text>
 
                 <Unorderedlist
@@ -201,7 +196,7 @@ export default class MyWellness extends Component {
                   <Link to="/LearnSkill">
                     <View style={styles1.imageview}>
                       <Text style={styles.paraText1}>
-                          Learning Skills and Tutoring
+                        Learning Skills and Tutoring
                       </Text>
                     </View>
                   </Link>
@@ -215,39 +210,39 @@ export default class MyWellness extends Component {
                   <Link to="/AccessibleLearning">
                     <View style={styles1.imageview}>
                       <Text style={styles.paraText1}>
-                      Accessible Learning and Accommodation
+                        Accessible Learning and Accommodation
                       </Text>
                     </View>
                   </Link>
-                  </Unorderedlist>
-                  <View style={styles1.lineStyle}></View>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
 
-                  <Unorderedlist
-                    bulletUnicode={0x2022}
-                    style={{ fontSize: 22, marginLeft: 20 }}
-                  >
-                    <Link to="/LearningAndAssitive">
-                      <View style={styles1.imageview}>
-                        <Text style={styles.paraText1}>
-                          Learning and Assistive Technology
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Link to="/LearningAndAssitive">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}>
+                        Learning and Assistive Technology
                         </Text>
-                      </View>
-                    </Link>
-                  </Unorderedlist>
-                  <View style={styles1.lineStyle}></View>
+                    </View>
+                  </Link>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
 
-                  <Unorderedlist
-                    bulletUnicode={0x2022}
-                    style={{ fontSize: 22, marginLeft: 20 }}
-                  >
-                    <Link to="/TechSupport">
-                      <View style={styles1.imageview}>
-                        <Text style={styles.paraText1}>
-                          Tech Support
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Link to="/TechSupport">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}>
+                        Tech Support
                         </Text>
-                      </View>
-                    </Link>
-                  </Unorderedlist>
+                    </View>
+                  </Link>
+                </Unorderedlist>
               </CardView>
             </View>
           </View>
@@ -257,16 +252,15 @@ export default class MyWellness extends Component {
           style={[
             styles1.Header,
             {
-              height: AnimateHeaderHeight,
-              backgroundColor: AnimatedHeaderBackgroundColor,
+              height: headerHeight,
             },
           ]}
         >
           <Image
             source={require("../../assets/res/myLearning.png")}
-            style={[
-              styles1.HeaderInsideText,
-              { height: AnimateHeaderHeight === 10 ? 10 : 180 },
+            style={[{
+              width: "100%", height: "100%"
+            }
             ]}
           ></Image>
         </Animated.View>
@@ -276,10 +270,7 @@ export default class MyWellness extends Component {
 }
 
 const styles1 = StyleSheet.create({
-  MainContainer: {
-    flex: 1,
-    paddingTop: Platform.OS == "ios" ? 20 : 0,
-  },
+
 
   Header: {
     justifyContent: "center",
@@ -287,24 +278,10 @@ const styles1 = StyleSheet.create({
     position: "absolute",
     left: 0,
     right: 0,
-    top: Platform.OS == "ios" ? 20 : 0,
+    top: 0,
   },
 
-  paraText1: {
-    fontSize: 20,
-    paddingTop: 5,
-    textAlign: "center",
-  },
 
-  paraText2: {
-    fontSize: 20,
-    paddingTop: 5,
-    textAlign: "center",
-  },
-
-  HeaderInsideText: {
-    width: "100%",
-  },
 
   TextViewStyle: {
     textAlign: "center",
@@ -312,10 +289,6 @@ const styles1 = StyleSheet.create({
     fontSize: 18,
     margin: 5,
     padding: 7,
-  },
-  imageprop1: {
-    backgroundColor: "#ffffff",
-    height: Header_Min_Height,
   },
   imageprop: {
     marginLeft: -30,

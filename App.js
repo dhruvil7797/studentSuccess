@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StatusBar, StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./Views/CateogoryPages/Login";
@@ -16,7 +16,6 @@ import RelatedService from "./Views/myWellness/Related_service";
 import HelpStudent from "./Views/myWellness/Help_Student";
 import HealthInsurance from "./Views/myWellness/HealthInsurance";
 import Contact from "./Views/myWellness/Contact";
-import MyWellness1 from "./Views/CateogoryPages/MyWellness1";
 import dashboard from "./Views/CateogoryPages/dashboard";
 import collapsedTool from "./collapsedTool";
 import AcademicTesting from "./Views/myLearning/AcademicTesting";
@@ -45,8 +44,31 @@ class App extends React.Component {
   render() {
     return (
       //Screen navigator
+      
       <NavigationContainer>
         <Stack.Navigator>
+        <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              headerShown: false,
+            }}
+          />
+        <Stack.Screen
+            name="dashboard"
+            component={dashboard}
+            options={{
+              headerShown: false,
+            }}
+          />
+        <Stack.Screen
+            name="MyCareer"
+            component={MyCareer}
+            options={{
+              headerShown: false,
+            }}
+          />
+        
         <Stack.Screen
             name="MyLearning"
             component={MyLearning}
@@ -71,13 +93,7 @@ class App extends React.Component {
             }}
           />
 
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{
-              headerShown: false,
-            }}
-          />
+          
           <Stack.Screen
             name="MyWellness"
             component={MyWellness}
@@ -86,13 +102,7 @@ class App extends React.Component {
             }}
           />
 
-          <Stack.Screen
-            name="dashboard"
-            component={dashboard}
-            options={{
-              headerShown: false,
-            }}
-          />
+          
 
           <Stack.Screen
             name="YourAdvisor"
@@ -109,13 +119,7 @@ class App extends React.Component {
             }}
           />
 
-          <Stack.Screen
-            name="MyCareer"
-            component={MyCareer}
-            options={{
-              headerShown: false,
-            }}
-          />
+          
 
           <Stack.Screen
             name="Medical_Care"
@@ -159,13 +163,7 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-          <Stack.Screen
-            name="MyWellness1"
-            component={MyWellness1}
-            options={{
-              headerShown: false,
-            }}
-          />
+          
 
           <Stack.Screen
             name="collapsedTool"

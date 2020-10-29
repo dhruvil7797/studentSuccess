@@ -11,7 +11,7 @@ import {
   Keyboard,
   StyleSheet,
   AsyncStorage,
-  Alert
+  StatusBar,
 } from "react-native";
 import AnimatedForm from "react-native-animated-form";
 import image from "../../assets/CSS.jpg";
@@ -19,6 +19,7 @@ import image from "../../assets/CSS.jpg";
 const AnimatedInput = Animated.createAnimatedComponent(TextInput);
 
 async function loggedInUser (props){
+  // this.setState({myState:1});
   try {
       await AsyncStorage.setItem(
           'isLoggedIn',
@@ -41,20 +42,27 @@ export default class Login extends Component {
     }       
   }
 
+  state = {  
+    myState: 0 
+  }  
   
 
   render() {
 
-   
+    
     return (
+      <View style={styles.container}>
+      <StatusBar barStyle="dark-content"/>
       <KeyboardAvoidingView
         behavior={Platform.OS == "ios" ? "padding" : "height"}
         style={styles.container}
       >
+        
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.container}>
             <Image style={styles.image} source={image} />
             <AnimatedForm style={styles.animatedForm} delay={250} distance={5}>
+              
               <AnimatedInput
                 style={styles.animatedInput}
                 placeholder="User name"
@@ -64,8 +72,16 @@ export default class Login extends Component {
                 style={styles.animatedInput}
                 placeholder="Password"
               />
+              {
+                this.state.myState === 1 ?
+                <TouchableOpacity>
+                  <Text style={[styles.appButtonText,{color:'red'}]}>Invalid details! Please try again</Text>
+                </TouchableOpacity>
+                : null
+              }
+              
               <TouchableOpacity
-                onPress={()=>loggedInUser(this.props)}
+                onPress={()=>{loggedInUser(this.props); }}
                 style={styles.appButtonContainer}
               >
                 <Text style={styles.appButtonText}>LOGIN</Text>
@@ -74,6 +90,7 @@ export default class Login extends Component {
           </View>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
+      </View>
     );
   }
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Alert, ScrollView, StyleSheet, Animated, AsyncStorage } from 'react-native';
+import { Text, View, Platform, Image,
+  Alert, ScrollView, StyleSheet, Animated, AsyncStorage, StatusBar } from 'react-native';
 import { Link, NavigationContainer } from '@react-navigation/native';
 import {
   Paragraph,
@@ -7,117 +8,118 @@ import {
   useTheme,
 } from 'react-native-paper';
 
-async function loggedOutUser (props){
+async function loggedOutUser(props) {
   try {
-      await AsyncStorage.setItem(
-          'isLoggedIn',
-          '0'
-      );
-      props.navigation.navigate('Login');
+    await AsyncStorage.setItem(
+      'isLoggedIn',
+      '0'
+    );
+    props.navigation.navigate('Login');
 
   }
-  catch(error) {
-      console.log(error);
+  catch (error) {
+    console.log(error);
   }
 };
 
 
 export default class dashboard extends React.Component {
-  // const {
-  //   colors: { background },
-  // } = useTheme();
-  render(){
-  return (
-    <ScrollView
-      style={[styles.container, { backgroundColor: "white", marginBottom:50, marginTop:50 }]}
-      contentContainerStyle={styles.content}
-    >
-      <Link style={[styles.card,{width:"100%"}]} to='/YourAdvisor'>                                
-      <Card
-        style={[styles.card,{width:200, backgroundColor:'red'}]}      
+  constructor() {
+    super();
+    this.scrollYAnimatedValue = new Animated.Value(0);
+  }
+  render() {
+    const HEADER_MIN_HEIGHT = 120;
+    const HEADER_MAX_HEIGHT = 250;
+    
+    const headerHeight = this.scrollYAnimatedValue.interpolate(
+      {
+        inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
+        outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
+        extrapolate: 'clamp'
+      });
+
+    
+    return (
+      
+      <View style={[styles.container2,{backgroundColor:'#2471A3'}]} >
+      <StatusBar barStyle="light-content"/>
+      <ScrollView
+        contentContainerStyle={[styles.content,{ paddingTop: HEADER_MAX_HEIGHT }]}
+        scrollEventThrottle={16}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: this.scrollYAnimatedValue } } }]
+        )}
+        style={[styles.container, { backgroundColor: "white",marginTop: 60 }]}
       >
-        <Card.Cover source={require('../../assets/kya.jpg')} />
-        <Card.Title title="Know Your Advisor" />
-        <Card.Content>
-          <Paragraph>
-          </Paragraph>
-        </Card.Content>
-      </Card>
-      </Link>  
+        
+          <Card
+            style={[styles.card,{marginTop:0}]}
+            onPress={()=>{this.props.navigation.navigate('YourAdvisor');}}
+          >
+            <Card.Cover style={styles.cardCover} source={require('../../assets/kyaTitle.jpg')} />
+            <Card.Title style={styles.cardTitle} title="Know Your Advisor" />
+          </Card>
+        
 
-      <Card
-        style={styles.card}
-        onPress={() => {
-          Alert.alert('Book an Appointment');
-        }}
-      >
-        <Card.Cover source={require('../../assets/res/bookappointment.png')} />
-        <Card.Title title="Book an Appointment" />
-        <Card.Content>
-          <Paragraph>
+        <Card
+          style={styles.card}
+          //onPress={()=>{this.props.navigation.navigate('YourAdvisor');}}
+        >
+          <Card.Cover style={styles.cardCover} source={require('../../assets/res/bookappointment.png')} />
+          <Card.Title style={styles.cardTitle} title="Book an Appointment" />
+        </Card>
 
-          </Paragraph>
-        </Card.Content>
-      </Card>
+        <Card
+          style={styles.card}
+          onPress={()=>{this.props.navigation.navigate('MyWellness');}}
+        >
+          <Card.Cover style={styles.cardCover} source={require('../../assets/res/myWellness.png')} />
+          <Card.Title style={styles.cardTitle} title="myWellness" />
+         
+        </Card>
 
-      <Card
-        style={styles.card}
-        onPress={() => {
-          Alert.alert('myWellness');
-        }}
-      >
-        <Card.Cover source={require('../../assets/res/bg1.jpg')} />
-        <Card.Title title="myWellness" />
-        <Card.Content>
-          <Paragraph>
+        <Card
+          style={styles.card}
+          onPress={()=>{this.props.navigation.navigate('MyLearning');}}
+        >
+          <Card.Cover style={styles.cardCover} source={require('../../assets/res/myLearning.png')} />
+          <Card.Title style={styles.cardTitle} title="myLearning" />
+        
+        </Card>
 
-          </Paragraph>
-        </Card.Content>
-      </Card>
+        <Card
+          style={styles.card}
+          onPress={()=>{this.props.navigation.navigate('MyCareer');}}
+        >
+          <Card.Cover style={styles.cardCover} source={require('../../assets/res/myCareer.png')} />
+          <Card.Title style={styles.cardTitle} title="myCareer" />
+      
+        </Card>
+        <Card
+          style={[styles.card,{height:80, marginBottom:100}]}
+          onPress={() => { loggedOutUser(this.props) }}
+        >
+          <Card.Title style={styles.cardTitle} title="Logout" />
+     
+        </Card>
+      </ScrollView>
+      <Animated.View style={[styles.animatedHeaderContainer, {marginTop:20 ,height:headerHeight , backgroundColor: '#2471A3' }]}> 
+          <Image source={require("../../assets/CSS.jpg")} style={{width:"80%", resizeMode:"stretch" ,backgroundColor:'green', flex:1, margin:20}}/>
+            
+          
+          <View style={{height:100, width:"100%", display:'flex', flexDirection:'row', alignItems:"center", justifyContent:"flex-end"}}>
+          <Text style={{fontSize:36, color:"white", marginRight:20}}>Welcome, Alan</Text>
+          <Image source={require("../../assets/alan.jpg")} style={{width:60, height:60, borderRadius:"50%", marginRight:20}} />  
+            
 
-      <Card
-        style={styles.card}
-        onPress={() => {
-          Alert.alert('myLearning');
-        }}
-      >
-        <Card.Cover source={require('../../assets/res/myLearning.png')} />
-        <Card.Title title="myLearning" />
-        <Card.Content>
-          <Paragraph>
-
-          </Paragraph>
-        </Card.Content>
-      </Card>
-
-      <Card
-        style={styles.card}
-        onPress={() => {
-          Alert.alert('myCareer');
-        }}
-      >
-        <Card.Cover source={require('../../assets/res/myCareer.png')} />
-        <Card.Title title="myCareer" />
-        <Card.Content>
-          <Paragraph>
-
-          </Paragraph>
-        </Card.Content>
-      </Card>
-      <Card
-        style={styles.card}
-        onPress={()=>{loggedOutUser(this.props)}}
-      >
-        <Card.Title title="Logout" />
-        <Card.Content>
-          <Paragraph>
-
-          </Paragraph>
-        </Card.Content>
-      </Card>
-    </ScrollView>
-  );
-}};
+            
+          </View>
+      </Animated.View>
+      </View>
+    );
+  }
+};
 
 dashboard.title = 'Card';
 
@@ -129,6 +131,38 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   card: {
-    margin: 4,
+    marginTop: 50,
+    marginLeft:20,
+    marginRight:20,
+    backgroundColor:"#eff0f1",
+    height:280,
+    borderWidth:1,
+    borderColor:'lightgrey'
   },
+
+  cardCover:{
+    height:200,
+    width:"100%",
+    
+  },
+  cardTitle:{
+    fontSize:20,
+    display:'flex',
+    height:80,
+    width:"100%",
+  },
+
+  container2: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  animatedHeaderContainer: {
+    position: 'absolute',
+    top: (Platform.OS == 'ios') ? 20 : 0,
+    left: 0,
+    right: 0,
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  },
+  
 });

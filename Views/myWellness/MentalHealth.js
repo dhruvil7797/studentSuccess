@@ -186,6 +186,7 @@ class MentalHealth extends Component {
               <Text style={style2.paraText}>
                    <Text style={[style2.paraText],{color:'blue'}} onPress={()=>{Linking.openURL('https://www.conestogac.on.ca/onecard/');}}>Here247</Text>
               <Text style={style2.paraText}> is an addictions, mental health and crisis services hotline for individuals in Waterloo and Wellington regions. They help navigate community mental health, recovery and medical services. 
+              </Text>
               </Text></Unorderedlist>
 
              
