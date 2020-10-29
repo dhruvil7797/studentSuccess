@@ -35,11 +35,11 @@ export default class MyWellness extends Component {
       });
 
     return (
-      <View style={[styles.MainContent, { backgroundColor: "#ffffff" }]}>
+      <View style={{ backgroundColor: "#ffffff" }}>
         <StatusBar barStyle="dark-content" />
         <ScrollView
           scrollEventThrottle={16}
-          contentContainerStyle={[styles.content, { paddingTop: HEADER_MAX_HEIGHT }]}
+          contentContainerStyle={{ paddingTop: HEADER_MAX_HEIGHT }}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { y: this.scrollYAnimatedValue } } }]
           )}
@@ -137,7 +137,18 @@ export default class MyWellness extends Component {
                 </View>
               </CardView>
 
-              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5} style={{ marginBottom: 125 }}>
+              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5} 
+              style={{ marginLeft:20,marginRight:20, backgroundColor:"#eff0f1", 
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 5,
+              height: 5,
+            },
+            shadowOpacity: 0.5,
+            shadowRadius: 3.84,
+            elevation: 5,
+            marginBottom:125,
+            marginTop:30 }}>
                 <Text style={styles.titleText2}>We Support</Text>
 
                 <Unorderedlist
