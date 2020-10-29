@@ -46,13 +46,7 @@ class App extends React.Component {
       //Screen navigator
       <NavigationContainer>
         <Stack.Navigator>
-        <Stack.Screen
-            name="MyWellness"
-            component={MyWellness}
-            options={{
-              headerShown: false,
-            }}
-          />
+        
         <Stack.Screen
             name="MyLearning"
             component={MyLearning}
