@@ -19,7 +19,7 @@ class MedicalCare extends Component{
           <Text style={{textAlign:"center", color:"grey"}}>Click on card to view description</Text>
         </View>
         <ScrollView>
-        <View style={style2.outer}>
+        <View style={style2.outer1}>
           <FlipCard style={[style2.flipcard,{paddingBottom:20}]}
             flipVertical={false}
             flipHorizontal={true}
@@ -33,7 +33,7 @@ class MedicalCare extends Component{
             </View>
 
               <View style= {medicalCareCSS.border}>
-              <Image style={medicalCareCSS.image} source={require('../../assets/res/medicalCare.png')}></Image>
+              <Image style={medicalCareCSS.image2} source={require('../../assets/res/medicalCare.png')}></Image>
               <View style= {{borderTopColor:"black" ,borderTopWidth:2 , width:"100%" ,display:"flex",flexDirection:"column",alignItems:"center" }}>
                 <Text>
                 <Text style={[style2.paraText,{marginLeft:0,marginTop:5}]}>Doctor and nurse practitioner appointments are available to all Conestoga College students with OHIP or other</Text><Text style={{color:"blue"}}><Link to='/HealthInsurance'> health insurance plans.</Link>  </Text>         
@@ -66,7 +66,7 @@ class MedicalCare extends Component{
           </FlipCard>
         </View>
         <View style={{marginBottom:10}}></View>
-        <View style={style2.outer}>
+        <View style={style2.outer1}>
           <FlipCard style={[style2.flipcard,{paddingBottom:20}]}
             flipVertical={false}
             flipHorizontal={true}
@@ -148,12 +148,22 @@ const medicalCareCSS = StyleSheet.create({
 },
 image1:{
   width:200,
-  height:"60%",
+  height:200,
   marginLeft:2,
   marginRight:2,
  alignContent:'center',
  alignItems:'center',
   resizeMode:'contain',
   flexWrap:'wrap'
-}
+},
+image2: {
+  height: 300,
+  marginLeft: 2,
+  marginRight: 2,
+  alignContent: "center",
+  alignItems: "center",
+  width: 300,
+  resizeMode: "contain",
+  flexWrap: "wrap",
+},
 })

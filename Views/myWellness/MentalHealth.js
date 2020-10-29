@@ -33,7 +33,7 @@ class MentalHealth extends Component {
           </View>
         </View>
         <ScrollView>
-          <View style={style2.outer}>
+          <View style={style2.outer1}>
             <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>The Breathing Space</Text>
             </View>
@@ -45,7 +45,7 @@ class MentalHealth extends Component {
             >
 
               <View style={{ width: "100%", alignItems: 'center' }}>
-                <Image style={style2.image} source={require('../../assets/res/BreathingLogo.png')}></Image>
+                <Image style={style2.image1} source={require('../../assets/res/BreathingLogo.png')}></Image>
                 <View style={{ borderTopColor: "black", borderTopWidth: 2, width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
 
@@ -67,7 +67,7 @@ class MentalHealth extends Component {
           </View>
           <View style={{ marginTop: 10 }}></View>
 
-          <View style={style2.outer}>
+          <View style={style2.outer1}>
             <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Self Help</Text>
             </View>
@@ -79,7 +79,7 @@ class MentalHealth extends Component {
             >
 
               <View style={{ width: "100%", alignItems: 'center' }}>
-                <Image style={style2.image} source={require('../../assets/res/selfhelp.jpg')}></Image>
+                <Image style={style2.image1} source={require('../../assets/res/selfhelp.jpg')}></Image>
                 <View style={{ borderTopColor: "black", borderTopWidth: 2, width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
 
@@ -101,7 +101,7 @@ class MentalHealth extends Component {
 
           </View>
           <View style={{ marginTop: 10 }}></View>
-          <View style={style2.outer}>
+          <View style={style2.outer1}>
             <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Peer Support</Text>
             </View>
@@ -113,9 +113,8 @@ class MentalHealth extends Component {
             >
 
 <View style={{ width: "100%", alignItems: 'center' }}>
-                <Image style={style2.image} source={require('../../assets/res/peerSupport.png')}></Image>
-                <View style={{ borderTopColor: "black", borderTopWidth: 2, width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                </View>
+                <Image style={style2.image1} source={require('../../assets/res/peerSupport.png')}></Image>
+               
               </View>
               <View style={{ height: 200, width: "100%", marginTop: 20 }}>
                 <Text style={style2.paraText}>
@@ -128,7 +127,7 @@ class MentalHealth extends Component {
             </FlipCard>
           </View>
           <View style={{ marginTop: 10 }}></View>
-          <View style={style2.outer}>
+          <View style={style2.outer1}>
           <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Help A Student</Text>
             </View>
@@ -139,7 +138,7 @@ class MentalHealth extends Component {
               friction={20}
             >
              <View style={{ width: "100%", alignItems: 'center' }}>
-                <Image style={style2.image} source={require('../../assets/res/helpStudent.png')}></Image>
+                <Image style={style2.image1} source={require('../../assets/res/helpStudent.png')}></Image>
                
               </View>
               <View style={{ height: 450, width: "100%"}}>
@@ -149,53 +148,16 @@ class MentalHealth extends Component {
                     re you worried about a friend's well-being? Often asking them if they need someone to talk to, and taking the time to listen, is a great first step to providing them with help. We suggest connecting with the Peer Support Navigator for advice or encouraging your friend to connect with one of the college wellness services.
                 </Text>
                 </Text>
-              </View>
-            </FlipCard>
-          </View>
-          <View style={{ marginTop: 10 }}></View>
-          <View style={style2.outer}>
-            <FlipCard
-              style={[style2.flipcard, { paddingBottom: 20 }]}
-              flipVertical={false}
-              flipHorizontal={true}
-              friction={20}
-            >
-              <View
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  alignItems: "center",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text
-                  style={[
-                    style2.paraText,
-                    {
-                      textAlign: "center",
-                      fontWeight: "bold",
-                      fontSize: 24,
-                      alignContent: "Justify",
-                      alignItems: "center",
-                    },
-                  ]}
-                >
-                  Help A Student
-                </Text>
-              </View>
-              <View style={{ height: 450, width: "100%", marginTop: 20 }}>
                 <Text style={style2.paraText}>
                   <Text>If you are concerned your friend is in immediate danger of harming themselves or others, please refer to our Emergency and Crisis Care information.
                  </Text>
-                </Text>
+                 </Text>
               </View>
             </FlipCard>
-
           </View>
+          
           <View style={{ marginTop: 10 }}></View>
-          <View style={style2.outer}>
+          <View style={style2.outer1}>
           <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Off-campus mental health supports for students</Text>
             </View>
@@ -205,7 +167,7 @@ class MentalHealth extends Component {
               friction={20}
             >
                <View style={{ width: "100%", alignItems: 'center' }}>
-                <Image style={style2.image} source={require('../../assets/res/offCampus.png')}></Image>
+                <Image style={style2.image1} source={require('../../assets/res/offCampus.png')}></Image>
                
               </View>
               <View style={{ height: 500, width: "100%"}}>
@@ -218,12 +180,12 @@ class MentalHealth extends Component {
                 </Unorderedlist>
                 
                 <Unorderedlist bulletUnicode={0x2022} style={{marginLeft:5}}>
-              <Text style={style2.paraText}>If you are concerned your friend is in immediate danger of harming themselves or others, please refer to our Emergency and Crisis Care information. 
+              <Text style={style2.paraText1}>If you are concerned your friend is in immediate danger of harming themselves or others, please refer to our Emergency and Crisis Care information. 
               </Text></Unorderedlist>
               <Unorderedlist bulletUnicode={0x2022} style={{marginLeft:5}}>
-              <Text style={style2.paraText}>
+              <Text style={style2.paraText1}>
                    <Text style={[style2.paraText],{color:'blue'}} onPress={()=>{Linking.openURL('https://www.conestogac.on.ca/onecard/');}}>Here247</Text>
-              <Text style={style2.paraText}> is an addictions, mental health and crisis services hotline for individuals in Waterloo and Wellington regions. They help navigate community mental health, recovery and medical services. 
+              <Text style={style2.paraText1}> is an addictions, mental health and crisis services hotline for individuals in Waterloo and Wellington regions. They help navigate community mental health, recovery and medical services. 
               </Text>
               </Text></Unorderedlist>
                 <Unorderedlist bulletUnicode={0x2022} style={{ marginLeft: 5 }}>
