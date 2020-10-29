@@ -103,15 +103,7 @@ class App extends React.Component {
           />
 
           
-          <Stack.Screen
-            name="MyWellness"
-            component={MyWellness}
-            options={{
-              headerShown: false,
-            }}
-          />
-
-          
+                
 
           <Stack.Screen
             name="YourAdvisor"
