@@ -6,6 +6,7 @@ import {
   ScrollView,
   Image,
   Animated,
+  Linking,
 } from "react-native";
 import { Link, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -38,7 +39,7 @@ export default class MyWellness extends Component {
     });
 
     return (
-      <View style={[styles.MainContent,{backgroundColor:"#ffffff"}]}>
+      <View style={[styles1.container, { backgroundColor: "#ffffff" }]}>
         <Text style={styles.titleText}>myLearning!</Text>
         <ScrollView
           scrollEventThrottle={16}
@@ -141,113 +142,153 @@ export default class MyWellness extends Component {
                 </View>
               </CardView>
 
-              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5} style={{marginBottom: 125}}>
+              <CardView
+                cardElevation={4}
+                cardMaxElevation={4}
+                cornerRadius={5}
+                style={{ marginBottom: 125 }}
+              >
                 <Text style={styles.titleText2}>We Support</Text>
 
                 <Unorderedlist
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/MathHelp">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>
-                        Math, Accounting and Statistics help
-                      </Text>
-                    </View>
-                  </Link>
-                </Unorderedlist>
-
-                <View style={styles1.lineStyle}></View>
-                <Unorderedlist
-                  bulletUnicode={0x2022}
-                  style={{ fontSize: 22, marginLeft: 20 }}
-                >
-                  <Link to="/WritingHelp">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>Writing and Citing</Text>
-                    </View>
-                  </Link>
-                </Unorderedlist>
-                <View style={styles1.lineStyle}></View>
-
-                <Unorderedlist
-                  bulletUnicode={0x2022}
-                  style={{ fontSize: 22, marginLeft: 20 }}
-                >
-                  <Link to="/Research">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>Research</Text>
-                    </View>
-                  </Link>
-                </Unorderedlist>
-                <View style={styles1.lineStyle}></View>
-
-                <Unorderedlist
-                  bulletUnicode={0x2022}
-                  style={{ fontSize: 22, marginLeft: 20 }}
-                >
-                  <Link to="/AcademicIntegrity">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>Academic Integrity</Text>
-                    </View>
-                  </Link>
-                </Unorderedlist>
-                <View style={styles1.lineStyle}></View>
-
-                <Unorderedlist
-                  bulletUnicode={0x2022}
-                  style={{ fontSize: 22, marginLeft: 20 }}
-                >
-                  <Link to="/LearnSkill">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>
-                          Learning Skills and Tutoring
-                      </Text>
-                    </View>
-                  </Link>
-                </Unorderedlist>
-                <View style={styles1.lineStyle}></View>
-
-                <Unorderedlist
-                  bulletUnicode={0x2022}
-                  style={{ fontSize: 22, marginLeft: 20 }}
-                >
-                  <Link to="/AccessibleLearning">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>
-                      Accessible Learning and Accommodation
-                      </Text>
-                    </View>
-                  </Link>
-                  </Unorderedlist>
-                  <View style={styles1.lineStyle}></View>
-
-                  <Unorderedlist
-                    bulletUnicode={0x2022}
-                    style={{ fontSize: 22, marginLeft: 20 }}
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://studentsuccess.conestogac.on.ca/DropIn"
+                      );
+                    }}
                   >
-                    <Link to="/LearningAndAssitive">
-                      <View style={styles1.imageview}>
-                        <Text style={styles.paraText1}>
-                          Learning and Assistive Technology
-                        </Text>
-                      </View>
-                    </Link>
-                  </Unorderedlist>
-                  <View style={styles1.lineStyle}></View>
+                    Math, Accounting and Statistics help
+                  </Text>
+                </Unorderedlist>
 
-                  <Unorderedlist
-                    bulletUnicode={0x2022}
-                    style={{ fontSize: 22, marginLeft: 20 }}
+                <View style={styles1.lineStyle}></View>
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/writing-services"
+                      );
+                    }}
                   >
-                    <Link to="/TechSupport">
-                      <View style={styles1.imageview}>
-                        <Text style={styles.paraText1}>
-                          Tech Support
-                        </Text>
-                      </View>
-                    </Link>
-                  </Unorderedlist>
+                    Writing and Citing
+                  </Text>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/ask-us/research-appointments"
+                      );
+                    }}
+                  >
+                    Reasearch
+                  </Text>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/c.php?g=698153&p=5006696"
+                      );
+                    }}
+                  >
+                    Academic Integrity
+                  </Text>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://studentsuccess.conestogac.on.ca/StudentReferral"
+                      );
+                    }}
+                  >
+                    Learning Skills and Tutoring
+                  </Text>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://studentsuccess.conestogac.on.ca/myLearning/AcademicAndTestingAccommodations"
+                      );
+                    }}
+                  >
+                    Accessible Learning and Accommodation
+                  </Text>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/assistive-technology"
+                      );
+                    }}
+                  >
+                    Learning and Assistive Technology
+                  </Text>
+                </Unorderedlist>
+                <View style={styles1.lineStyle}></View>
+
+                <Unorderedlist
+                  bulletUnicode={0x2022}
+                  style={{ fontSize: 22, marginLeft: 20 }}
+                >
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/Tech-Loans-Help/tutors"
+                      );
+                    }}
+                  >
+                    Tech Support
+                  </Text>
+                  <Link to="/TechSupport">
+                    <View style={styles1.imageview}>
+                      <Text style={styles.paraText1}></Text>
+                    </View>
+                  </Link>
+                </Unorderedlist>
               </CardView>
             </View>
           </View>
@@ -279,6 +320,11 @@ const styles1 = StyleSheet.create({
   MainContainer: {
     flex: 1,
     paddingTop: Platform.OS == "ios" ? 20 : 0,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    marginTop: 80,
   },
 
   Header: {
