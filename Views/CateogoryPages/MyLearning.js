@@ -6,7 +6,8 @@ import {
   ScrollView,
   Image,
   Animated,
-  StatusBar
+  StatusBar,
+  Linking,
 } from "react-native";
 import { Link, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -143,13 +144,16 @@ export default class MyWellness extends Component {
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/MathHelp">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>
-                        Math, Accounting and Statistics help
-                      </Text>
-                    </View>
-                  </Link>
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://studentsuccess.conestogac.on.ca/DropIn"
+                      );
+                    }}
+                  >
+                    Math, Accounting and Statistics help
+                  </Text>
                 </Unorderedlist>
 
                 <View style={styles1.lineStyle}></View>
@@ -157,11 +161,16 @@ export default class MyWellness extends Component {
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/WritingHelp">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>Writing and Citing</Text>
-                    </View>
-                  </Link>
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/writing-services"
+                      );
+                    }}
+                  >
+                    Writing and Citing
+                  </Text>
                 </Unorderedlist>
                 <View style={styles1.lineStyle}></View>
 
@@ -169,11 +178,16 @@ export default class MyWellness extends Component {
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/Research">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>Research</Text>
-                    </View>
-                  </Link>
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/ask-us/research-appointments"
+                      );
+                    }}
+                  >
+                    Reasearch
+                  </Text>
                 </Unorderedlist>
                 <View style={styles1.lineStyle}></View>
 
@@ -181,11 +195,16 @@ export default class MyWellness extends Component {
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/AcademicIntegrity">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>Academic Integrity</Text>
-                    </View>
-                  </Link>
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/c.php?g=698153&p=5006696"
+                      );
+                    }}
+                  >
+                    Academic Integrity
+                  </Text>
                 </Unorderedlist>
                 <View style={styles1.lineStyle}></View>
 
@@ -193,13 +212,16 @@ export default class MyWellness extends Component {
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/LearnSkill">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>
-                        Learning Skills and Tutoring
-                      </Text>
-                    </View>
-                  </Link>
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://studentsuccess.conestogac.on.ca/StudentReferral"
+                      );
+                    }}
+                  >
+                    Learning Skills and Tutoring
+                  </Text>
                 </Unorderedlist>
                 <View style={styles1.lineStyle}></View>
 
@@ -207,13 +229,16 @@ export default class MyWellness extends Component {
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/AccessibleLearning">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>
-                        Accessible Learning and Accommodation
-                      </Text>
-                    </View>
-                  </Link>
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://studentsuccess.conestogac.on.ca/myLearning/AcademicAndTestingAccommodations"
+                      );
+                    }}
+                  >
+                    Accessible Learning and Accommodation
+                  </Text>
                 </Unorderedlist>
                 <View style={styles1.lineStyle}></View>
 
@@ -221,13 +246,16 @@ export default class MyWellness extends Component {
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
-                  <Link to="/LearningAndAssitive">
-                    <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>
-                        Learning and Assistive Technology
-                        </Text>
-                    </View>
-                  </Link>
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/assistive-technology"
+                      );
+                    }}
+                  >
+                    Learning and Assistive Technology
+                  </Text>
                 </Unorderedlist>
                 <View style={styles1.lineStyle}></View>
 
@@ -235,11 +263,19 @@ export default class MyWellness extends Component {
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
                 >
+                  <Text
+                    style={[styles.paraText1, { color: "blue" }]}
+                    onPress={() => {
+                      Linking.openURL(
+                        "https://lib.conestogac.on.ca/Tech-Loans-Help/tutors"
+                      );
+                    }}
+                  >
+                    Tech Support
+                  </Text>
                   <Link to="/TechSupport">
                     <View style={styles1.imageview}>
-                      <Text style={styles.paraText1}>
-                        Tech Support
-                        </Text>
+                      <Text style={styles.paraText1}></Text>
                     </View>
                   </Link>
                 </Unorderedlist>
@@ -270,7 +306,6 @@ export default class MyWellness extends Component {
 }
 
 const styles1 = StyleSheet.create({
-
 
   Header: {
     justifyContent: "center",

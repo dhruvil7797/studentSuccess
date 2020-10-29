@@ -9,20 +9,17 @@ import {
 } from "react-native";
 import styles from "../../style";
 import style2 from "../../CSS/MyWellnessStyle";
-import CardView from "react-native-cardview";
 import FlipCard from "react-native-flip-card";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { Card } from "react-native-elements";
-import Unorderedlist from "react-native-unordered-list";
 
-
-const mailSubject = "Mobile Solution Development!!!";
+const mailUrl =
+  "mailto:Accessibility Conestoga <accessibility@conestogac.on.ca>?subject=";
 const Header_Max_Height = 130;
 const Header_Min_Height = 20;
 class AcademicTesting extends Component {
   render() {
     return (
-      <View style={style2.container}>
+      <View style={[styles1.container, { paddingBottom: 60}]}>
         <Text style={[style2.titleText, { paddingBottom: 20 }]}>
           Accessible Learning
         </Text>
@@ -42,6 +39,10 @@ class AcademicTesting extends Component {
               cardMaxElevation={5}
             >
               <View style={[styles1.cardStyle]}>
+              <Image
+                  style={styles1.image}
+                  source={require("../../assets/res/myLearning/accessibleLearning.png")}
+                ></Image>
                 <Text style={[styles1.titleText1]}>Accessible Learning</Text>
               </View>
 
@@ -71,20 +72,24 @@ class AcademicTesting extends Component {
 
           <View style={[styles1.outer, { display: "flex" }]}>
             <FlipCard
-              style={[styles1.flipcard, { paddingBottom: 20 }]}
+              style={[styles1.flipcard]}
               flipVertical={false}
               flipHorizontal={true}
               friction={20}
               cardElevation={5}
               cardMaxElevation={5}
             >
-              <View style={[styles1.cardStyle]}>
+              
                 <View style={[styles1.cardStyle]}>
+                <Image
+                  style={styles1.image}
+                  source={require("../../assets/res/myLearning/submitYourDocument.png")}  
+                ></Image>
                   <Text style={[styles1.titleText1]}>
                     Submit your Documentation
                   </Text>
                 </View>
-              </View>
+             
               <View
                 style={{
                   height: "100%",
@@ -100,12 +105,21 @@ class AcademicTesting extends Component {
                     or are experiencing difficulties that affect your learning
                     you can register for academic accommodations. Documentation
                     can be emailed, faxed or submitted in person to
-                    Accessibility @ Conestoga.{"\n"}{"\n"}
+                    Accessibility @ Conestoga.{"\n"}
+                    {"\n"}
                   </Text>
                   <Icon name="envelope" size={22} color="#000000" />
-                  <Text style={{color:"blue"}}> accessibility@conestogac.on.ca {"\n"} </Text>
+                  <Text
+                    style={{ color: "blue" }}
+                    onPress={() => {
+                      Linking.openURL(mailUrl);
+                    }}
+                  >
+                    {" "}
+                    accessibility@conestogac.on.ca {"\n"}
+                    {"\n"}{" "}
+                  </Text>
                   <Icon name="phone" size={22} color="#000000" />
-                  
                   <Text
                     style={{ fontWeight: "bold", color: "blue" }}
                     onPress={() => {
@@ -113,13 +127,13 @@ class AcademicTesting extends Component {
                     }}
                   >
                     {" "}
-                    519-748-5220 
+                    519-748-5220
                   </Text>{" "}
                   <Text> ext. 3232{"\n"}</Text>
                   <Icon name="fax" size={22} color="#000000" />
-                  <Text>Fax: 519-748-3507{'\n'}</Text>
+                  <Text> Fax: 519-748-3507{"\n"}</Text>
                   <Icon name="phone" size={22} color="#000000" />
-                  <Text>{'\n'}TTY: </Text>
+                  <Text> TTY: </Text>
                   <Text
                     style={{ fontWeight: "bold", color: "blue" }}
                     onPress={() => {
@@ -127,8 +141,18 @@ class AcademicTesting extends Component {
                     }}
                   >
                     {" "}
-                    1-866-463-4484 
+                    1-866-463-4484
                   </Text>
+                  <Text
+                    style={{ fontWeight: "bold", color: "blue" }}
+                    onPress={() => {
+                      Linking.openURL("https://studentsuccess.conestogac.on.ca/myLearning/AcademicAndTestingAccommodations");
+                    }}
+                  >
+                    {"\n"}{"\n"}
+                    Click here
+                  </Text>
+                  <Text> to know more about documents</Text>
                 </Text>
               </View>
             </FlipCard>
@@ -151,6 +175,11 @@ const styles1 = StyleSheet.create({
     alignContent: "center",
     alignItems: "center",
     backgroundColor: "#eff0f1",
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+    marginTop: 80,
   },
   flipcard: {
     height: "100%",
@@ -177,8 +206,11 @@ const styles1 = StyleSheet.create({
     marginBottom: 20,
     justifyContent: "center",
     alignItems: "center",
+    marginTop: "5%",
+   
   },
   cardStyle: {
+
     marginTop: 0,
     paddingTop: 0,
     width: "100%",
@@ -186,10 +218,10 @@ const styles1 = StyleSheet.create({
     resizeMode: "contain",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "flex-start",
   },
   outer: {
-    height: 350,
+    height: 420,
     width: "90%",
     backgroundColor: "#eff0f1",
     borderColor: "#eff0f1",

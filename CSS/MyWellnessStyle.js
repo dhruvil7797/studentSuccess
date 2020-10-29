@@ -39,6 +39,25 @@ export default StyleSheet.create({
     backgroundColor: "#eff0f1",
     //flexDirection:'row'
   },
+  paraText1: {
+    marginLeft: 20,
+   // marginBottom: 3,
+    fontSize: 14,
+    width: "90%",
+    paddingHorizontal: 10,
+    marginVertical: 1,
+
+    textAlign: "justify",
+    alignItems: "center",
+    alignContent: "center",
+    alignItems: "center",
+    // borderWidth: 1,
+    // borderRadius: 3,
+    //borderColor: "#ffffff",
+    // color: "#333",
+    backgroundColor: "#eff0f1",
+    //flexDirection:'row'
+  },
   lineStyle: {
     borderWidth: 0.8,
     borderColor: "black",

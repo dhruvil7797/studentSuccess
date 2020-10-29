@@ -47,6 +47,7 @@ class App extends React.Component {
       
       <NavigationContainer>
         <Stack.Navigator>
+        
         <Stack.Screen
             name="Login"
             component={Login}
@@ -76,7 +77,15 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-          
+
+        <Stack.Screen
+            name="MyWellness"
+            component={MyWellness}
+            options={{
+              headerShown: false,
+            }}
+          />
+           
           <Stack.Screen
             name="mlContact"
             component={mlContact}
@@ -164,7 +173,6 @@ class App extends React.Component {
             }}
           />
           
-
           <Stack.Screen
             name="collapsedTool"
             component={collapsedTool}
