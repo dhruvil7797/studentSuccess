@@ -4,9 +4,11 @@ import {Avatar, Accessory} from 'react-native-elements';
 import CollapsibleToolbar from 'react-native-collapsible-toolbar';
 import styles from '../../style';
 //import * from '../../assets';
-//import advisorImage from './assets/alan.jpg';
+import advisorImage from '../../assets/alan.jpg';
+import image from '../../assets/kya.jpg';
 
 const mailSubject = 'Mobile Solution Development!!!';
+const mailUrl = 'mailto:Alan Roper <aroper@conestogac.on.ca>?subject=' + mailSubject
 class YourAdvisor extends Component {
     render(){
     return (
@@ -25,7 +27,7 @@ class YourAdvisor extends Component {
                   <Text style={{fontSize:30}}>Alan Roper</Text>
                   <Text style={{fontSize:15}}>Student Success Advisor</Text>
                   <Text>{"\n"}</Text>
-                  <Button style={styles.appButtonContainer} onPress={() => Linking.openURL('mailto:Alan Roper <aroper@conestogac.on.ca>?subject=${mailSubject}') }
+                  <Button style={styles.appButtonContainer} onPress={() => Linking.openURL(mailUrl) }
                     title="Reach Your Advisor" />
               </View>  
     );

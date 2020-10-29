@@ -58,8 +58,7 @@ export default StyleSheet.create({
       width:'90%',
       height: 150,
       resizeMode: 'stretch',
-      paddingHorizontal: 150,
-      marginVertical: 30,
+      marginBottom: 30,
     },
       
     button: {
@@ -163,7 +162,7 @@ export default StyleSheet.create({
       marginBottom:10
     },
     viewset:
-    { height:150,
+    { height:180,
       marginTop: 15
     },
     imageview:

@@ -8,7 +8,7 @@ class Counselling extends Component {
       
               <View style={styles.container}>
 
-                  <Text style={styles.titleText}>Transition</Text>
+                  <Text style={styles.titleText}>ML Transition</Text>
                   <Text style={styles.paraText}>
                         <Text style={styles.initial}>S</Text>
                         <Text> 

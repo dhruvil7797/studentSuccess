@@ -1,10 +1,10 @@
 import React from 'react'
-import { Text, StyleSheet, View, ScrollView, Image, Animated,SafeAreaView } from 'react-native';
+import { Text, StyleSheet, View, ScrollView, Image, Animated,SafeAreaView, Alert } from 'react-native';
 import { Link, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Component } from 'react';
 import styles from '../../style';
-import { BorderlessButton } from 'react-native-gesture-handler';
+import { BorderlessButton, TouchableOpacity } from 'react-native-gesture-handler';
 import { Platform } from 'react-native';
 import CollapsibleToolbar from 'react-native-collapsible-toolbar';
 import CardView from 'react-native-cardview';
@@ -76,12 +76,14 @@ export default class MyWellness extends Component {
               <Text style={styles.titleText1}>Our Services + Supports</Text>
               <View style={styles.viewset}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                  <Link to='/MentalHealth'>
+                  {/* <Link to='/MentalHealth'> */}
+                  <TouchableOpacity onPress={()=>{this.props.navigation.navigate('MentalHealth')}}>
                     <View style={styles.imageview}>
                       <Image source={require('../../assets/res/mental_health.png')}
                         style={styles.imageprop}></Image>
                     </View>
-                  </Link>
+                    </TouchableOpacity>
+                  {/* </Link> */}
                   <Link to='/Medical_Care'>
                     <View style={styles.imageview}>
                       <Image source={require('../../assets/res/medical_care.png')}
