@@ -18,6 +18,7 @@ class MedicalCare extends Component{
       <View style={{width:"100%", marginBottom:20}}>
           <Text style={{textAlign:"center", color:"grey"}}>Click on card to view description</Text>
         </View>
+        <ScrollView>
         <View style={style2.outer}>
           <FlipCard style={[style2.flipcard,{paddingBottom:20}]}
             flipVertical={false}
@@ -32,7 +33,7 @@ class MedicalCare extends Component{
             </View>
 
               <View style= {medicalCareCSS.border}>
-              <Image style={medicalCareCSS.image} source={require('../../assets/res/medical.png')}></Image>
+              <Image style={medicalCareCSS.image} source={require('../../assets/res/medicalCare.png')}></Image>
               <View style= {{borderTopColor:"black" ,borderTopWidth:2 , width:"100%" ,display:"flex",flexDirection:"column",alignItems:"center" }}>
                 <Text>
                 <Text style={[style2.paraText,{marginLeft:0,marginTop:5}]}>Doctor and nurse practitioner appointments are available to all Conestoga College students with OHIP or other</Text><Text style={{color:"blue"}}><Link to='/HealthInsurance'> health insurance plans.</Link>  </Text>         
@@ -95,8 +96,6 @@ class MedicalCare extends Component{
                 <Text style={style2.paraText}>  and proof of <Text style={{color:"blue"}}><Link to='/HealthInsurance'> health insurance.</Link>  </Text>         
                 </Text> 
                 </Text>
-              
-             
             </Unorderedlist>
                 
               <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}>
@@ -114,6 +113,7 @@ class MedicalCare extends Component{
           </FlipCard>
 
         </View>
+        </ScrollView>
       </View>
     );
   }

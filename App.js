@@ -16,7 +16,6 @@ import RelatedService from "./Views/myWellness/Related_service";
 import HelpStudent from "./Views/myWellness/Help_Student";
 import HealthInsurance from "./Views/myWellness/HealthInsurance";
 import Contact from "./Views/myWellness/Contact";
-import MyWellness1 from "./Views/CateogoryPages/MyWellness1";
 import dashboard from "./Views/CateogoryPages/dashboard";
 import collapsedTool from "./collapsedTool";
 import AcademicTesting from "./Views/myLearning/AcademicTesting";
@@ -48,6 +47,13 @@ class App extends React.Component {
       <NavigationContainer>
         <Stack.Navigator>
         <Stack.Screen
+            name="MyWellness"
+            component={MyWellness}
+            options={{
+              headerShown: false,
+            }}
+          />
+        <Stack.Screen
             name="MyLearning"
             component={MyLearning}
             options={{
@@ -78,13 +84,7 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-          <Stack.Screen
-            name="MyWellness"
-            component={MyWellness}
-            options={{
-              headerShown: false,
-            }}
-          />
+          
 
           <Stack.Screen
             name="dashboard"
@@ -159,14 +159,7 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-          <Stack.Screen
-            name="MyWellness1"
-            component={MyWellness1}
-            options={{
-              headerShown: false,
-            }}
-          />
-
+          
           <Stack.Screen
             name="collapsedTool"
             component={collapsedTool}
