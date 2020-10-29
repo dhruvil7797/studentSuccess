@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, StyleSheet, View, ScrollView, Image, Animated,SafeAreaView, Alert } from 'react-native';
+import { Text, StyleSheet, View, ScrollView, Image, Animated,SafeAreaView, StatusBar } from 'react-native';
 import { Link, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Component } from 'react';
@@ -11,35 +11,35 @@ import CardView from 'react-native-cardview';
 import { Card } from 'react-native-elements';
 import Unorderedlist from 'react-native-unordered-list';
 
-const Header_Max_Height = 130;
-const Header_Min_Height = 20;
 
 export default class MyWellness extends Component {
   constructor() {
     super();
-    this.AnimatedHeader = new Animated.Value(0);
-
+    this.scrollYAnimatedValue = new Animated.Value(0);
   }
 
   render() {
-
-
-    const AnimateHeaderHeight = this.AnimatedHeader.interpolate({
-      inputRange: [0, Header_Max_Height - Header_Min_Height],
-      outputRange: [Header_Max_Height, 0],
-      extrapolate: 'clamp',
-    });
+    const HEADER_MAX_HEIGHT = 250;
+    const HEADER_MIN_HEIGHT = 100;
+    const headerHeight = this.scrollYAnimatedValue.interpolate(
+      {
+        inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
+        outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
+        extrapolate: 'clamp'
+      });
 
     return (
-     <SafeAreaView style={{backgroundColor:"#e5f3ca"}}>
-      <View style={[styles.MainContent],{backgroundColor:"#ffffff"}}>
-        <Text style={styles.titleText}>myWellness!</Text>
+     
+      <View style={{backgroundColor:"#ffffff"}}>
+        <StatusBar barStyle="dark-content" />
         <ScrollView
           scrollEventThrottle={16}
-          contentContainerStyle={{ paddingTop: Header_Max_Height -35}}
-          onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { y: this.AnimatedHeader } } },
-          ])}>
+          contentContainerStyle={{paddingTop: HEADER_MAX_HEIGHT }}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { y: this.scrollYAnimatedValue } } }]
+          )}
+          style={{ backgroundColor: "white", marginTop: 30 }}
+          >
 
 
           <View style={[styles.container,{backgroundColor:"#ffffff"}]}>
@@ -58,8 +58,7 @@ export default class MyWellness extends Component {
             elevation: 5,
             }}
             >
-              <Text style={styles.titleText}>What is myWellness?</Text>
-              <View style = {styles1.lineStyle} ></View>
+              <Text style={styles.titleText}>What is myWellness?</Text>              
             <Text style={styles1.paragraph}>
               <Text style={styles.initial}>C</Text>
               <Text>
@@ -138,6 +137,8 @@ export default class MyWellness extends Component {
             shadowOpacity: 0.5,
             shadowRadius: 3.84,
             elevation: 5,
+            marginTop:30,
+            marginBottom:20
             }}
             >
              <Text style={styles.titleText2}>We Support</Text>
@@ -178,17 +179,20 @@ export default class MyWellness extends Component {
           style={[
             styles1.Header,
             {
-              height: AnimateHeaderHeight,
+              height: headerHeight,
             },
-          ]}>
-          <Image source={require('../../assets/res/bg1.jpg')}
-            style={[styles1.HeaderInsideText, { height: AnimateHeaderHeight < 200 ? 0 : 180, },]}
-             />
-
-
+          ]}
+        >
+          <Image
+            source={require("../../assets/res/myWellness.png")}
+            style={[{
+              width: "100%", height: "100%"
+            }
+            ]}
+          ></Image>
         </Animated.View>
         </View>
-      </SafeAreaView>
+      
     );
   }
 }
@@ -212,7 +216,7 @@ const styles1 = StyleSheet.create({
     position: 'absolute',
     left: 0,
     right: 0,
-    top: Platform.OS == 'ios' ? 20 : 0,
+    top: 0,
   },
 
   HeaderInsideText: {
@@ -229,10 +233,7 @@ const styles1 = StyleSheet.create({
     margin: 5,
     padding: 7,
   },
-  imageprop1: {
-    backgroundColor: "#ffffff",
-    height: Header_Min_Height,
-  },
+  
   paragraph:{
     margin: 24,
     fontSize: 18,

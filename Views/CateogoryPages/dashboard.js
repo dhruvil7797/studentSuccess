@@ -64,9 +64,9 @@ export default class dashboard extends React.Component {
 
         <Card
           style={styles.card}
-          //onPress={()=>{this.props.navigation.navigate('YourAdvisor');}}
+          onPress={()=>{this.props.navigation.navigate('YourAdvisor');}}
         >
-          <Card.Cover style={styles.cardCover} source={require('../../assets/res/bookappointment.png')} />
+          <Card.Cover style={styles.cardCover} source={require('../../assets/res/bookAppointment.jpg')} />
           <Card.Title style={styles.cardTitle} title="Book an Appointment" />
         </Card>
 
