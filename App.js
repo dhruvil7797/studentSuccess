@@ -37,6 +37,7 @@ import LearnSkill from "./Views/myLearning/LearnSkillHelp";
 import AccessibleLearning from "./Views/myLearning/AccessibleLearning";
 import LearningAndAssitive from "./Views/myLearning/LearningAndAssitive";
 import TechSupport from "./Views/myLearning/TechSupport";
+import TestingPage from "./Views/TestPage";
 
 const Stack = createStackNavigator(); //variable declaration
 
@@ -46,22 +47,37 @@ class App extends React.Component {
       //Screen navigator
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
+        <Stack.Screen
             name="MyLearning"
             component={MyLearning}
             options={{
               headerShown: false,
             }}
           />
-
+          
           <Stack.Screen
-            name="MyCareer"
-            component={MyCareer}
+            name="mlContact"
+            component={mlContact}
             options={{
               headerShown: false,
             }}
           />
 
+          <Stack.Screen
+            name="MentalHealth"
+            component={MentalHealth}
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen
             name="MyWellness"
             component={MyWellness}
@@ -79,12 +95,28 @@ class App extends React.Component {
           />
 
           <Stack.Screen
-            name="MentalHealth"
-            component={MentalHealth}
+            name="YourAdvisor"
+            component={YourAdvisor}
             options={{
               headerShown: false,
             }}
           />
+          <Stack.Screen
+            name="Testing"
+            component={TestingPage}
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name="MyCareer"
+            component={MyCareer}
+            options={{
+              headerShown: false,
+            }}
+          />
+
           <Stack.Screen
             name="Medical_Care"
             component={MedicalCare}
@@ -144,21 +176,6 @@ class App extends React.Component {
           />
 
           <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="YourAdvisor"
-            component={YourAdvisor}
-            options={{
-              headerShown: false,
-            }}
-          />
-
-          <Stack.Screen
             name="AcademicTesting"
             component={AcademicTesting}
             options={{
@@ -198,13 +215,6 @@ class App extends React.Component {
             }}
           />
 
-          <Stack.Screen
-            name="mlContact"
-            component={mlContact}
-            options={{
-              headerShown: false,
-            }}
-          />
           <Stack.Screen
             name="CareerAdvice"
             component={CareerAdvice}

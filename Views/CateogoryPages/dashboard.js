@@ -1,27 +1,40 @@
 import * as React from 'react';
-import { Alert, ScrollView, StyleSheet, Animated } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Animated, AsyncStorage } from 'react-native';
+import { Link, NavigationContainer } from '@react-navigation/native';
 import {
   Paragraph,
   Card,
   useTheme,
 } from 'react-native-paper';
 
-const dashboard = () => {
-  const {
-    colors: { background },
-  } = useTheme();
+async function loggedOutUser (props){
+  try {
+      await AsyncStorage.setItem(
+          'isLoggedIn',
+          '0'
+      );
+      props.navigation.navigate('Login');
 
+  }
+  catch(error) {
+      console.log(error);
+  }
+};
+
+
+export default class dashboard extends React.Component {
+  // const {
+  //   colors: { background },
+  // } = useTheme();
+  render(){
   return (
     <ScrollView
-      style={[styles.container, { backgroundColor: background }]}
+      style={[styles.container, { backgroundColor: "white", marginBottom:50, marginTop:50 }]}
       contentContainerStyle={styles.content}
     >
-        
+      <Link style={[styles.card,{width:"100%"}]} to='/YourAdvisor'>                                
       <Card
-        style={styles.card}
-        onPress={() => {
-          Alert.alert('Know Your Advidor');
-        }}
+        style={[styles.card,{width:200, backgroundColor:'red'}]}      
       >
         <Card.Cover source={require('../../assets/kya.jpg')} />
         <Card.Title title="Know Your Advisor" />
@@ -30,6 +43,7 @@ const dashboard = () => {
           </Paragraph>
         </Card.Content>
       </Card>
+      </Link>  
 
       <Card
         style={styles.card}
@@ -90,9 +104,20 @@ const dashboard = () => {
           </Paragraph>
         </Card.Content>
       </Card>
+      <Card
+        style={styles.card}
+        onPress={()=>{loggedOutUser(this.props)}}
+      >
+        <Card.Title title="Logout" />
+        <Card.Content>
+          <Paragraph>
+
+          </Paragraph>
+        </Card.Content>
+      </Card>
     </ScrollView>
   );
-};
+}};
 
 dashboard.title = 'Card';
 
@@ -107,5 +132,3 @@ const styles = StyleSheet.create({
     margin: 4,
   },
 });
-
-export default dashboard;

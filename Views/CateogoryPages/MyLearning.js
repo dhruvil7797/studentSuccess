@@ -38,7 +38,7 @@ export default class MyWellness extends Component {
     });
 
     return (
-      <View style={styles.MainContent}>
+      <View style={[styles.MainContent,{backgroundColor:"#ffffff"}]}>
         <Text style={styles.titleText}>myLearning!</Text>
         <ScrollView
           scrollEventThrottle={16}
@@ -133,7 +133,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview1}>
                         <Image
                           source={require("../../assets/res/myLearning/contact.png")}
-                          style={styles1.imageprop}
+                          style={[styles1.imageprop, { marginRight: 20 }]}
                         ></Image>
                       </View>
                     </Link>
@@ -141,7 +141,7 @@ export default class MyWellness extends Component {
                 </View>
               </CardView>
 
-              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5}>
+              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5} style={{marginBottom: 125}}>
                 <Text style={styles.titleText2}>We Support</Text>
 
                 <Unorderedlist
@@ -248,9 +248,7 @@ export default class MyWellness extends Component {
                       </View>
                     </Link>
                   </Unorderedlist>
-                
               </CardView>
-              <View style={{ marginBottom: 125 }}></View>
             </View>
           </View>
         </ScrollView>

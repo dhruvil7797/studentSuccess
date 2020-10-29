@@ -58,8 +58,7 @@ export default StyleSheet.create({
       width:'90%',
       height: 150,
       resizeMode: 'stretch',
-      paddingHorizontal: 150,
-      marginVertical: 30,
+      marginBottom: 30,
     },
       
     button: {
