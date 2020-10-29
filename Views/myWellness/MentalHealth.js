@@ -1,13 +1,26 @@
-import React, { Component } from 'react';
-import { Animated, KeyboardAvoidingView, StyleSheet, Text, TextInput, View, Image, TouchableOpacity, Button, TouchableWithoutFeedback, Keyboard, Linking } from 'react-native';
-import styles from '../../style';
-import style2 from '../../CSS/MyWellnessStyle';
-import CardView from 'react-native-cardview';
-import FlipCard from 'react-native-flip-card';
-import { Card } from 'react-native-elements';
-import { ScrollView } from 'react-native-gesture-handler';
-import Unorderedlist from 'react-native-unordered-list';
-const mailSubject = 'Mobile Solution Development!!!';
+import React, { Component } from "react";
+import {
+  Animated,
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Image,
+  TouchableOpacity,
+  Button,
+  TouchableWithoutFeedback,
+  Keyboard,
+  Linking,
+} from "react-native";
+import styles from "../../style";
+import style2 from "../../CSS/MyWellnessStyle";
+import CardView from "react-native-cardview";
+import FlipCard from "react-native-flip-card";
+import { Card } from "react-native-elements";
+import { ScrollView } from "react-native-gesture-handler";
+import Unorderedlist from "react-native-unordered-list";
+const mailSubject = "Mobile Solution Development!!!";
 class MentalHealth extends Component {
   render() {
     return (
@@ -136,6 +149,43 @@ class MentalHealth extends Component {
                     re you worried about a friend's well-being? Often asking them if they need someone to talk to, and taking the time to listen, is a great first step to providing them with help. We suggest connecting with the Peer Support Navigator for advice or encouraging your friend to connect with one of the college wellness services.
                 </Text>
                 </Text>
+              </View>
+            </FlipCard>
+          </View>
+          <View style={{ marginTop: 10 }}></View>
+          <View style={style2.outer}>
+            <FlipCard
+              style={[style2.flipcard, { paddingBottom: 20 }]}
+              flipVertical={false}
+              flipHorizontal={true}
+              friction={20}
+            >
+              <View
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Text
+                  style={[
+                    style2.paraText,
+                    {
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      fontSize: 24,
+                      alignContent: "Justify",
+                      alignItems: "center",
+                    },
+                  ]}
+                >
+                  Help A Student
+                </Text>
+              </View>
+              <View style={{ height: 450, width: "100%", marginTop: 20 }}>
                 <Text style={style2.paraText}>
                   <Text>If you are concerned your friend is in immediate danger of harming themselves or others, please refer to our Emergency and Crisis Care information.
                  </Text>
@@ -180,8 +230,7 @@ class MentalHealth extends Component {
               </View>
             </FlipCard>
           </View>
-          <View style={{ marginBottom: 20}}></View>
-
+          <View style={{ marginBottom: 20}}></View>          
         </ScrollView>
       </View>
     );

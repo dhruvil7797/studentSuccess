@@ -31,7 +31,7 @@ export default class MyWellness extends Component {
     });
 
     return (
-     <SafeAreaView >
+     <SafeAreaView style={{backgroundColor:"#e5f3ca"}}>
       <View style={[styles.MainContent],{backgroundColor:"#ffffff"}}>
         <Text style={styles.titleText}>myWellness!</Text>
         <ScrollView

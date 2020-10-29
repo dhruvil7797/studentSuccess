@@ -60,7 +60,15 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-          
+
+        <Stack.Screen
+            name="MyWellness"
+            component={MyWellness}
+            options={{
+              headerShown: false,
+            }}
+          />
+           
           <Stack.Screen
             name="mlContact"
             component={mlContact}
