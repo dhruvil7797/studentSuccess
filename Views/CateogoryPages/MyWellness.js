@@ -75,14 +75,12 @@ export default class MyWellness extends Component {
               <Text style={styles.titleText1}>Our Services + Supports</Text>
               <View style={styles.viewset}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                  {/* <Link to='/MentalHealth'> */}
                   <TouchableOpacity onPress={()=>{this.props.navigation.navigate('MentalHealth')}}>
                     <View style={styles.imageview}>
                       <Image source={require('../../assets/res/mental_health.png')}
                         style={styles.imageprop}></Image>
                     </View>
                     </TouchableOpacity>
-                  {/* </Link> */}
                   <Link to='/Medical_Care'>
                     <View style={styles.imageview}>
                       <Image source={require('../../assets/res/medical_care.png')}

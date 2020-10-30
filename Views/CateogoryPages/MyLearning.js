@@ -88,7 +88,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/icon-testing-grey.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -96,7 +96,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/serviceAndSupport.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -104,7 +104,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/tuitoring.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -112,7 +112,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/transition.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -120,7 +120,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/relatedServie.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
