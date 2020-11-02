@@ -13,13 +13,19 @@ import HealthInsurance from './HealthInsurance'
 class MedicalCare extends Component{
   render() {
     return (
+       //Main content View 
       <View style={style2.container}>
       <Text style={[style2.titleText, { paddingBottom: 20 }]}>Medical Care</Text>
       <View style={{width:"100%", marginBottom:20}}>
           <Text style={{textAlign:"center", color:"grey"}}>Click on card to view description</Text>
         </View>
         <ScrollView>
-        <View style={style2.outer}>
+          {/*It contains the flipCard view of medical care */}
+        <View style={style2.outer1}>
+        <View style={ medicalCareCSS.CardView }>
+            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>Medical Services Available</Text>
+              
+            </View>
           <FlipCard style={[style2.flipcard,{paddingBottom:20}]}
             flipVertical={false}
             flipHorizontal={true}
@@ -27,13 +33,9 @@ class MedicalCare extends Component{
           >
 
 <View style={{ width: "100%" ,alignItems: 'center'  }}>
-<View style={ medicalCareCSS.CardView }>
-            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>Medical Services Available</Text>
-              
-            </View>
 
               <View style= {medicalCareCSS.border}>
-              <Image style={medicalCareCSS.image} source={require('../../assets/res/medicalCare.png')}></Image>
+              <Image style={medicalCareCSS.image2} source={require('../../assets/res/medicalCare.png')}></Image>
               <View style= {{borderTopColor:"black" ,borderTopWidth:2 , width:"100%" ,display:"flex",flexDirection:"column",alignItems:"center" }}>
                 <Text>
                 <Text style={[style2.paraText,{marginLeft:0,marginTop:5}]}>Doctor and nurse practitioner appointments are available to all Conestoga College students with OHIP or other</Text><Text style={{color:"blue"}}><Link to='/HealthInsurance'> health insurance plans.</Link>  </Text>         
@@ -41,6 +43,7 @@ class MedicalCare extends Component{
               </View>
               </View>
             </View>
+            {/*It contains backside of flipCard which shows information on how medical services are avilable for students*/}
             <View style={medicalCareCSS.viewlist}>
             <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}><Text style={style2.paraText}>Diagnosis and treatment of illness and injury</Text></Unorderedlist>
                 
@@ -66,7 +69,11 @@ class MedicalCare extends Component{
           </FlipCard>
         </View>
         <View style={{marginBottom:10}}></View>
-        <View style={style2.outer}>
+         {/*It contains the flipCard view of medical care */}
+        <View style={style2.outer1}>
+        <View style={ medicalCareCSS.CardView }>
+            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>What You need to Book an Appointment?</Text>
+            </View>
           <FlipCard style={[style2.flipcard,{paddingBottom:20}]}
             flipVertical={false}
             flipHorizontal={true}
@@ -74,18 +81,13 @@ class MedicalCare extends Component{
           >
 
 <View style={{ width: "100%" ,alignItems: 'center'  }}>
-<View style={ medicalCareCSS.CardView }>
-            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>What You need to Book an Appointment?</Text>
-            </View>
+
               <View style= {medicalCareCSS.border}>
-              <Image style={medicalCareCSS.image1} source={require('../../assets/res/appointment.png')}></Image>
-              <View style= {{borderTopColor:"black" ,borderTopWidth:2 , width:"100%" ,display:"flex",alignItems:"center",margin:10 }}>
-                <Text>
-                <Text style={[style2.paraText,{marginLeft:0,marginTop:5}]}>Please visit our Privacy and Confidentiality page for details on our commitment to patient information security.</Text>      
-                </Text>
-              </View>
+              <Image style={medicalCareCSS.image2} source={require('../../assets/res/bookAppointment.jpg')}></Image>
+              
               </View>
             </View>
+            {/*It contains backside of flipCard which shows information on how they students can book an appointment for medical services*/}
             <View style={medicalCareCSS.viewlist}>
             
              <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}>
@@ -113,6 +115,7 @@ class MedicalCare extends Component{
           </FlipCard>
 
         </View>
+        <View style={{marginBottom:20}}></View>
         </ScrollView>
       </View>
     );
@@ -120,13 +123,14 @@ class MedicalCare extends Component{
 }
 export default MedicalCare;
 
+//stylesheet of medicalCare
 const medicalCareCSS = StyleSheet.create({
   CardView:
   {
     width: "100%",alignItems: 'center',display:'flex',justifyContent:'center',alignItems:'center'
   },
   CardViewText:
-  {textAlign:'justify',textAlign:'center',fontWeight:'bold',fontSize:24,alignItems:'center',display:'flex',justifyContent:'center'},
+  {textAlign:'justify',textAlign:'center',fontWeight:'bold',fontSize:24,alignItems:'center',display:'flex',justifyContent:'center',marginTop:5},
   border:
   {
     borderTopColor:"black" ,borderTopWidth:2 , width:"90%" ,display:"flex",flexDirection:"column",alignItems:"center"
@@ -148,12 +152,22 @@ const medicalCareCSS = StyleSheet.create({
 },
 image1:{
   width:200,
-  height:"60%",
+  height:200,
   marginLeft:2,
   marginRight:2,
  alignContent:'center',
  alignItems:'center',
   resizeMode:'contain',
   flexWrap:'wrap'
-}
+},
+image2: {
+  height: 300,
+  marginLeft: 2,
+  marginRight: 2,
+  alignContent: "center",
+  alignItems: "center",
+  width: 300,
+  resizeMode: "contain",
+  flexWrap: "wrap",
+},
 })

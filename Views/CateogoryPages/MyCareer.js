@@ -33,7 +33,9 @@ export default class MyWellness extends Component {
       });
 
     return (  
+      //main Content view
       <View style={[styles1.MainContent,{backgroundColor:'#fff4ce'}]} >
+        {/* statusbar theme */}
         <StatusBar barStyle="dark-content"/>        
         <ScrollView
           scrollEventThrottle={16}
@@ -44,7 +46,7 @@ export default class MyWellness extends Component {
           style={{ backgroundColor: "white",marginTop: 10 }}
         >
           <View style={styles1.container}>
-
+            {/* CardView contains information on myCareer */}
             <CardView
               cardElevation={4}
               cardMaxElevation={4}
@@ -72,7 +74,8 @@ export default class MyWellness extends Component {
               </Text>
               </Text>
             </CardView>
-
+              {/* myCareer services stated under horizontal scrollview
+                  Each services seperated with CardView */}
             <View style={styles.scrollviewset}>
               <CardView
                 cardElevation={4}
@@ -139,7 +142,7 @@ export default class MyWellness extends Component {
                 }}
               >
                 <Text style={styles.titleText2}>We can help</Text>
-
+                {/*Unorderlist contain information on how myCareer can help student */}
                 <Unorderedlist bulletUnicode={0x2022} style={{ fontSize: 22, marginLeft: 20 }}><Text style={styles.paraText1}>Explore career options related to your program of study</Text></Unorderedlist>
                 <View style={styles1.lineStyle} ></View>
                 <Unorderedlist bulletUnicode={0x2022} style={{ fontSize: 22, marginLeft: 20 }} ><Text style={styles.paraText1}>Use the knowledge, skills and experience you've gained as a student to achieve your career goals</Text></Unorderedlist>
@@ -175,7 +178,7 @@ export default class MyWellness extends Component {
     );
   }
 }
-
+//stylesheet of myCareer
 const styles1 = StyleSheet.create({
   MainContent: {
     flex: 1,    

@@ -1,11 +1,26 @@
 # Introduction 
-React-native project for mobile application of Conestoga College Student Services
+React-native project for developing mobile application for Conestoga College Student Success department
 
+# Technologies
+- React-native
+- Node.JS
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+# Features
+- View services provided by the student success department
+- Navigation to book an appointment for the services
+- Push notification to remind for the deadline of assignment, exam and lectures
+- Push notification to remind about the events and to provide learning tips
+- Contact your advisor
+- Search services
+- Manage your events and schedule your week
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# Project Setup
+`npm install`
+
+# To run the project
+`expo start`
+
+# Team member
+- Dhruvil Shah
+- Kaushal Pandey
+- Presha Shah

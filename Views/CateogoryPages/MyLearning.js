@@ -35,17 +35,20 @@ export default class MyWellness extends Component {
       });
 
     return (
-      <View style={[styles.MainContent, { backgroundColor: "#ffffff" }]}>
+      //main Content view
+      <View style={{ backgroundColor: "#ffffff" }}>
+         {/* statusbar theme */}
         <StatusBar barStyle="dark-content" />
         <ScrollView
           scrollEventThrottle={16}
-          contentContainerStyle={[styles.content, { paddingTop: HEADER_MAX_HEIGHT }]}
+          contentContainerStyle={{ paddingTop: HEADER_MAX_HEIGHT }}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { y: this.scrollYAnimatedValue } } }]
           )}
           style={{ backgroundColor: "white", marginTop: 30 }}
         >
           <View style={styles.container}>
+             {/* CardView contains information on myLearning */}
             <CardView
               cardElevation={4}
               cardMaxElevation={4}
@@ -75,7 +78,8 @@ export default class MyWellness extends Component {
                 </Text>
               </Text>
             </CardView>
-
+              {/* myLearning services stated under horizontal scrollview
+                  Each services seperated with CardView */}
             <View style={styles.scrollviewset}>
               <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5}>
                 <Text style={styles.titleText1}>Our Services + Supports</Text>
@@ -88,7 +92,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/icon-testing-grey.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -96,7 +100,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/serviceAndSupport.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -104,7 +108,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/tuitoring.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -112,7 +116,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/transition.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -120,7 +124,7 @@ export default class MyWellness extends Component {
                       <View style={styles1.imageview}>
                         <Image
                           source={require("../../assets/res/myLearning/relatedServie.png")}
-                          style={styles1.imageprop}
+                          style={styles.imageprop}
                         ></Image>
                       </View>
                     </Link>
@@ -137,7 +141,18 @@ export default class MyWellness extends Component {
                 </View>
               </CardView>
 
-              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5} style={{ marginBottom: 125 }}>
+              <CardView cardElevation={4} cardMaxElevation={4} cornerRadius={5} 
+              style={{ marginLeft:20,marginRight:20, backgroundColor:"#eff0f1", 
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 5,
+              height: 5,
+            },
+            shadowOpacity: 0.5,
+            shadowRadius: 3.84,
+            elevation: 5,
+            marginBottom:125,
+            marginTop:30 }}>
                 <Text style={styles.titleText2}>We Support</Text>
 
                 <Unorderedlist
@@ -157,6 +172,7 @@ export default class MyWellness extends Component {
                 </Unorderedlist>
 
                 <View style={styles1.lineStyle}></View>
+                 {/*Unorderlist contain information on how myLearning can help student */}
                 <Unorderedlist
                   bulletUnicode={0x2022}
                   style={{ fontSize: 22, marginLeft: 20 }}
