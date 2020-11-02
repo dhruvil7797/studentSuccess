@@ -47,7 +47,7 @@ class App extends React.Component {
       
       <NavigationContainer>
         <Stack.Navigator>
-        
+
         <Stack.Screen
             name="Login"
             component={Login}
@@ -55,6 +55,29 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
+        <Stack.Screen
+            name="Tutoring"
+            component={Tutoring}
+            options={{
+              headerShown: false,
+            }}
+          />
+        <Stack.Screen
+            name="ServiceAndSupport"
+            component={ServiceAndSupoort}
+            options={{
+              headerShown: false,
+            }}
+          />
+        
+        <Stack.Screen
+            name="mlContact"
+            component={mlContact}
+            options={{
+              headerShown: false,
+            }}
+          />
+        
         <Stack.Screen
             name="dashboard"
             component={dashboard}
@@ -86,13 +109,7 @@ class App extends React.Component {
             }}
           />
            
-          <Stack.Screen
-            name="mlContact"
-            component={mlContact}
-            options={{
-              headerShown: false,
-            }}
-          />
+          
 
           <Stack.Screen
             name="MentalHealth"
@@ -176,22 +193,6 @@ class App extends React.Component {
           <Stack.Screen
             name="AcademicTesting"
             component={AcademicTesting}
-            options={{
-              headerShown: false,
-            }}
-          />
-
-          <Stack.Screen
-            name="ServiceAndSupport"
-            component={ServiceAndSupoort}
-            options={{
-              headerShown: false,
-            }}
-          />
-
-          <Stack.Screen
-            name="Tutoring"
-            component={Tutoring}
             options={{
               headerShown: false,
             }}

@@ -64,7 +64,7 @@ export default class MyWellness extends Component {
               }}
             >
               <Text style={styles.titleText}>myLearning!</Text>
-              <Text style={styles1.paragraph}>
+              <Text style={styles1.lineStyle}>
                 <Text style={styles.initial}>C</Text>
                 <Text>
                   onestoga College offers a variety of services that support
@@ -349,11 +349,11 @@ const styles1 = StyleSheet.create({
     color: "#34495e",
   },
   lineStyle: {
-    borderWidth: 0.5,
+    borderWidth: 0,
     borderColor: "black",
     marginLeft: 20,
     marginRight: 20,
     marginBottom: 10,
-    marginTop: 10,
+    marginTop: 5,
   },
 });

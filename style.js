@@ -110,16 +110,9 @@ export default StyleSheet.create({
 
 
     paraText:{
-      fontSize: 16,
-      //width: '100%',
-     
+      fontSize: 16,     
       textAlign: "justify",
-     // paddingHorizontal: 30,
       marginVertical: 1,
-     // borderWidth: 1,
-     // borderRadius: 3,
-      //borderColor: "#ffffff",
-      //color: "#333",
       backgroundColor: "#ffffff", 
       flex:1
     },
@@ -168,10 +161,6 @@ export default StyleSheet.create({
     imageview:
     {
       height:150,
-      
-      
-    
-      //marginLeft:Platform.OS =='ios' ? -60 : -80
       
     },
     imageview1:

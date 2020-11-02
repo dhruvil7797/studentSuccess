@@ -22,7 +22,6 @@ async function loggedOutUser(props) {
   }
 };
 
-
 export default class dashboard extends React.Component {
   constructor() {
     super();
