@@ -23,6 +23,7 @@ class YourAdvisor extends Component {
         extrapolate: 'clamp'
       });
     return (
+      //Main content view
       <View style={[styles.MainContent, { backgroundColor: '#fff4ce' }]} >
         <StatusBar barStyle="dark-content" />
         <ScrollView
@@ -58,6 +59,7 @@ class YourAdvisor extends Component {
               title="Reach Your Advisor" />
           </View>
         </ScrollView>
+        {/*Animated header view */}
         <Animated.View
           style={[styles.Header, { height: headerHeight }]}>
           <Image source={image} style={[{ width: "100%", height: "100%", resizeMode:'stretch' }]} />
@@ -66,7 +68,7 @@ class YourAdvisor extends Component {
     );
   }
 }
-
+//stylesheet of YourAdvisor class
 const styles = StyleSheet.create({
   MainContent: {
     flex: 1,

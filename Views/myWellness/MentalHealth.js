@@ -24,7 +24,7 @@ const mailSubject = "Mobile Solution Development!!!";
 class MentalHealth extends Component {
   render() {
     return (
-
+        //Main content View 
       <View style={style2.container}>
         <View>
           <Text style={[style2.titleText, { paddingBottom: 20 }]}>MentalHealth Support and Resources</Text>
@@ -33,6 +33,7 @@ class MentalHealth extends Component {
           </View>
         </View>
         <ScrollView>
+           {/*It contains the flipCard view of the Breathing space */}
           <View style={style2.outer1}>
             <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>The Breathing Space</Text>
@@ -54,6 +55,7 @@ class MentalHealth extends Component {
 
                 </View>
               </View>
+              {/*It contains backside of flipCard which shows information on how breathing spaces are avilable for students*/}
               <View style={{ height: 200, width: "100%", marginTop: 20 }}>
                 <Text style={style2.paraText}>
                   <Text style={style2.initial}>T</Text>
@@ -66,7 +68,7 @@ class MentalHealth extends Component {
             </FlipCard>
           </View>
           <View style={{ marginTop: 10 }}></View>
-
+           {/*It contains the flipCard view of self help */}
           <View style={style2.outer1}>
             <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Self Help</Text>
@@ -88,6 +90,7 @@ class MentalHealth extends Component {
 
                 </View>
               </View>
+              {/*It contains backside of flipCard which shows information on how self help works for students*/}
               <View style={{ height: 200, width: "100%", marginTop: 20 }}>
                 <Text style={style2.paraText}>
                   <Text style={style2.initial}>S</Text>
@@ -101,6 +104,7 @@ class MentalHealth extends Component {
 
           </View>
           <View style={{ marginTop: 10 }}></View>
+           {/*It contains the flipCard view of peer support */}
           <View style={style2.outer1}>
             <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Peer Support</Text>
@@ -116,6 +120,7 @@ class MentalHealth extends Component {
                 <Image style={style2.image1} source={require('../../assets/res/peerSupport.png')}></Image>
                
               </View>
+              {/*It contains backside of flipCard which shows information on how peer support helps student*/}
               <View style={{ height: 200, width: "100%", marginTop: 20 }}>
                 <Text style={style2.paraText}>
                   <Text style={style2.initial}>P</Text>
@@ -127,6 +132,7 @@ class MentalHealth extends Component {
             </FlipCard>
           </View>
           <View style={{ marginTop: 10 }}></View>
+           {/*It contains the flipCard view of helping a student */}
           <View style={style2.outer1}>
           <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Help A Student</Text>
@@ -141,6 +147,7 @@ class MentalHealth extends Component {
                 <Image style={style2.image1} source={require('../../assets/res/helpStudent.png')}></Image>
                
               </View>
+              {/*It contains backside of flipCard which shows information on how help Student works*/}
               <View style={{ height: 450, width: "100%"}}>
                 <Text style={style2.paraText}>
                   <Text style={style2.initial}>A</Text>
@@ -157,6 +164,7 @@ class MentalHealth extends Component {
           </View>
           
           <View style={{ marginTop: 10 }}></View>
+           {/*It contains the flipCard view of off-campus mental health support */}
           <View style={style2.outer1}>
           <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Off-campus mental health supports for students</Text>
@@ -170,6 +178,7 @@ class MentalHealth extends Component {
                 <Image style={style2.image1} source={require('../../assets/res/offCampus.png')}></Image>
                
               </View>
+              {/*It contains backside of flipCard which shows information on how off-campus mental health support works for students*/}
               <View style={{ height: 500, width: "100%"}}>
                 <Unorderedlist bulletUnicode={0x2022} style={{ marginLeft: 5 }}>
                   <Text style={style2.paraText1}>

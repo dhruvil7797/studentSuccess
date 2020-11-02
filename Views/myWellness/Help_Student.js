@@ -24,7 +24,7 @@ const mailSubject = "Mobile Solution Development!!!";
 class HelpStudent extends Component {
   render() {
     return (
-
+      //Main content View 
       <View style={style2.container}>
         <View>
           <Text style={[style2.titleText, { paddingBottom: 20 }]}>Help A Student</Text>
@@ -33,8 +33,7 @@ class HelpStudent extends Component {
           </View>
         </View>
         <ScrollView>
-         
-         
+          {/*It contains the flipCard view of help a student */}
           <View style={style2.outer1}>
           <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Help A Student</Text>
@@ -49,6 +48,7 @@ class HelpStudent extends Component {
                 <Image style={style2.image1} source={require('../../assets/res/helpStudent.png')}></Image>
                
               </View>
+              {/*It contains backside of flipCard which shows information on how they can help a student*/}
               <View style={{ height: 450, width: "100%"}}>
                 <Text style={style2.paraText}>
                   <Text style={style2.initial}>A</Text>
@@ -65,6 +65,7 @@ class HelpStudent extends Component {
           </View>
           
           <View style={{ marginTop: 10 }}></View>
+           {/*It contains the flipCard view of off-campus mental health support */}
           <View style={style2.outer1}>
           <View style={{ borderBottomColor: "black", borderBottomWidth: 2, paddingBottom: 10, marginLeft: 20, marginRight: 20 }} >
               <Text style={style2.titleText1}>Off-campus mental health supports for students</Text>
@@ -78,6 +79,7 @@ class HelpStudent extends Component {
                 <Image style={style2.image1} source={require('../../assets/res/offCampus.png')}></Image>
                
               </View>
+              {/*It contains backside of flipCard which shows information on how students can use off-campus mental health support*/}
               <View style={{ height: 500, width: "100%"}}>
                 <Unorderedlist bulletUnicode={0x2022} style={{ marginLeft: 5 }}>
                   <Text style={style2.paraText1}>

@@ -28,6 +28,7 @@ class Contact extends Component {
           </Text>
         </View>
         <ScrollView scrollEventThrottle={10}>
+           {/*It contains the flipCard view of Doon Campus card */}
           <View style={styles1.outer1}>
             <FlipCard
               style={styles1.flipcard}
@@ -48,7 +49,7 @@ class Contact extends Component {
                   Campus
                 </Text>
               </View>
-
+              {/*It contains backside of flipCard which shows information on how they can reach to doon campus advisor */}
               <View style={styles1.cardText}>
               <Text style={styles1.paraText}>
                 <Text style={{ fontWeight: "bold" }}>
@@ -118,7 +119,7 @@ class Contact extends Component {
               </View>
             </FlipCard>
           </View>
-
+          {/*It contains the flipCard view of Cambridge Campus card */}
           <View style={styles1.outer1}>
             <FlipCard
               style={[styles1.flipcard, { paddingBottom: 20 }]}
@@ -140,6 +141,7 @@ class Contact extends Component {
                   </Text>
                 </View>
               </View>
+              {/*It contains backside of flipCard which shows information on how they can reach to cambridge campus advisor */}
               <View style={styles1.cardText}>
               <Text style={styles1.paraText1}>
                 <Text style={{ fontWeight: "bold" }}>
@@ -171,6 +173,7 @@ class Contact extends Component {
               </View>
             </FlipCard>
           </View>
+          {/*It contains the flipCard view of Guelph Campus card */}
           <View style={styles1.outer1}>
             <FlipCard
               style={[styles1.flipcard, { paddingBottom: 20 }]}
@@ -192,6 +195,7 @@ class Contact extends Component {
                   </Text>
                 </View>
               </View>
+              {/*It contains backside of flipCard which shows information on how they can reach to Guelph campus advisor */}
               <View style={styles1.cardText}>
               <Text style={styles1.paraText1}>
                 <Text style={{ fontWeight: "bold" }}>
@@ -222,6 +226,7 @@ class Contact extends Component {
               </View>
             </FlipCard>
           </View>
+          {/*It contains the flipCard view of Waterloo Campus card */}
           <View style={styles1.outer1}>
             <FlipCard
               style={[styles1.flipcard, { paddingBottom: 20 }]}
@@ -243,6 +248,7 @@ class Contact extends Component {
                   </Text>
                 </View>
               </View>
+              {/*It contains backside of flipCard which shows information on how they can reach to Waterloo campus advisor */}
               <View style={styles1.cardText}>
               <Text style={styles1.paraText1}>
                 <Text style={{ fontWeight: "bold" }}>

@@ -16,29 +16,49 @@ async function loggedOutUser(props) {
       '0'
     );
     props.navigation.navigate('Login');
-
   }
   catch (error) {
     console.log(error);
   }
 };
 
-
 export default class dashboard extends React.Component {
-  constructor() {
+  async componentDidMount() {  
+    const value = await AsyncStorage.getItem('userId');
+    var callingURL = 'https://studentsuccessweb.herokuapp.com/getUser?uid='+value;
+    fetch(callingURL)
+      .then((response) => response.json())
+      .then((json) => {
+        if (json['success'] === false) {
+          console.warn("Error");
+          this.setState({firstName: ""});
+          this.setState({imageURL: "https://t3.ftcdn.net/jpg/02/70/09/98/360_F_270099822_9zbx236dHn1hyxYNl9HSOBvpUEpU0eOz.jpg"});          
+        }
+        else{
+          console.warn(json['imageURL']);          
+          this.setState({firstName: json['firstName'] });
+          this.setState({imageURL: json['imageURL'] });          
+        }
+      });
+  }
+  constructor(){
     super();
     this.scrollYAnimatedValue = new Animated.Value(0);
   }
+  state = {
+    firstName: '',
+    imageURL: 'https://t3.ftcdn.net/jpg/02/70/09/98/360_F_270099822_9zbx236dHn1hyxYNl9HSOBvpUEpU0eOz.jpg'
+  }
+  
   render() {
     const HEADER_MIN_HEIGHT = 120;
-    const HEADER_MAX_HEIGHT = 250;
-    
+    const HEADER_MAX_HEIGHT = 250;    
     const headerHeight = this.scrollYAnimatedValue.interpolate(
-      {
+    {
         inputRange: [0, (HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT)],
         outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
         extrapolate: 'clamp'
-      });
+    });
 
     
     return (
@@ -77,8 +97,7 @@ export default class dashboard extends React.Component {
           onPress={()=>{this.props.navigation.navigate('MyWellness');}}
         >
           <Card.Cover style={styles.cardCover} source={require('../../assets/res/myWellness.png')} />
-          <Card.Title style={styles.cardTitle} title="myWellness" />
-         
+          <Card.Title style={styles.cardTitle} title="myWellness" />         
         </Card>
           {/*myLearning card*/}
         <Card
@@ -86,8 +105,7 @@ export default class dashboard extends React.Component {
           onPress={()=>{this.props.navigation.navigate('MyLearning');}}
         >
           <Card.Cover style={styles.cardCover} source={require('../../assets/res/myLearning.png')} />
-          <Card.Title style={styles.cardTitle} title="myLearning" />
-        
+          <Card.Title style={styles.cardTitle} title="myLearning" />        
         </Card>
           {/*myCareer card*/}
         <Card
@@ -95,29 +113,22 @@ export default class dashboard extends React.Component {
           onPress={()=>{this.props.navigation.navigate('MyCareer');}}
         >
           <Card.Cover style={styles.cardCover} source={require('../../assets/res/myCareer.png')} />
-          <Card.Title style={styles.cardTitle} title="myCareer" />
-      
+          <Card.Title style={styles.cardTitle} title="myCareer" />      
         </Card>
         {/*LogOut Card*/}
         <Card
           style={[styles.card,{height:80, marginBottom:100}]}
           onPress={() => { loggedOutUser(this.props) }}
         >
-          <Card.Title style={styles.cardTitle} title="Logout" />
-     
+          <Card.Title style={styles.cardTitle} title="Logout" />     
         </Card>
       </ScrollView>
       {/*Animated header view style*/}
       <Animated.View style={[styles.animatedHeaderContainer, {marginTop:20 ,height:headerHeight , backgroundColor: '#2471A3' }]}> 
-          <Image source={require("../../assets/CSS.jpg")} style={{width:"80%", resizeMode:"stretch" ,backgroundColor:'green', flex:1, margin:20}}/>
-            
-          
+          <Image source={require("../../assets/CSS.jpg")} style={{width:"80%", resizeMode:"stretch" ,backgroundColor:'green', flex:1, margin:20}}/>                      
           <View style={{height:100, width:"100%", display:'flex', flexDirection:'row', alignItems:"center", justifyContent:"flex-end"}}>
-          <Text style={{fontSize:36, color:"white", marginRight:20}}>Welcome, Alan</Text>
-          <Image source={require("../../assets/alan.jpg")} style={{width:60, height:60, borderRadius:"50%", marginRight:20}} />  
-            
-
-            
+          <Text style={{fontSize:24, color:"white", marginRight:20}}>Welcome, {this.state.firstName}</Text>
+          <Image source={{uri:this.state.imageURL,}} style={{width:60, height:60, borderRadius:"50%", marginRight:20}} />              
           </View>
       </Animated.View>
       </View>
@@ -167,6 +178,5 @@ const styles = StyleSheet.create({
     right: 0,
     justifyContent: 'flex-end',
     alignItems: 'center'
-  },
-  
+  },  
 });

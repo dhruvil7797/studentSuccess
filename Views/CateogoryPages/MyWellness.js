@@ -29,8 +29,9 @@ export default class MyWellness extends Component {
       });
 
     return (
-     
+     //main Content view
       <View style={{backgroundColor:"#ffffff"}}>
+        {/* statusbar theme */}
         <StatusBar barStyle="dark-content" />
         <ScrollView
           scrollEventThrottle={16}
@@ -43,7 +44,7 @@ export default class MyWellness extends Component {
 
 
           <View style={[styles.container,{backgroundColor:"#ffffff"}]}>
-            
+          {/* CardView contains information on myWellness */}
           <CardView
             cardElevation={4}
             cardMaxElevation={4}
@@ -66,7 +67,8 @@ export default class MyWellness extends Component {
                         </Text>
             </Text>
           </CardView>
-          
+          {/* myWellness services stated under horizontal scrollview
+                  Each services seperated with CardView */}
             <View style={styles.scrollviewset}>
             <CardView
             cardElevation={4}
@@ -75,14 +77,12 @@ export default class MyWellness extends Component {
               <Text style={styles.titleText1}>Our Services + Supports</Text>
               <View style={styles.viewset}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                  {/* <Link to='/MentalHealth'> */}
                   <TouchableOpacity onPress={()=>{this.props.navigation.navigate('MentalHealth')}}>
                     <View style={styles.imageview}>
                       <Image source={require('../../assets/res/mental_health.png')}
                         style={styles.imageprop}></Image>
                     </View>
                     </TouchableOpacity>
-                  {/* </Link> */}
                   <Link to='/Medical_Care'>
                     <View style={styles.imageview}>
                       <Image source={require('../../assets/res/medical_care.png')}
@@ -142,7 +142,7 @@ export default class MyWellness extends Component {
             }}
             >
              <Text style={styles.titleText2}>We Support</Text>
-              
+              {/*Unorderlist contain information on how myWellness can help student */}
               <Unorderedlist bulletUnicode={0x2022} style={{ fontSize: 22 , marginLeft:20 }}><Text style={styles.paraText1 }>Stress Managements</Text></Unorderedlist>
               <View style = {styles1.lineStyle} ></View>
               <Unorderedlist bulletUnicode={0x2022} style={{ fontSize: 22 , marginLeft:20 }} ><Text style={styles.paraText1}>Relationships</Text></Unorderedlist>
@@ -196,6 +196,7 @@ export default class MyWellness extends Component {
     );
   }
 }
+//stylesheet of myWellness
 const styles1 = StyleSheet.create({
   MainContainer: {
     flex: 1,

@@ -20,6 +20,7 @@ const Header_Min_Height = 20;
 class Contact extends Component {
   render() {
     return (
+      //It contains the main view of the page
       <View style={style2.container}>
         <Text style={[style2.titleText, { paddingBottom: 20 }]}>Contact</Text>
         <View style={{ width: "100%", marginBottom: 20 }}>
@@ -28,6 +29,7 @@ class Contact extends Component {
           </Text>
         </View>
         <ScrollView scrollEventThrottle={10}>
+           {/*It contains the flipCard view of contact card */}
           <View style={styles1.outer}>
             <FlipCard
               style={styles1.flipcard}
@@ -48,7 +50,7 @@ class Contact extends Component {
                   Campus
                 </Text>
               </View>
-
+              {/*It contains backside of flipCard which shows information on how they can reach to their advisor*/}
               <View style={styles1.cardText}>
                 <Text style={styles1.paraText}>
                   <Text style={{ fontWeight: "bold" }}>
@@ -92,7 +94,7 @@ class Contact extends Component {
     );
   }
 }
-
+//stylesheet of contact class
 const styles1 = StyleSheet.create({
   paraText: {
     marginLeft: 18,

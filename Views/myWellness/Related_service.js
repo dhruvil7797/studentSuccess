@@ -13,12 +13,14 @@ import HealthInsurance from './HealthInsurance'
 class RelatedService extends Component{
   render() {
     return (
+      //Main content View 
       <View style={style2.container}>
       <Text style={[style2.titleText, { paddingBottom: 20 }]}>Related Services</Text>
       <View style={{width:"100%", marginBottom:20}}>
           <Text style={{textAlign:"center", color:"grey"}}>Click on card to view description</Text>
         </View>
         <ScrollView>
+          {/*It contains the flipCard view of Related college Services */}
         <View style={style2.outer1}>
         <View style={ medicalCareCSS.CardView }>
             <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>Related College Services and Community Resources</Text>
@@ -38,6 +40,7 @@ class RelatedService extends Component{
               
               </View>
             </View>
+            {/*It contains backside of flipCard which shows information on how college services are available for students*/}
             <View style={medicalCareCSS.viewlist}>
               
               <Text style={style2.titleText2}>Athletics and Recreation</Text>
@@ -66,6 +69,7 @@ class RelatedService extends Component{
           </FlipCard>
         </View>
         <View style={{marginBottom:10}}></View>
+        {/*It contains the flipCard view of Conestoga Students Inc. Health and Wellness Supports */}
         <View style={style2.outer1}>
         <View style={ medicalCareCSS.CardView }>
             <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>Conestoga Students Inc. Health and Wellness Supports</Text>
@@ -83,6 +87,7 @@ class RelatedService extends Component{
               
               </View>
             </View>
+            {/*It contains backside of flipCard which shows information on how health and wellness supports are available for students*/}
             <View style={medicalCareCSS.viewlist}>
             <Text style={style2.titleText1}>Athletics and Recreation</Text>
             <Unorderedlist bulletUnicode={0x2022} style={[medicalCareCSS.orderlist,{marginLeft:30}]}>

@@ -20,6 +20,7 @@ const Header_Min_Height = 20;
 class CareerEvents extends Component {
   render() {
     return (
+      //It contains the main view of the page
       <View style={style2.container}>
         <Text style={[style2.titleText, { paddingBottom: 20 }]}>Career Events</Text>
         <View style={{ width: "100%", marginBottom: 20 }}>
@@ -28,7 +29,7 @@ class CareerEvents extends Component {
           </Text>
         </View>
         <ScrollView scrollEventThrottle={10}>
-          
+           {/*It contains the flipCard view of careerEvent card */}
           <View style={styles1.outer}>
             <FlipCard
               style={[styles1.flipcard, { paddingBottom: 20 }]}
@@ -48,6 +49,7 @@ class CareerEvents extends Component {
                   
                 </View>
               </View>
+              {/*It contains backside of flipCard which shows information on how they can implement career Event */}
               <View style={styles1.cardText}>
               <Text style={styles1.paraText1}>
                
@@ -70,7 +72,7 @@ class CareerEvents extends Component {
     );
   }
 }
-
+//stylesheet of careerEvent class 
 const styles1 = StyleSheet.create({
   paraText: {
     marginLeft: 18,

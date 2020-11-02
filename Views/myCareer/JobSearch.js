@@ -29,7 +29,7 @@ class jobSearch extends Component {
           </Text>
         </View>
         <ScrollView scrollEventThrottle={10}>
-          {/*It contains the flipcard view and the jobSearch card */}
+          {/*It contains the flipCard view of jobSearch card */}
           <View style={styles1.outer}>
             <FlipCard
               style={[styles1.flipcard, { paddingBottom: 20 }]}
@@ -48,8 +48,8 @@ class jobSearch extends Component {
                   <Text style={[styles1.titleText1]}>Job Search Tool</Text>
                   
                 </View>
-                 {/*It contains the information of the jobSearch card */}
               </View>
+              {/*It contains backside of flipCard which shows information on how they can implement job Search */}
               <View style={styles1.cardText}>
               <Text style={styles1.paraText1}>
                

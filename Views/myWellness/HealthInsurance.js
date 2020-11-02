@@ -14,12 +14,14 @@ import { Link, NavigationContainer } from '@react-navigation/native';
 class HealthInsurance extends Component{
   render() {
     return (
+      //Main content View 
       <View style={style2.container}>
       <Text style={[style2.titleText, { paddingBottom: 20 }]}>Health Insurance</Text>
       <View style={{width:"100%", marginBottom:20}}>
           <Text style={{textAlign:"center", color:"grey"}}>Click on card to view description</Text>
         </View>
         <ScrollView>  
+          {/*It contains the flipCard view of student health insurance plan */}
         <View style={style2.outer1}>
         <View style={ [medicalCareCSS.CardView],{marginTop:5} }>
             <Text style={[style2.paraText1,medicalCareCSS.CardViewText]}>Conestoga Student Health Insurance Plan</Text>
@@ -37,7 +39,7 @@ class HealthInsurance extends Component{
               
               </View>
             </View>
-              
+            {/*It contains backside of flipCard which shows information on how they can use Student Health Insurance Plan*/}
               <View style={{ height: 200, width: "100%", marginTop: 20 }}>
               <Text style={style2.paraText}>
                 <Text style={style2.initial}>T</Text>
@@ -51,6 +53,7 @@ class HealthInsurance extends Component{
             </FlipCard>
           </View>
           <View style={{marginBottom:10}}></View>
+          {/*It contains the flipCard view of international student */}
           <View style={style2.outer1}>
           <View style={ [medicalCareCSS.CardView],{marginTop:5} }>
             <Text style={[style2.paraText1,medicalCareCSS.CardViewText]}>International Students</Text>
@@ -68,6 +71,7 @@ class HealthInsurance extends Component{
               
               </View>
             </View>
+             {/*It contains backside of flipCard which shows information on how international can use Student Health Insurance Plan*/}
             <View style={medicalCareCSS.viewlist}>
             <Text style={style2.paraText}>
                 <Text style={style2.initial}>I</Text>
@@ -82,6 +86,7 @@ class HealthInsurance extends Component{
 
         </View>
         <View style={{marginBottom:10}}></View>
+        {/*It contains the flipCard view of ontario resident students */}
           <View style={style2.outer1}>
           <View style={ [medicalCareCSS.CardView],{marginTop:5} }>
             <Text style={[style2.paraText1,medicalCareCSS.CardViewText]}>Ontario Resident Students</Text>
@@ -99,6 +104,7 @@ class HealthInsurance extends Component{
               
               </View>
             </View>
+             {/*It contains backside of flipCard which shows information on how ontario residents can use Student Health Insurance Plan*/}
             <View style={medicalCareCSS.viewlist}>
             <Text style={style2.paraText}>
                 <Text style={style2.initial}>I</Text>
@@ -110,6 +116,7 @@ class HealthInsurance extends Component{
 
         </View>
         <View style={{marginBottom:10}}></View>
+        {/*It contains the flipCard view of extra charges */}
           <View style={style2.outer1}>
           <View style={ [medicalCareCSS.CardView],{marginTop:5} }>
             <Text style={[style2.paraText1,medicalCareCSS.CardViewText]}>Extra Charges</Text>
@@ -127,6 +134,7 @@ class HealthInsurance extends Component{
               
               </View>
             </View>
+             {/*It contains backside of flipCard which shows information on Extra charges*/}
             <View style={medicalCareCSS.viewlist}>
             <Text style={style2.paraText}>
                 <Text style={style2.initial}>T</Text>

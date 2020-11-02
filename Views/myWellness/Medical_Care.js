@@ -13,12 +13,14 @@ import HealthInsurance from './HealthInsurance'
 class MedicalCare extends Component{
   render() {
     return (
+       //Main content View 
       <View style={style2.container}>
       <Text style={[style2.titleText, { paddingBottom: 20 }]}>Medical Care</Text>
       <View style={{width:"100%", marginBottom:20}}>
           <Text style={{textAlign:"center", color:"grey"}}>Click on card to view description</Text>
         </View>
         <ScrollView>
+          {/*It contains the flipCard view of medical care */}
         <View style={style2.outer1}>
         <View style={ medicalCareCSS.CardView }>
             <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>Medical Services Available</Text>
@@ -32,7 +34,6 @@ class MedicalCare extends Component{
 
 <View style={{ width: "100%" ,alignItems: 'center'  }}>
 
-
               <View style= {medicalCareCSS.border}>
               <Image style={medicalCareCSS.image2} source={require('../../assets/res/medicalCare.png')}></Image>
               <View style= {{borderTopColor:"black" ,borderTopWidth:2 , width:"100%" ,display:"flex",flexDirection:"column",alignItems:"center" }}>
@@ -42,6 +43,7 @@ class MedicalCare extends Component{
               </View>
               </View>
             </View>
+            {/*It contains backside of flipCard which shows information on how medical services are avilable for students*/}
             <View style={medicalCareCSS.viewlist}>
             <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}><Text style={style2.paraText}>Diagnosis and treatment of illness and injury</Text></Unorderedlist>
                 
@@ -67,6 +69,7 @@ class MedicalCare extends Component{
           </FlipCard>
         </View>
         <View style={{marginBottom:10}}></View>
+         {/*It contains the flipCard view of medical care */}
         <View style={style2.outer1}>
         <View style={ medicalCareCSS.CardView }>
             <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>What You need to Book an Appointment?</Text>
@@ -84,6 +87,7 @@ class MedicalCare extends Component{
               
               </View>
             </View>
+            {/*It contains backside of flipCard which shows information on how they students can book an appointment for medical services*/}
             <View style={medicalCareCSS.viewlist}>
             
              <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}>
@@ -119,6 +123,7 @@ class MedicalCare extends Component{
 }
 export default MedicalCare;
 
+//stylesheet of medicalCare
 const medicalCareCSS = StyleSheet.create({
   CardView:
   {

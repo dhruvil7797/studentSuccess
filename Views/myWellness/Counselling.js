@@ -13,12 +13,14 @@ import HealthInsurance from './HealthInsurance'
 class Counselling extends Component{
   render() {
     return (
+      //Main content View 
       <View style={style2.container}>
       <Text style={[style2.titleText, { paddingBottom: 20 }]}>Counselling</Text>
       <View style={{width:"100%", marginBottom:20}}>
           <Text style={{textAlign:"center", color:"grey"}}>Click on card to view description</Text>
         </View>
         <ScrollView>  
+           {/*It contains the flipCard view of support mental health card */}
         <View style={style2.outer1}>
         <View style={ [medicalCareCSS.CardView],{marginTop:5} }>
             <Text style={[style2.paraText1,medicalCareCSS.CardViewText]}>Support for mental health and wellness issues</Text>
@@ -36,8 +38,10 @@ class Counselling extends Component{
               
               </View>
             </View>
+            {/*It contains backside of flipCard which shows information on how they can use services of mental health and wellness*/}
               <View style={{ height: 450, width: "100%", marginTop: 20 }}>
               <Text style={style2.paraText}>Our counsellors provide short-term mental health support in a variety of areas. </Text>
+              {/* Unorderlist contains information of support mental health and wellness */}
               <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}>
               <Text style={style2.paraText}>Anxiety and stress</Text></Unorderedlist>
               <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}>
@@ -58,6 +62,7 @@ class Counselling extends Component{
             </FlipCard>
           </View>
           <View style={{marginBottom:10}}></View>
+           {/*It contains the flipCard view of Appointment card */}
           <View style={style2.outer1}>
           <View style={ [medicalCareCSS.CardView],{marginTop:5} }>
             <Text style={[style2.paraText1,medicalCareCSS.CardViewText]}>What You need to Book an Appointment?</Text>
@@ -75,6 +80,7 @@ class Counselling extends Component{
               
               </View>
             </View>
+            {/*It contains backside of flipCard which shows information on how they can book appointment */}
             <View style={medicalCareCSS.viewlist}>
             
              <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}>
