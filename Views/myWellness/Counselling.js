@@ -19,19 +19,23 @@ class Counselling extends Component{
           <Text style={{textAlign:"center", color:"grey"}}>Click on card to view description</Text>
         </View>
         <ScrollView>  
-        <View style={style2.outer}>
+        <View style={style2.outer1}>
+        <View style={ [medicalCareCSS.CardView],{marginTop:5} }>
+            <Text style={[style2.paraText1,medicalCareCSS.CardViewText]}>Support for mental health and wellness issues</Text>
+            </View>
             <FlipCard style={[style2.flipcard, { paddingBottom: 20 }]}
               flipVertical={false}
               flipHorizontal={true}
               friction={20}
             >
-              <View style={{ borderTopColor: "black", borderTopWidth: 2, width: "100%" }}>
-                <View style={{ width: "100%", height: "100%", alignItems: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 20 }}>
-                  <Text style={[style2.paraText, { textAlign: 'center', fontWeight: 'bold', fontSize: 24, alignContent: 'Justify', alignItems: 'center', marginLeft: 0 }]}>Support for mental health and wellness issues</Text>
-                </View>
-                <View style={{ borderBottomColor: "black", borderBottomWidth: 2 }} >
-                </View>
+              
+              <View style={{ width: "100%" ,alignItems: 'center'  }}>
+
+              <View style= {medicalCareCSS.border}>
+              <Image style={medicalCareCSS.image2} source={require('../../assets/res/CounsellingM.png')}></Image>
+              
               </View>
+            </View>
               <View style={{ height: 450, width: "100%", marginTop: 20 }}>
               <Text style={style2.paraText}>Our counsellors provide short-term mental health support in a variety of areas. </Text>
               <Unorderedlist bulletUnicode={0x2022} style={medicalCareCSS.orderlist}>
@@ -53,7 +57,11 @@ class Counselling extends Component{
               </View>
             </FlipCard>
           </View>
-          <View style={style2.outer}>
+          <View style={{marginBottom:10}}></View>
+          <View style={style2.outer1}>
+          <View style={ [medicalCareCSS.CardView],{marginTop:5} }>
+            <Text style={[style2.paraText1,medicalCareCSS.CardViewText]}>What You need to Book an Appointment?</Text>
+            </View>
           <FlipCard style={[style2.flipcard,{paddingBottom:20}]}
             flipVertical={false}
             flipHorizontal={true}
@@ -61,16 +69,10 @@ class Counselling extends Component{
           >
 
 <View style={{ width: "100%" ,alignItems: 'center'  }}>
-<View style={ medicalCareCSS.CardView }>
-            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>What You need to Book an Appointment?</Text>
-            </View>
+
               <View style= {medicalCareCSS.border}>
-              <Image style={medicalCareCSS.image1} source={require('../../assets/res/appointment.png')}></Image>
-              <View style= {{borderTopColor:"black" ,borderTopWidth:2 , width:"100%" ,display:"flex",alignItems:"center",margin:10 }}>
-                <Text>
-                <Text style={[style2.paraText,{marginLeft:0,marginTop:5}]}>Please visit our Privacy and Confidentiality page for details on our commitment to patient information security.</Text>      
-                </Text>
-              </View>
+              <Image style={medicalCareCSS.image2} source={require('../../assets/res/bookAppointment.jpg')}></Image>
+              
               </View>
             </View>
             <View style={medicalCareCSS.viewlist}>
@@ -96,6 +98,7 @@ class Counselling extends Component{
 
         </View>
         </ScrollView>
+        <View style={{marginBottom:20}}></View>
       </View>
     );
   }
@@ -137,5 +140,16 @@ image1:{
  alignItems:'center',
   resizeMode:'contain',
   flexWrap:'wrap'
-}
+},
+image2: {
+  height: 300,
+  marginLeft: 2,
+  marginRight: 2,
+  alignContent: "center",
+  alignItems: "center",
+  width: 300,
+  resizeMode: "contain",
+  flexWrap: "wrap",
+},
+
 })

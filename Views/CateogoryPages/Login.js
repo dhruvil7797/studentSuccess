@@ -18,6 +18,7 @@ import image from "../../assets/CSS.jpg";
 
 const AnimatedInput = Animated.createAnimatedComponent(TextInput);
 
+//logged In function
 async function loggedInUser (props){
   // this.setState({myState:1});
   try {

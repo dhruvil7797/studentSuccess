@@ -20,6 +20,10 @@ class MedicalCare extends Component{
         </View>
         <ScrollView>
         <View style={style2.outer1}>
+        <View style={ medicalCareCSS.CardView }>
+            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>Medical Services Available</Text>
+              
+            </View>
           <FlipCard style={[style2.flipcard,{paddingBottom:20}]}
             flipVertical={false}
             flipHorizontal={true}
@@ -27,10 +31,7 @@ class MedicalCare extends Component{
           >
 
 <View style={{ width: "100%" ,alignItems: 'center'  }}>
-<View style={ medicalCareCSS.CardView }>
-            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>Medical Services Available</Text>
-              
-            </View>
+
 
               <View style= {medicalCareCSS.border}>
               <Image style={medicalCareCSS.image2} source={require('../../assets/res/medicalCare.png')}></Image>
@@ -67,6 +68,9 @@ class MedicalCare extends Component{
         </View>
         <View style={{marginBottom:10}}></View>
         <View style={style2.outer1}>
+        <View style={ medicalCareCSS.CardView }>
+            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>What You need to Book an Appointment?</Text>
+            </View>
           <FlipCard style={[style2.flipcard,{paddingBottom:20}]}
             flipVertical={false}
             flipHorizontal={true}
@@ -74,16 +78,10 @@ class MedicalCare extends Component{
           >
 
 <View style={{ width: "100%" ,alignItems: 'center'  }}>
-<View style={ medicalCareCSS.CardView }>
-            <Text style={[style2.paraText,medicalCareCSS.CardViewText]}>What You need to Book an Appointment?</Text>
-            </View>
+
               <View style= {medicalCareCSS.border}>
-              <Image style={medicalCareCSS.image1} source={require('../../assets/res/appointment.png')}></Image>
-              <View style= {{borderTopColor:"black" ,borderTopWidth:2 , width:"100%" ,display:"flex",alignItems:"center",margin:10 }}>
-                <Text>
-                <Text style={[style2.paraText,{marginLeft:0,marginTop:5}]}>Please visit our Privacy and Confidentiality page for details on our commitment to patient information security.</Text>      
-                </Text>
-              </View>
+              <Image style={medicalCareCSS.image2} source={require('../../assets/res/bookAppointment.jpg')}></Image>
+              
               </View>
             </View>
             <View style={medicalCareCSS.viewlist}>
@@ -113,6 +111,7 @@ class MedicalCare extends Component{
           </FlipCard>
 
         </View>
+        <View style={{marginBottom:20}}></View>
         </ScrollView>
       </View>
     );
@@ -126,7 +125,7 @@ const medicalCareCSS = StyleSheet.create({
     width: "100%",alignItems: 'center',display:'flex',justifyContent:'center',alignItems:'center'
   },
   CardViewText:
-  {textAlign:'justify',textAlign:'center',fontWeight:'bold',fontSize:24,alignItems:'center',display:'flex',justifyContent:'center'},
+  {textAlign:'justify',textAlign:'center',fontWeight:'bold',fontSize:24,alignItems:'center',display:'flex',justifyContent:'center',marginTop:5},
   border:
   {
     borderTopColor:"black" ,borderTopWidth:2 , width:"90%" ,display:"flex",flexDirection:"column",alignItems:"center"

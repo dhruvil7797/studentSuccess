@@ -8,6 +8,7 @@ import {
   useTheme,
 } from 'react-native-paper';
 
+//logout function
 async function loggedOutUser(props) {
   try {
     await AsyncStorage.setItem(
@@ -41,8 +42,9 @@ export default class dashboard extends React.Component {
 
     
     return (
-      
+      //Main View Container
       <View style={[styles.container2,{backgroundColor:'#2471A3'}]} >
+        {/*titlebar with animated view*/}
       <StatusBar barStyle="light-content"/>
       <ScrollView
         contentContainerStyle={[styles.content,{ paddingTop: HEADER_MAX_HEIGHT }]}
@@ -52,7 +54,7 @@ export default class dashboard extends React.Component {
         )}
         style={[styles.container, { backgroundColor: "white",marginTop: 60 }]}
       >
-        
+        {/*Your Advisor card*/}
           <Card
             style={[styles.card,{marginTop:0}]}
             onPress={()=>{this.props.navigation.navigate('YourAdvisor');}}
@@ -61,7 +63,7 @@ export default class dashboard extends React.Component {
             <Card.Title style={styles.cardTitle} title="Know Your Advisor" />
           </Card>
         
-
+        {/*Book an Appointment card*/}
         <Card
           style={styles.card}
           onPress={()=>{this.props.navigation.navigate('YourAdvisor');}}
@@ -69,7 +71,7 @@ export default class dashboard extends React.Component {
           <Card.Cover style={styles.cardCover} source={require('../../assets/res/bookAppointment.jpg')} />
           <Card.Title style={styles.cardTitle} title="Book an Appointment" />
         </Card>
-
+          {/*myWellness card*/}
         <Card
           style={styles.card}
           onPress={()=>{this.props.navigation.navigate('MyWellness');}}
@@ -78,7 +80,7 @@ export default class dashboard extends React.Component {
           <Card.Title style={styles.cardTitle} title="myWellness" />
          
         </Card>
-
+          {/*myLearning card*/}
         <Card
           style={styles.card}
           onPress={()=>{this.props.navigation.navigate('MyLearning');}}
@@ -87,7 +89,7 @@ export default class dashboard extends React.Component {
           <Card.Title style={styles.cardTitle} title="myLearning" />
         
         </Card>
-
+          {/*myCareer card*/}
         <Card
           style={styles.card}
           onPress={()=>{this.props.navigation.navigate('MyCareer');}}
@@ -96,6 +98,7 @@ export default class dashboard extends React.Component {
           <Card.Title style={styles.cardTitle} title="myCareer" />
       
         </Card>
+        {/*LogOut Card*/}
         <Card
           style={[styles.card,{height:80, marginBottom:100}]}
           onPress={() => { loggedOutUser(this.props) }}
@@ -104,6 +107,7 @@ export default class dashboard extends React.Component {
      
         </Card>
       </ScrollView>
+      {/*Animated header view style*/}
       <Animated.View style={[styles.animatedHeaderContainer, {marginTop:20 ,height:headerHeight , backgroundColor: '#2471A3' }]}> 
           <Image source={require("../../assets/CSS.jpg")} style={{width:"80%", resizeMode:"stretch" ,backgroundColor:'green', flex:1, margin:20}}/>
             
