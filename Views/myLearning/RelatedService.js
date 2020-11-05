@@ -21,6 +21,7 @@ const Header_Min_Height = 20;
 class RelatedService extends Component {
   render() {
     return (
+      //main content
       <View style={[styles1.container, { paddingBottom: 60 }]}>
         <Text style={[style2.titleText, { paddingBottom: 20 }]}>
           Learning resources and Services
@@ -28,6 +29,7 @@ class RelatedService extends Component {
         <View style={{ width: "100%", marginBottom: 20 }}></View>
         <ScrollView scrollEventThrottle={10}>
           <View style={styles.container}>
+            {/*It contains the CardView of Free student planning tools */}
             <CardView
               cardElevation={4}
               cardMaxElevation={4}
@@ -54,6 +56,7 @@ class RelatedService extends Component {
                   printable and digital planners:
                 </Text>
               </Text>
+              {/*It shows pdf view of winter 2021 planner*/}
               <TouchableOpacity
                 onPress={() => {
                   Linking.openURL(
@@ -67,7 +70,7 @@ class RelatedService extends Component {
                   Download Printable Fall 2020 - Winter 2021 Planner
                 </Text>
               </TouchableOpacity>
-
+                 {/*It shows pdf view of 4-month calendar*/}
               <TouchableOpacity
                 onPress={() => {
                   Linking.openURL(
@@ -83,7 +86,7 @@ class RelatedService extends Component {
                   Download Fillable Fall 2020 4-Month Calendar
                 </Text>
               </TouchableOpacity>
-
+                 {/*It shows pdf view of daily calendar*/}
               <TouchableOpacity
                 onPress={() => {
                   Linking.openURL(
@@ -140,7 +143,7 @@ class RelatedService extends Component {
           <Text style={{ textAlign: "center", color: "grey", marginTop: 30 }}>
             Click on card to view description
           </Text>
-
+           {/*It contains the flipCard view of tips for online learning success */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -159,7 +162,7 @@ class RelatedService extends Component {
                   Tips for Online Learning Success
                 </Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how they can success in Online Learning*/}
               <View
                 style={{
                   height: "100%",
@@ -185,7 +188,7 @@ class RelatedService extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the flipCard view of students can get organized */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -202,7 +205,7 @@ class RelatedService extends Component {
                 ></Image>
                 <Text style={[styles1.titleText1]}>Get organized</Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how they can get orgsnized with studies*/}
               <View
                 style={{
                   height: "100%",
@@ -305,7 +308,7 @@ class RelatedService extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the flipCard view of Planning */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -322,7 +325,7 @@ class RelatedService extends Component {
                 ></Image>
                 <Text style={[styles1.titleText1]}>Plan</Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how students can do planning for studies*/}
               <View
                 style={{
                   height: "100%",
@@ -430,7 +433,7 @@ class RelatedService extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the flipCard view of Stay Connected */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -447,7 +450,7 @@ class RelatedService extends Component {
                 ></Image>
                 <Text style={[styles1.titleText1]}>Stay Connected</Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on they can stay connected*/}
               <View
                 style={{
                   height: "100%",
@@ -566,7 +569,7 @@ class RelatedService extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the flipCard view of Library Sevices */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -583,7 +586,7 @@ class RelatedService extends Component {
                 ></Image>
                 <Text style={[styles1.titleText1]}>Library Services</Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how Library Services are available*/}
               <View
                 style={{
                   height: "100%",
@@ -704,7 +707,7 @@ class RelatedService extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the flipCard view of Co-Curricular Record */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -723,7 +726,7 @@ class RelatedService extends Component {
                   Co-Curricular Record (CCR)
                 </Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how Co-Curricular Record works*/}
               <View
                 style={{
                   height: "100%",
@@ -797,7 +800,7 @@ class RelatedService extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the CardView of IT Service Desk */}
           <View
             style={{
               flex: 1,

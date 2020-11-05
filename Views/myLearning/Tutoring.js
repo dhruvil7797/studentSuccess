@@ -21,10 +21,12 @@ const Header_Min_Height = 20;
 class Tutoring extends Component {
   render() {
     return (
+      //Main content View 
       <View style={[styles1.container, { paddingBottom: 60 }]}>
         <Text style={[style2.titleText, { paddingBottom: 20 }]}>Tutoring</Text>
         <View style={{ width: "100%", marginBottom: 20 }}></View>
         <ScrollView scrollEventThrottle={10}>
+           {/*It contains the  CardView of how Student Success Advisors can help students */}
           <View style={styles.container}>
             <CardView
               cardElevation={4}
@@ -127,7 +129,7 @@ class Tutoring extends Component {
                 </Text>
               </Text>
             </CardView>
-
+             {/*It contains the  CardView of Tutoring and Academic Support */}
             <CardView
               cardElevation={4}
               cardMaxElevation={4}
@@ -196,7 +198,7 @@ class Tutoring extends Component {
           <Text style={{ textAlign: "center", color: "grey", marginTop: 30 }}>
             Click on card to view description
           </Text>
-
+           {/*It contains the flipCard view of Math,Accounting and Statistics Help */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -215,7 +217,7 @@ class Tutoring extends Component {
                   Math, Accounting and Statistics Help
                 </Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how math,accounting and statistics help available*/}
               <View
                 style={{
                   height: "100%",
@@ -281,7 +283,7 @@ class Tutoring extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the flipCard view of Writing and Academic Integrity Support */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -300,7 +302,7 @@ class Tutoring extends Component {
                   Writing and Academic Integrity Support
                 </Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how Writing and Academic Integrity supports are available */}
               <View
                 style={{
                   height: "100%",
@@ -433,7 +435,7 @@ class Tutoring extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the flipCard view of Learning Skills Improvement */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -452,7 +454,7 @@ class Tutoring extends Component {
                   Learning Skills Improvement
                 </Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how students can improve their learning skills*/}
               <View
                 style={{
                   height: "100%",
