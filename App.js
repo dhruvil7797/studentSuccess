@@ -37,6 +37,7 @@ import AccessibleLearning from "./Views/myLearning/AccessibleLearning";
 import LearningAndAssitive from "./Views/myLearning/LearningAndAssitive";
 import TechSupport from "./Views/myLearning/TechSupport";
 import TestingPage from "./Views/TestPage";
+import BookAppointment from "./Views/CateogoryPages/BookAppointment";
 
 const Stack = createStackNavigator(); //variable declaration
 
@@ -55,6 +56,14 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
+          <Stack.Screen
+            name="BookAppointment"
+            component={BookAppointment}
+            options={{
+              headerShown: false,
+            }}
+          />
+          
         <Stack.Screen
             name="Tutoring"
             component={Tutoring}
