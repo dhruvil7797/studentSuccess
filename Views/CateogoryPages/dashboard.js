@@ -120,7 +120,8 @@ export default class dashboard extends React.Component {
           style={[styles.card,{height:80, marginBottom:100}]}
           onPress={() => { loggedOutUser(this.props) }}
         >
-          <Card.Title style={styles.cardTitle} title="Logout" />     
+          <Card.Title style={[styles.cardTitle
+          ]} title="Logout" />     
         </Card>
       </ScrollView>
       {/*Animated header view style*/}

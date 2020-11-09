@@ -38,7 +38,7 @@ export default class Login extends Component {
   //loggedIn function implementation using herokuapp
   loggedInUser() {
     
-    var callingURL = 'https://studentsuccessweb.herokuapp.com/loginUser?fn=' + this.state.username;
+    var callingURL = 'https://studentsuccessweb.herokuapp.com/loginUser?fn=' + this.state.username + "&pwd=" + this.state.password;
     fetch(callingURL)
       .then((response) => response.json())
       .then(async(json) => {
@@ -90,6 +90,7 @@ export default class Login extends Component {
     //bydefault user
     myState: 0,
     username: "dshah3186@conestogac.on.ca",
+    password:"",
     errorMessage: ""
   }
 

@@ -19,17 +19,17 @@ const Header_Min_Height = 20;
 class AcademicTesting extends Component {
   render() {
     return (
-      <View style={[styles1.container, { paddingBottom: 60}]}>
-        <Text style={[style2.titleText, { paddingBottom: 20 }]}>
+      <View style={[styles1.container, { paddingBottom: 60}]}> {/* main view for the page */}
+        <Text style={[style2.titleText, { paddingBottom: 20 }]}> {/* title text for page */}
           Accessible Learning
         </Text>
-        <View style={{ width: "100%", marginBottom: 20 }}>
+        <View style={{ width: "100%", marginBottom: 20 }}> {/* view to display message for use of component */}
           <Text style={{ textAlign: "center", color: "grey" }}>
             Click on card to view description
           </Text>
         </View>
-        <ScrollView scrollEventThrottle={10}>
-          <View style={styles1.outer}>
+        <ScrollView scrollEventThrottle={10}> {/* main scroll-view for the page where all sub-components are placed  */}
+          <View style={styles1.outer}> {/* view to add flip card for accessible learning */}
             <FlipCard
               style={styles1.flipcard}
               flipVertical={false}
@@ -37,8 +37,8 @@ class AcademicTesting extends Component {
               friction={20}
               cardElevation={5}
               cardMaxElevation={5}
-            >
-              <View style={[styles1.cardStyle]}>
+            >   
+              <View style={[styles1.cardStyle]}> {/* front of the flip card for accessible learning*/}
               <Image
                   style={styles1.image}
                   source={require("../../assets/res/myLearning/accessibleLearning.png")}
@@ -54,7 +54,7 @@ class AcademicTesting extends Component {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
-              >
+              > {/* back of the flip card for accessible learning*/}
                 <Text style={styles1.paraText}>
                   <Text style={style2.initial}>C</Text>
                   <Text>
@@ -70,7 +70,7 @@ class AcademicTesting extends Component {
             </FlipCard>
           </View>
 
-          <View style={[styles1.outer, { display: "flex" }]}>
+          <View style={[styles1.outer, { display: "flex" }]}> {/* view to add flip card for Submit your Documentation */}
             <FlipCard
               style={[styles1.flipcard]}
               flipVertical={false}
@@ -80,7 +80,7 @@ class AcademicTesting extends Component {
               cardMaxElevation={5}
             >
               
-                <View style={[styles1.cardStyle]}>
+                <View style={[styles1.cardStyle]}> {/* front of the flip card for Submit your Documentation*/}
                 <Image
                   style={styles1.image}
                   source={require("../../assets/res/myLearning/submitYourDocument.png")}  
@@ -98,7 +98,7 @@ class AcademicTesting extends Component {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
-              >
+              > {/* back of the flip card for Submit your Documentation*/}
                 <Text style={styles1.paraText}>
                   <Text>
                     If you have a documented permanent or temporary disability
@@ -139,7 +139,7 @@ class AcademicTesting extends Component {
                     onPress={() => {
                       Linking.openURL("tel:1-866-463-4484");
                     }}
-                  >
+                  > {/* link for phone number*/}
                     {" "}
                     1-866-463-4484
                   </Text>
@@ -148,7 +148,7 @@ class AcademicTesting extends Component {
                     onPress={() => {
                       Linking.openURL("https://studentsuccess.conestogac.on.ca/myLearning/AcademicAndTestingAccommodations");
                     }}
-                  >
+                  > {/* link for detail of documnts require*/}
                     {"\n"}{"\n"}
                     Click here
                   </Text>

@@ -19,16 +19,16 @@ const Header_Max_Height = 130;
 const Header_Min_Height = 20;
 class Contact extends Component {
   render() {
-    return (
-      <View style={style2.container}>
-        <Text style={[style2.titleText, { paddingBottom: 20 }]}>Contact</Text>
+    return ( 
+      <View style={style2.container}> {/* main view of the page */}
+        <Text style={[style2.titleText, { paddingBottom: 20 }]}>Contact</Text> {/* title text for page */}
         <View style={{ width: "100%", marginBottom: 20 }}>
           <Text style={{ textAlign: "center", color: "grey" }}>
             Click on card to view description
           </Text>
         </View>
-        <ScrollView scrollEventThrottle={10}>
-          <View style={styles1.outer}>
+        <ScrollView scrollEventThrottle={10}> {/* main scroll-view for the page where all sub-components are placed  */}
+          <View style={styles1.outer}> {/* view to add flip card for contact Doon campus */}
             <FlipCard
               style={styles1.flipcard}
               flipVertical={false}
@@ -37,7 +37,8 @@ class Contact extends Component {
               cardElevation={5}
               cardMaxElevation={5}
             >
-              <View style={[styles1.cardStyle]}>
+              <View style={[styles1.cardStyle]}> {/* front of the flip card for contact Doon campus*/}
+
                 <Image
                   style={styles1.image}
                   source={require("../../assets/res/Campuses/doonCampus.png")}
@@ -49,7 +50,7 @@ class Contact extends Component {
                 </Text>
               </View>
 
-              <View style={styles1.cardText}>
+              <View style={styles1.cardText}> {/* back of the flip card for contact Doon campus*/}
                 <Text style={styles1.paraText}>
                   <Text style={{ fontWeight: "bold" }}>
                     Reach us: {"\n"}
@@ -85,7 +86,7 @@ class Contact extends Component {
             </FlipCard>
           </View>
 
-          <View style={styles1.outer}>
+          <View style={styles1.outer}> {/* view to add flip card for contact brantford campus */}
             <FlipCard
               style={[styles1.flipcard, { paddingBottom: 20 }]}
               flipVertical={false}
@@ -94,7 +95,7 @@ class Contact extends Component {
               cardElevation={5}
               cardMaxElevation={5}
             >
-              <View style={[styles1.cardStyle]}>
+              <View style={[styles1.cardStyle]}> {/* front of the flip card for brantford campus*/}
                 <View style={[styles1.cardStyle]}>
                   <Image
                     style={styles1.image}
@@ -106,7 +107,7 @@ class Contact extends Component {
                   </Text>
                 </View>
               </View>
-              <View style={styles1.cardText}>
+              <View style={styles1.cardText}> {/* back of the flip card for brantford campus*/}
                 <Text style={styles1.paraText}>
                   <Text style={{ fontWeight: "bold" }}>
                     Reach us: {"\n"}
@@ -136,7 +137,7 @@ class Contact extends Component {
             </FlipCard>
           </View>
 
-          <View style={styles1.outer}>
+          <View style={styles1.outer}>  {/* view to add flip card for contact cambridge campus */}
             <FlipCard
               style={[styles1.flipcard, { paddingBottom: 20 }]}
               flipVertical={false}
@@ -144,8 +145,8 @@ class Contact extends Component {
               friction={20}
               cardElevation={5}
               cardMaxElevation={5}
-            >
-              <View style={[styles1.cardStyle]}>
+            > 
+              <View style={[styles1.cardStyle]}> {/* front of the flip card for cambridge campus*/}
                 <View style={[styles1.cardStyle]}>
                   <Image
                     style={styles1.image}
@@ -157,7 +158,7 @@ class Contact extends Component {
                   </Text>
                 </View>
               </View>
-              <View style={styles1.cardText}>
+              <View style={styles1.cardText}> {/* back of the flip card for cambridge campus*/}
                 <Text style={styles1.paraText}>
                   <Text style={{ fontWeight: "bold" }}>
                     Reach us: {"\n"}
@@ -187,7 +188,7 @@ class Contact extends Component {
             </FlipCard>
           </View>
 
-          <View style={styles1.outer}>
+          <View style={styles1.outer}> {/* view to add flip card for contact Guelph campus */}
             <FlipCard
               style={[styles1.flipcard, { paddingBottom: 20 }]}
               flipVertical={false}
@@ -196,7 +197,7 @@ class Contact extends Component {
               cardElevation={5}
               cardMaxElevation={5}
             >
-              <View style={[styles1.cardStyle]}>
+              <View style={[styles1.cardStyle]}> {/* front of the flip card for contact Guelph campus*/}
                 <View style={[styles1.cardStyle]}>
                   <Image
                     style={styles1.image}
@@ -208,7 +209,7 @@ class Contact extends Component {
                   </Text>
                 </View>
               </View>
-              <View style={styles1.cardText}>
+              <View style={styles1.cardText}> {/* back side of the flip card for contact Guelph campus*/}
                 <Text style={styles1.paraText}>
                   <Text style={{ fontWeight: "bold" }}>
                     Reach us: {"\n"}
