@@ -19,6 +19,7 @@ const Header_Min_Height = 20;
 class ServiceAndSupport extends Component {
   render() {
     return (
+      //main content
       <View style={[styles1.container, { paddingBottom: 60 }]}>
         <Text style={[style2.titleText, { paddingBottom: 20 }]}>
           Service And Support
@@ -29,6 +30,7 @@ class ServiceAndSupport extends Component {
           </Text>
         </View>
         <ScrollView scrollEventThrottle={10}>
+          {/*It contains the flipCard view of Assistive Technology and Alternate Format */}
           <View style={styles1.outer}>
             <FlipCard
               style={styles1.flipcard}
@@ -47,7 +49,7 @@ class ServiceAndSupport extends Component {
                   Assistive Technology and Alternate Format
                 </Text>
               </View>
-
+            {/*It contains backside of flipCard which shows information on how Assistive Technology and Alternate Formats are available */}
               <View
                 style={{
                   height: "100%",

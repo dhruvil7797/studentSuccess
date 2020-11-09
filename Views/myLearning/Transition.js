@@ -21,6 +21,7 @@ const Header_Min_Height = 20;
 class Transition extends Component {
   render() {
     return (
+      //main content
       <View style={[styles1.container, { paddingBottom: 60 }]}>
         <Text style={[style2.titleText, { paddingBottom: 20 }]}>
           C Success Summer Transition Program
@@ -28,6 +29,7 @@ class Transition extends Component {
         <View style={{ width: "100%", marginBottom: 20 }}></View>
         <ScrollView scrollEventThrottle={10}>
           <View style={styles.container}>
+             {/*It contains the  CardView of Virtual Transition Programming */}
             <CardView
               cardElevation={4}
               cardMaxElevation={4}
@@ -85,7 +87,7 @@ class Transition extends Component {
           <Text style={{ textAlign: "center", color: "grey", marginTop: 30 }}>
             Click on card to view description
           </Text>
-
+           {/*It contains the FlipCard of C Success opportunities */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -104,7 +106,7 @@ class Transition extends Component {
                   C Success opportunities
                 </Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on how C Success opportunities are available*/}
               <View
                 style={{
                   height: "100%",
@@ -124,7 +126,7 @@ class Transition extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the FlipCard of Make connections with services */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -143,7 +145,7 @@ class Transition extends Component {
                 Make connections – interact with services
                 </Text>
               </View>
-
+                 {/*It contains backside of flipCard which shows information on how studens can make connections or interact with services*/}
               <View
                 style={{
                   height: "100%",
@@ -234,7 +236,7 @@ class Transition extends Component {
               </View>
             </FlipCard>
           </View>
-
+           {/*It contains the FlipCard of C build capacity */}
           <View style={[styles1.outer, { marginTop: 20 }]}>
             <FlipCard
               style={styles1.flipcard}
@@ -253,7 +255,7 @@ class Transition extends Component {
                 Build capacity
                 </Text>
               </View>
-
+               {/*It contains backside of flipCard which shows information on they can build capacity of C success*/}
               <View
                 style={{
                   height: "100%",
