@@ -38,6 +38,7 @@ import LearningAndAssitive from "./Views/myLearning/LearningAndAssitive";
 import TechSupport from "./Views/myLearning/TechSupport";
 import TestingPage from "./Views/TestPage";
 import BookAppointment from "./Views/CateogoryPages/BookAppointment";
+import ViewSingleNotification from "./Views/CateogoryPages/ViewSingleNotification";
 
 const Stack = createStackNavigator(); //variable declaration
 
@@ -48,7 +49,13 @@ class App extends React.Component {
       
       <NavigationContainer>
         <Stack.Navigator>
-
+        <Stack.Screen
+            name="View Notification"
+            component={ViewSingleNotification}
+            options={{
+              headerShown: true,
+            }}
+          />
         <Stack.Screen
             name="Login"
             component={Login}

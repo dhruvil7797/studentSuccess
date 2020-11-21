@@ -19,6 +19,7 @@
     "expo-status-bar": "~1.0.2",
     "ios": "^0.0.1",
     "react": "16.13.1",
+    "react-calendar-icon": "^0.9.4",
     "react-image-hover": "^1.0.3",
     "react-native": "^0.63.3",
     "react-native-animated-form": "0.0.7",
