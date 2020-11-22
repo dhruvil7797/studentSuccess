@@ -43,7 +43,7 @@ export default class Login extends Component {
       .then((response) => response.json())
       .then(async(json) => {
         if (json['success'] === false) {
-          this.setState({ errorMessage: "Invalid Login Details! Try Again" });
+          this.setState({ errorMessage: "Invalid Login Credentials" });
         }
         else {
           try {
@@ -89,7 +89,7 @@ export default class Login extends Component {
   state = {
     //bydefault user
     myState: 0,
-    username: "dshah3186@conestogac.on.ca",
+    username: "",
     password:"",
     errorMessage: ""
   }

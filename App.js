@@ -38,6 +38,7 @@ import LearningAndAssitive from "./Views/myLearning/LearningAndAssitive";
 import TechSupport from "./Views/myLearning/TechSupport";
 import TestingPage from "./Views/TestPage";
 import BookAppointment from "./Views/CateogoryPages/BookAppointment";
+import Notification from "./Views/CateogoryPages/Notification";
 
 const Stack = createStackNavigator(); //variable declaration
 
@@ -45,11 +46,18 @@ class App extends React.Component {
   render() {
     return (
       //Screen navigator
-      
+
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="Notification"
+            component={Notification}
+            options={{
+              headerShown: false,
+            }}
+          />
 
-        <Stack.Screen
+          <Stack.Screen
             name="Login"
             component={Login}
             options={{
@@ -63,46 +71,46 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-          
-        <Stack.Screen
+
+          <Stack.Screen
             name="Tutoring"
             component={Tutoring}
             options={{
               headerShown: false,
             }}
           />
-        <Stack.Screen
+          <Stack.Screen
             name="ServiceAndSupport"
             component={ServiceAndSupoort}
             options={{
               headerShown: false,
             }}
           />
-        
-        <Stack.Screen
+
+          <Stack.Screen
             name="mlContact"
             component={mlContact}
             options={{
               headerShown: false,
             }}
           />
-        
-        <Stack.Screen
+
+          <Stack.Screen
             name="dashboard"
             component={dashboard}
             options={{
               headerShown: false,
             }}
           />
-        <Stack.Screen
+          <Stack.Screen
             name="MyCareer"
             component={MyCareer}
             options={{
               headerShown: false,
             }}
           />
-        
-        <Stack.Screen
+
+          <Stack.Screen
             name="MyLearning"
             component={MyLearning}
             options={{
@@ -110,15 +118,13 @@ class App extends React.Component {
             }}
           />
 
-        <Stack.Screen
+          <Stack.Screen
             name="MyWellness"
             component={MyWellness}
             options={{
               headerShown: false,
             }}
           />
-           
-          
 
           <Stack.Screen
             name="MentalHealth"
@@ -127,9 +133,6 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-
-          
-                
 
           <Stack.Screen
             name="YourAdvisor"
@@ -145,8 +148,6 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-
-          
 
           <Stack.Screen
             name="Medical_Care"
@@ -190,7 +191,7 @@ class App extends React.Component {
               headerShown: false,
             }}
           />
-          
+
           <Stack.Screen
             name="collapsedTool"
             component={collapsedTool}
