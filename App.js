@@ -38,7 +38,11 @@ import LearningAndAssitive from "./Views/myLearning/LearningAndAssitive";
 import TechSupport from "./Views/myLearning/TechSupport";
 import TestingPage from "./Views/TestPage";
 import BookAppointment from "./Views/CateogoryPages/BookAppointment";
+<<<<<<< HEAD
 import Notification from "./Views/CateogoryPages/Notification";
+=======
+import ViewSingleNotification from "./Views/CateogoryPages/ViewSingleNotification";
+>>>>>>> 755df7c32f3f0508506cd9ab4c9f720f35fd983a
 
 const Stack = createStackNavigator(); //variable declaration
 

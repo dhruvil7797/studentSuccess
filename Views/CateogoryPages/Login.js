@@ -135,11 +135,9 @@ export default class Login extends Component {
                   value={this.state.password}
                   placeholder="Password"
                 />
-
                 <TouchableOpacity>
                 <Text style={[styles.appButtonText, { color: 'red' }]}>{this.state.errorMessage}</Text>
                 </TouchableOpacity>
-
 
                 <TouchableOpacity
                   onPress={() => {
