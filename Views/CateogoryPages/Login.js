@@ -15,33 +15,26 @@ import {
 } from "react-native";
 import AnimatedForm from "react-native-animated-form";
 import image from "../../assets/CSS.jpg";
+import { Server_Url } from "../../Globaldata";
 
 const AnimatedInput = Animated.createAnimatedComponent(TextInput);
 
 
-//logged In function
-async function loggedInUser (props){
-  // this.setState({myState:1});
-  try {
-      await AsyncStorage.setItem(
-          'isLoggedIn',
-          '1'
-      );
-    }
-    catch(error){
-
-    }
-      props.navigation.navigate('dashboard');
-  }
-
 export default class Login extends Component {
   //loggedIn function implementation using herokuapp
   loggedInUser() {
-    
-    var callingURL = 'https://studentsuccessweb.herokuapp.com/loginUser?fn=' + this.state.username + "&pwd=" + this.state.password;
-    fetch(callingURL)
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userName: this.state.username,
+        pwd: this.state.password
+      })
+    };
+    var callingURL = '/loginStudent'
+    fetch(Server_Url + callingURL, requestOptions)
       .then((response) => response.json())
-      .then(async(json) => {
+      .then(async (json) => {
         if (json['success'] === false) {
           this.setState({ errorMessage: "Invalid Login Details! Try Again" });
         }
@@ -52,11 +45,11 @@ export default class Login extends Component {
               'isLoggedIn',
               '1'
             );
-            var userId = ""+json['id'];
+            var userId = "" + json['studentId'];
             await AsyncStorage.setItem(
-              'userId',
+              'studentId',
               userId
-            );                        
+            );
             this.props.navigation.navigate('dashboard');
           }
           catch (error) {
@@ -75,7 +68,6 @@ export default class Login extends Component {
   handleChange(event = {}) {
     const name = event.target && event.target.name;
     const value = event.target && event.target.value;
-    console.warn(name + " : " + value);
     this.setState({ [name]: value, })
   }
 
@@ -88,9 +80,8 @@ export default class Login extends Component {
 
   state = {
     //bydefault user
-    myState: 0,
     username: "dshah3186@conestogac.on.ca",
-    password:"",
+    password: "",
     errorMessage: ""
   }
 
@@ -116,7 +107,7 @@ export default class Login extends Component {
                   name="username"
                   onChangeText={text =>
                     this.setState({
-                      errorMessage:"",
+                      errorMessage: "",
                       username: text
                     })
                   }
@@ -127,7 +118,7 @@ export default class Login extends Component {
                   style={styles.animatedInput}
                   onChangeText={text =>
                     this.setState({
-                      errorMessage:"",
+                      errorMessage: "",
                       password: text
                     })
                   }
@@ -136,7 +127,7 @@ export default class Login extends Component {
                   placeholder="Password"
                 />
                 <TouchableOpacity>
-                <Text style={[styles.appButtonText, { color: 'red' }]}>{this.state.errorMessage}</Text>
+                  <Text style={[styles.appButtonText, { color: 'red' }]}>{this.state.errorMessage}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity

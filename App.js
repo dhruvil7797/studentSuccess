@@ -50,19 +50,20 @@ class App extends React.Component {
       <NavigationContainer>
         <Stack.Navigator>
         <Stack.Screen
-            name="View Notification"
-            component={ViewSingleNotification}
-            options={{
-              headerShown: true,
-            }}
-          />
-        <Stack.Screen
             name="Login"
             component={Login}
             options={{
               headerShown: false,
             }}
           />
+        <Stack.Screen
+            name="ViewNotification"
+            component={ViewSingleNotification}
+            options={{
+              headerShown: true,
+            }}
+          />
+        
           <Stack.Screen
             name="BookAppointment"
             component={BookAppointment}
