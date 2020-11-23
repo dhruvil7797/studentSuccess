@@ -65,9 +65,10 @@ class App extends React.Component {
             name="Login"
             component={Login}
             options={{
-              headerShown: false,
+              headerShown: true,
             }}
           />
+        
           <Stack.Screen
             name="BookAppointment"
             component={BookAppointment}

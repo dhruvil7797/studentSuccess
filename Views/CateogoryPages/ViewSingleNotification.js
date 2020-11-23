@@ -1,5 +1,3 @@
-//const { Component } = require("react")
-
 import React, { Component } from "react";
 import {
     Animated,
@@ -21,10 +19,14 @@ import { Card, Icon, Button } from 'react-native-elements';
 import style from "../../style";
 //import CalendarIcon from "react-calendar-icon";
 import Unorderedlist from 'react-native-unordered-list';
+import { Server_Url } from '../../Globaldata.js';
 
 export default class ViewSingleNotification extends Component {
     constructor() {
         super();
+        // fetch(Server_Url)
+        // .then((response) => console.warn(response))
+        // .catch(function(error){console.warn(error)})
         this.state = {
             data: [
                 {
@@ -45,63 +47,64 @@ export default class ViewSingleNotification extends Component {
 
         return (
             <View style={styles.container}>
+                <Text>{this.props.route.params.notificationId}</Text>
                 <Text style={styles.titleText}>{(this.state.data[0])['title']}</Text>
-                <View style={{flexDirection:'row'}}>
-                <Icon name="schedule" style={styles.icon}></Icon>
+                <View style={{ flexDirection: 'row' }}>
+                    <Icon name="schedule" style={styles.icon}></Icon>
                     <Text style={styles.dateFormat}>
-                    {(this.state.data[0])['date'].toString().split(" ")[0] + ", "
-                        + (this.state.data[0])['date'].toString().split(" ")[1] + " "
-                        + (this.state.data[0])['date'].toString().split(" ")[2] + " "
-                        + (this.state.data[0])['date'].toString().split(" ")[3] + " - "
-                        + (this.state.data[0])['date'].toString().split(" ")[4].split(":")[0] + ":"
-                        + (this.state.data[0])['date'].toString().split(" ")[4].split(":")[1]}
-                </Text>
+                        {(this.state.data[0])['date'].toString().split(" ")[0] + ", "
+                            + (this.state.data[0])['date'].toString().split(" ")[1] + " "
+                            + (this.state.data[0])['date'].toString().split(" ")[2] + " "
+                            + (this.state.data[0])['date'].toString().split(" ")[3] + " - "
+                            + (this.state.data[0])['date'].toString().split(" ")[4].split(":")[0] + ":"
+                            + (this.state.data[0])['date'].toString().split(" ")[4].split(":")[1]}
+                    </Text>
                 </View>
                 <Text style={styles.paraText}>{(this.state.data[0])['shortDescription']}</Text>
                 <Text style={styles.paraText}>{(this.state.data[0])['header']}</Text>
                 {
                     (this.state.data[0])['contentType'] === 'list' ?
                         <View style={styles.paraText}>
-                            
-                                {(this.state.data[0])['content'].split(",").map((block) => (
-                                    <Unorderedlist bulletUnicode={0x2022}>
+
+                            {(this.state.data[0])['content'].split(",").map((block) => (
+                                <Unorderedlist bulletUnicode={0x2022}>
                                     <Text>{block}</Text>
-                                    </Unorderedlist>
-                                ))}
-                            
+                                </Unorderedlist>
+                            ))}
+
                         </View>
                         :
                         <Text style={styles.paraText}>{(this.state.data[0])['content']}</Text>
                 }
 
                 <Text style={styles.paraText}>{(this.state.data[0])['footer']}</Text>
-                    {(this.state.data[0])['eventURL'] === '' ? null :
-                        <Button title='View Details' style={styles.appButtonContainer}>View Details
+                {(this.state.data[0])['eventURL'] === '' ? null :
+                    <Button title='View Details' style={styles.appButtonContainer}>View Details
                         </Button>
-                
-    }
+
+                }
             </View>
         );
 
     }
 }
 const styles = StyleSheet.create({
-    
+
     appButtonContainer: {
-        height:200,
-        width:200,
-        alignContent:'center',
-        alignSelf:'center',
-       paddingTop:20
-      },
-      appButtonText: {
+        height: 200,
+        width: 200,
+        alignContent: 'center',
+        alignSelf: 'center',
+        paddingTop: 20
+    },
+    appButtonText: {
         fontSize: 18,
         color: "#fff",
         fontWeight: "bold",
         alignSelf: "center",
         textTransform: "uppercase"
-      },
-     
+    },
+
     titleText: {
         fontSize: 26,
         fontWeight: "bold",
@@ -111,10 +114,10 @@ const styles = StyleSheet.create({
     },
     icon:
     {
-        paddingTop:8,
-        color:"#696969" ,
-        fontSize:16,
-        marginLeft:15
+        paddingTop: 8,
+        color: "#696969",
+        fontSize: 16,
+        marginLeft: 15
     },
     dateFormat: {
         fontSize: 16,
