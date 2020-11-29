@@ -8,6 +8,7 @@ import {
   Animated,
   SafeAreaView,
   StatusBar,
+  AsyncStorage,
 } from "react-native";
 import { Link, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -23,47 +24,45 @@ import CardView from "react-native-cardview";
 import { Card } from "react-native-elements";
 import Unorderedlist from "react-native-unordered-list";
 import RowNotification from "./RowNotification";
+import { Server_Url } from "../../Globaldata";
 
 export default class MyWellness extends Component {
+  async componentDidMount() {
+    console.log("Fetching Notifications");
+    const value = await AsyncStorage.getItem('studentId');
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        studentNumber: value
+      })
+    };
+    var callingURL = '/getAllNotification';
+    fetch(Server_Url + callingURL, requestOptions)
+      .then((response) => response.json())
+      .then((json) => {
+        var dataObject = json['upcomingData'];
+        this.setState({
+          data: dataObject,
+        })
+      });
+  }
   constructor() {
     super();
-    this.state = {
-    //   data: [
-    //     {
-    //       title: "Title1",
-    //       shortDescription: "Short Description",
-    //       longDescription: "Long Description",
-    //       date: new Date(),
-    //     },
-    //     {
-    //       title: "Title2",
-    //       shortDescription: "Short Description2",
-    //       longDescription: "Long Description2",
-    //       date: new Date(),
-    //     },
-    //     {
-    //       title: "Title3",
-    //       shortDescription: "Short Description3",
-    //       longDescription: "Long Description3",
-    //       date: new Date(),
-    //     },
-    //     {
-    //       title: "Title3",
-    //       shortDescription: "Short Description3",
-    //       longDescription: "Long Description3",
-    //       date: new Date(),
-    //     },
-    //   ],
-    data:[]
-    };
+  }
+
+  state = {
+    data:[],
   }
 
   render() {
     return (
       <View>
+        <ScrollView>
         {this.state.data.map((block) => (
           <RowNotification notiData={block} />
         ))}
+        </ScrollView>
       </View>
     );
   }

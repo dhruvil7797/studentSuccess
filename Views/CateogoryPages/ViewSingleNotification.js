@@ -19,69 +19,96 @@ import { Card, Icon, Button } from 'react-native-elements';
 import style from "../../style";
 //import CalendarIcon from "react-calendar-icon";
 import Unorderedlist from 'react-native-unordered-list';
-import { Server_Url } from '../../Globaldata.js';
+import { getNotiId, Server_Url } from '../../Globaldata.js';
 
 export default class ViewSingleNotification extends Component {
+    async componentDidMount() {
+        console.log("Fetching Single Notifications");
+        var value = getNotiId();
+        
+        // while(value === -1){
+            
+        //     value = getNotiId();
+        // }
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                notificationId: value === -1 ? 1 : value
+            })
+        };
+        var callingURL = '/getSingleNotification';
+        fetch(Server_Url + callingURL, requestOptions)
+            .then((response) => response.json())
+            .then((json) => {
+                console.log(json);
+                var dataObject = json['data'];
+                console.log(dataObject);
+                this.setState({
+                    data: [dataObject]
+                })
+            });
+    }
     constructor() {
         super();
         // fetch(Server_Url)
         // .then((response) => console.warn(response))
         // .catch(function(error){console.warn(error)})
         this.state = {
-            data: [
-                {
-                    title: 'Notification',
-                    date: new Date(),
-                    shortDescription: 'Short Description',
-                    header: 'Header Para',
-                    contentType: "list",
-                    content: "A,B,C,D",
-                    footer: 'Footer Para',
-                    eventURL: 'Event URL'
-
-                }
-            ]
+            data: []
         }
     }
     render() {
 
         return (
-            <View style={styles.container}>
-                <Text>{this.props.route.params.notificationId}</Text>
-                <Text style={styles.titleText}>{(this.state.data[0])['title']}</Text>
-                <View style={{ flexDirection: 'row' }}>
-                    <Icon name="schedule" style={styles.icon}></Icon>
-                    <Text style={styles.dateFormat}>
-                        {(this.state.data[0])['date'].toString().split(" ")[0] + ", "
-                            + (this.state.data[0])['date'].toString().split(" ")[1] + " "
-                            + (this.state.data[0])['date'].toString().split(" ")[2] + " "
-                            + (this.state.data[0])['date'].toString().split(" ")[3] + " - "
-                            + (this.state.data[0])['date'].toString().split(" ")[4].split(":")[0] + ":"
-                            + (this.state.data[0])['date'].toString().split(" ")[4].split(":")[1]}
-                    </Text>
-                </View>
-                <Text style={styles.paraText}>{(this.state.data[0])['shortDescription']}</Text>
-                <Text style={styles.paraText}>{(this.state.data[0])['header']}</Text>
+            <View style={[styles.container,{paddingLeft:20, paddingRight:20, width:'100%', margin:0, marginLeft:0, paddingTop:10}]}>
                 {
-                    (this.state.data[0])['contentType'] === 'list' ?
-                        <View style={styles.paraText}>
+                    this.state.data.length === 0 ?
+                        null :
 
-                            {(this.state.data[0])['content'].split(",").map((block) => (
-                                <Unorderedlist bulletUnicode={0x2022}>
-                                    <Text>{block}</Text>
-                                </Unorderedlist>
-                            ))}
 
-                        </View>
-                        :
-                        <Text style={styles.paraText}>{(this.state.data[0])['content']}</Text>
-                }
+                        <View style={styles.container}>
+                            <Text style={styles.titleText}>{(this.state.data[0].eventTitle)}</Text>
+                            <View style={{ flexDirection: 'row' }}>
+                                <Icon name="schedule" style={styles.icon}></Icon>
+                                <Text style={styles.dateFormat}>
+                                    {new Date(this.state.data[0].eventDate).toString().split(" ")[0] + ", "
+                                        + new Date(this.state.data[0].eventDate).toString().split(" ")[1] + " "
+                                        + new Date(this.state.data[0].eventDate).toString().split(" ")[2] + " "
+                                        + new Date(this.state.data[0].eventDate).toString().split(" ")[3] + " - "
+                                        + new Date(this.state.data[0].eventDate).toString().split(" ")[4].split(":")[0] + ":"
+                                        + new Date(this.state.data[0].eventDate).toString().split(" ")[4].split(":")[1]}
+                                </Text>
+                            </View>
+                            <Text style={styles.paraText}>{(this.state.data[0].eventShortDescription)}</Text>
+                            <Text style={styles.paraText}>{(this.state.data[0].eventHeaderPara)}</Text>
+                            {
+                                this.state.data[0].eventContentType === 'List' ?
+                                    <View style={styles.paraText}>
 
-                <Text style={styles.paraText}>{(this.state.data[0])['footer']}</Text>
-                {(this.state.data[0])['eventURL'] === '' ? null :
-                    <Button title='View Details' style={styles.appButtonContainer}>View Details
+                                        {this.state.data[0].eventContent.split(",").map((block) => (
+                                            <Unorderedlist bulletUnicode={0x2022}>
+                                                <Text>{block}</Text>
+                                            </Unorderedlist>
+                                        ))}
+
+                                    </View>
+                                    :
+                                    <Text style={styles.paraText}>{this.state.data[0].eventContent}</Text>
+                            }
+
+                            <Text style={styles.paraText}>{this.state.data[0].eventFooterPara}</Text>
+                            <View style={{ flexGrow: 1 }}></View>
+                            {this.state.data[0].eventURL.trim() === '' ? null :
+                                <Button title='View Details' onPress={() => {
+                                    console.log("data");
+                                    console.log(this.state.data[0].eventURL);
+                                    Linking.openURL(this.state.data[0].eventURL)
+                                }} style={styles.appButtonContainer}>View Details
                         </Button>
 
+                            }
+                        </View>
                 }
             </View>
         );
@@ -91,11 +118,10 @@ export default class ViewSingleNotification extends Component {
 const styles = StyleSheet.create({
 
     appButtonContainer: {
-        height: 200,
-        width: 200,
-        alignContent: 'center',
+        marginBottom: 40,
+        width: '100%',
         alignSelf: 'center',
-        paddingTop: 20
+
     },
     appButtonText: {
         fontSize: 18,
@@ -108,7 +134,7 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 26,
         fontWeight: "bold",
-        marginLeft: 20,
+        
         justifyContent: "center",
         paddingTop: 10,
     },
@@ -117,7 +143,7 @@ const styles = StyleSheet.create({
         paddingTop: 8,
         color: "#696969",
         fontSize: 16,
-        marginLeft: 15
+        
     },
     dateFormat: {
         fontSize: 16,
@@ -133,12 +159,13 @@ const styles = StyleSheet.create({
         marginLeft: 20
     },
     container: {
+        marginLeft:20,
+        marginRight:20,
         flex: 1,
         backgroundColor: "#ffffff",
-        // marginTop: 80,
     },
     paraText: {
-        marginLeft: 20,
+        
         paddingTop: 10,
         fontSize: 18,
         marginVertical: 1,

@@ -9,7 +9,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Unorderedlist from 'react-native-unordered-list';
 const mailSubject = 'Mobile Solution Development!!!';
 import { Link, NavigationContainer } from '@react-navigation/native';
-import HealthInsurance from './HealthInsurance'
 class MedicalCare extends Component{
   render() {
     return (

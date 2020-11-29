@@ -11,6 +11,8 @@ import {
 } from 'react-native-paper';
 import { Default_Image_Url, Server_Url } from '../../Globaldata';
 import { Icon } from 'react-native-elements';
+import * as Notifications from 'expo-notifications';
+import * as Permissions from 'expo-permissions';
 
 //logout function
 async function loggedOutUser(props) {
@@ -19,6 +21,16 @@ async function loggedOutUser(props) {
       'isLoggedIn',
       '0'
     );
+    const value = await AsyncStorage.getItem('studentId');
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        studentNumber: value
+      })
+    };
+    var callingURL = '/unregisterDevice';
+    fetch(Server_Url + callingURL, requestOptions);
     await AsyncStorage.removeItem('studentId');
     props.navigation.navigate('Login');
   }
@@ -26,6 +38,34 @@ async function loggedOutUser(props) {
     console.log(error);
   }
 };
+
+async function registerForPushNotificationsAsync(value) {
+  
+  let token;
+  
+  const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
+  let finalStatus = existingStatus;
+  if (existingStatus !== 'granted') {
+    const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+    finalStatus = status;
+  }
+  if (finalStatus !== 'granted') {
+    alert('Failed to get push token for push notification!');
+    return;
+  }
+  token = (await Notifications.getExpoPushTokenAsync()).data;
+
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      studentNumber: value,
+      deviceId:token
+    })
+  };
+  var callingURL = '/registerDevice';
+  fetch(Server_Url + callingURL, requestOptions);
+}
 
 export default class dashboard extends React.Component {
   async componentDidMount() {
@@ -49,13 +89,16 @@ export default class dashboard extends React.Component {
         }
         else {
           console.warn(json['data']['firstName']);
-          this.setState({ firstName: json['data']['firstName']});
+          this.setState({ firstName: json['data']['firstName'] });
           if (json['data']['imageURL'] === "") {
             this.setState({ imageURL: Default_Image_Url });
           }
           else {
             this.setState({ imageURL: json['data']['imageURL'] });
           }
+          var token = registerForPushNotificationsAsync(value);
+          
+
         }
       });
   }
@@ -102,13 +145,7 @@ export default class dashboard extends React.Component {
           </Card>
 
           {/*Book an Appointment card*/}
-          <Card
-            style={styles.card}
-            onPress={() => { this.props.navigation.navigate('BookAppointment'); }}
-          >
-            <Card.Cover style={styles.cardCover} source={require('../../assets/res/bookAppointment.jpg')} />
-            <Card.Title style={styles.cardTitle} title="Book an Appointment" />
-          </Card>
+          
           {/*myWellness card*/}
           <Card
             style={styles.card}
@@ -133,6 +170,13 @@ export default class dashboard extends React.Component {
             <Card.Cover style={styles.cardCover} source={require('../../assets/res/myCareer.png')} />
             <Card.Title style={styles.cardTitle} title="myCareer" />
           </Card>
+          <Card
+            style={styles.card}
+            onPress={() => { this.props.navigation.navigate('BookAppointment'); }}
+          >
+            <Card.Cover style={styles.cardCover} source={require('../../assets/res/bookAppointment.jpg')} />
+            <Card.Title style={styles.cardTitle} title="Book an Appointment" />
+          </Card>
           {/*LogOut Card*/}
           <Card
             style={[styles.card, { height: 80, marginBottom: 100 }]}
@@ -145,9 +189,9 @@ export default class dashboard extends React.Component {
         {/*Animated header view style*/}
         <Animated.View style={[styles.animatedHeaderContainer, { marginTop: 20, height: headerHeight, backgroundColor: '#2471A3' }]}>
           <Image source={require("../../assets/CSS.jpg")} style={{ width: "80%", resizeMode: "stretch", backgroundColor: 'green', flex: 1, margin: 20 }} />
-          <View style={{ height: 100, paddingLeft:20 ,width: "100%", display: 'flex', flexDirection: 'row', alignItems: "center", justifyContent: "flex-end" }}>
-            <Icon name="notifications" size={40} color="white" onPress={()=>{this.props.navigation.navigate('ViewNotification',{notificationId:'1'});}}/>
-            <View style={{flexGrow:1}}></View>
+          <View style={{ height: 100, paddingLeft: 20, width: "100%", display: 'flex', flexDirection: 'row', alignItems: "center", justifyContent: "flex-end" }}>
+            <Icon name="notifications" size={40} color="white" onPress={() => { this.props.navigation.navigate('Notification', { notificationId: '1' }); }} />
+            <View style={{ flexGrow: 1 }}></View>
             <Text style={{ fontSize: 24, color: "white", marginRight: 20 }}>Welcome, {this.state.firstName}</Text>
             <Image source={{ uri: this.state.imageURL, }} style={{ width: 60, height: 60, borderRadius: "50%", marginRight: 20 }} />
           </View>
