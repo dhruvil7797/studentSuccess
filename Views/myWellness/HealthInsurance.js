@@ -7,7 +7,6 @@ import FlipCard from 'react-native-flip-card';
 import { Card } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import Unorderedlist from 'react-native-unordered-list';
-import Medical_Care from './Medical_Care'
 const mailSubject = 'Mobile Solution Development!!!';
 import { Link, NavigationContainer } from '@react-navigation/native';
 

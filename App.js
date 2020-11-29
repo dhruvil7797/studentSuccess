@@ -49,22 +49,31 @@ class App extends Component {
 
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
-            name="Notification"
-            component={Notification}
-            options={{
-              headerShown: false,
-            }}
-          />
-
-          <Stack.Screen
+        <Stack.Screen
             name="Login"
             component={Login}
             options={{
               headerShown: true,
             }}
           />
-        
+          <Stack.Screen
+            name="Notification"
+            component={Notification}
+            options={{
+              headerShown: true,
+            }}
+          />
+
+          <Stack.Screen
+            name="ViewNotification"
+            component={ViewSingleNotification}
+            options={{
+              headerShown: true,
+            }}
+          />
+
+          
+
           <Stack.Screen
             name="BookAppointment"
             component={BookAppointment}

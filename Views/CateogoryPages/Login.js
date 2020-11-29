@@ -80,10 +80,8 @@ export default class Login extends Component {
 
   state = {
     //bydefault user
-
     username: "dshah3186@conestogac.on.ca",
     password: "",
-
     errorMessage: ""
   }
 
