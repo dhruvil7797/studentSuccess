@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React from "react";
+import React, {Component} from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
 //import Icon from "react-native-vector-icons/FontAwesome";
 import { NavigationContainer } from "@react-navigation/native";
@@ -44,9 +44,8 @@ import ViewSingleNotification from "./Views/CateogoryPages/ViewSingleNotificatio
 import ViewCalendar from "./Views/CateogoryPages/ViewCalendar";
 import { Icon } from 'react-native-elements';
 
-const Stack = createStackNavigator(); //variable declaration
-
-class App extends React.Component {
+const Stack = createStackNavigator(); 
+class App extends Component {
   render() {
     return (
       //Screen navigator
@@ -354,4 +353,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
