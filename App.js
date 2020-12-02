@@ -1,6 +1,7 @@
 import "react-native-gesture-handler";
 import React from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
+//import Icon from "react-native-vector-icons/FontAwesome";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./Views/CateogoryPages/Login";
@@ -40,6 +41,8 @@ import TestingPage from "./Views/TestPage";
 import BookAppointment from "./Views/CateogoryPages/BookAppointment";
 import Notification from "./Views/CateogoryPages/Notification";
 import ViewSingleNotification from "./Views/CateogoryPages/ViewSingleNotification";
+import ViewCalendar from "./Views/CateogoryPages/ViewCalendar";
+import { Icon } from 'react-native-elements';
 
 const Stack = createStackNavigator(); //variable declaration
 
@@ -50,6 +53,22 @@ class App extends React.Component {
 
       <NavigationContainer>
         <Stack.Navigator>
+        
+        <Stack.Screen
+            name="ViewCalendar"
+            component={ViewCalendar}
+            options={{
+              headerShown: true,
+              // headerTitle:'Calender',
+              /*
+              headerRight: () => (
+                  <Icon
+                    name="add"
+                    
+                  />
+                  )*/
+            }}
+          />
         <Stack.Screen
             name="Login"
             component={Login}
