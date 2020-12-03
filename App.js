@@ -40,6 +40,7 @@ import TestingPage from "./Views/TestPage";
 import BookAppointment from "./Views/CateogoryPages/BookAppointment";
 import Notification from "./Views/CateogoryPages/Notification";
 import ViewSingleNotification from "./Views/CateogoryPages/ViewSingleNotification";
+import ModalTest from "./Views/CateogoryPages/modalTest"
 
 const Stack = createStackNavigator(); 
 class App extends Component {
@@ -49,6 +50,15 @@ class App extends Component {
 
       <NavigationContainer>
         <Stack.Navigator>
+        
+        <Stack.Screen
+            name="ModalTest"
+            component={ModalTest}
+            options={{
+              headerShown: true,
+            }}
+          />
+        
         <Stack.Screen
             name="Login"
             component={Login}
