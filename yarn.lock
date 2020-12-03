@@ -1362,6 +1362,13 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
+"@react-native-community/datetimepicker@^3.0.6":
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/@react-native-community/datetimepicker/-/datetimepicker-3.0.6.tgz#ac5ef61b2724bc8d80e2e32b2a77e74a7794c78d"
+  integrity sha512-w+c+U7sR3JVVI+oJE8ZoprBU4d8TG2KG6I+WeM5DCnszxSHS+pJVZPSc5hWHMTDb12PkBlNJDpMoasyDGLPUdw==
+  dependencies:
+    invariant "^2.2.4"
+
 "@react-native-community/datetimepicker@~2.3.0":
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/datetimepicker/-/datetimepicker-2.3.2.tgz#c4dfc503ed260c7c93ce838f60e707dbba179452"
@@ -5100,11 +5107,7 @@ mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "^1.2.5"
 
-<<<<<<< HEAD
-moment@^2.29.1:
-=======
-moment@^2.24.0, moment@^2.29.1:
->>>>>>> 83468d1febf307c43aefdaf4716a965daf1dd9df
+moment@^2.22.0, moment@^2.24.0, moment@^2.29.1:
   version "2.29.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
@@ -5868,6 +5871,18 @@ react-is@^16.12.0, react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1, react-
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-accordion-xg@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-accordion-xg/-/react-native-accordion-xg-0.0.1.tgz#88aff00a26ba328517acfb9a9ac21612a1de4764"
+  integrity sha1-iK/wCia6MoUXrPuamsIWEqHeR2Q=
+
+react-native-action-sheet-xg@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-action-sheet-xg/-/react-native-action-sheet-xg-0.0.1.tgz#e8626215ab374a34f31357031b04601f5d3d3862"
+  integrity sha1-6GJiFas3SjTzE1cDGwRgH109OGI=
+  dependencies:
+    react-native-stylesheet-xg "^1.1.0"
+
 react-native-animatable@1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.3.tgz#a13a4af8258e3bb14d0a9d839917e9bb9274ec8a"
@@ -5881,6 +5896,22 @@ react-native-animated-form@0.0.7:
   integrity sha512-Lipk+dXcOSv5XfLhqBXyTFt2rD9VU557WChEu943sL2eCnEq8JRYiqqXDaNAdeyH/g9C9jWkhNXsHLXFOYUt9w==
   dependencies:
     prop-types "^15.5.9"
+
+react-native-buttons@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-buttons/-/react-native-buttons-0.0.3.tgz#0669634c16a8b3481c3ac6ba5bcaf329f1a00aa6"
+  integrity sha1-BmljTBaos0gcOsa6W8rzKfGgCqY=
+  dependencies:
+    react-native-colortool "^0.0.1"
+    react-native-stylesheet-xg "^1.0.3"
+
+react-native-buttons@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-buttons/-/react-native-buttons-0.0.4.tgz#6ae98074b9923f2dc1492b85f4ae3b5d5aba0a13"
+  integrity sha1-aumAdLmSPy3BSSuF9K47XVq6ChM=
+  dependencies:
+    react-native-colortool "^0.0.1"
+    react-native-stylesheet-xg "^1.0.3"
 
 react-native-cardview@^2.0.5:
   version "2.0.5"
@@ -5896,10 +5927,41 @@ react-native-collapsible-toolbar@^0.1.2:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-colortool@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-colortool/-/react-native-colortool-0.0.1.tgz#0ae21efe2e3df18a1c3d9b48c30acaaa647dfb66"
+  integrity sha1-CuIe/i498YocPZtIwwrKqmR9+2Y=
+
 react-native-config@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.4.1.tgz#3549d0d1f4545e45659b2c2105c0866bdce9967f"
   integrity sha512-isK9z1ibzG0Z8HPRhCk0krmvtLknONCpEHLGSpBtf+oQ02PllAXljGMFN/XJCnq3G3MdmP1CffZh3vm4e/A50w==
+
+react-native-confirm@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-confirm/-/react-native-confirm-0.0.1.tgz#495ba41e10f67a8c1323a9450623a172c4743a29"
+  integrity sha1-SVukHhD2eowTI6lFBiOhcsR0Oik=
+  dependencies:
+    react-native-buttons "^0.0.3"
+    react-native-input-xg "^0.0.2"
+    react-native-stylesheet-xg "^1.1.0"
+
+react-native-date-picker@^3.2.5:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/react-native-date-picker/-/react-native-date-picker-3.2.5.tgz#351836282fc909e5c4de3d490846fcae16794c20"
+  integrity sha512-OKIqx3ZSUsp7XWcfuiWouIfIyW+CK48kG8HC2ZzLm8bSrsruSo/+McIybZ7NYuIAgDB9z5omK18EA1oOZgITxA==
+
+react-native-datepicker@^1.4.4, react-native-datepicker@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/react-native-datepicker/-/react-native-datepicker-1.7.2.tgz#58d0822591a0ac9b32aba082650222a0ee29669d"
+  integrity sha1-WNCCJZGgrJsyq6CCZQIioO4pZp0=
+  dependencies:
+    moment "^2.22.0"
+
+react-native-drawer-menu@^0.2.3:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/react-native-drawer-menu/-/react-native-drawer-menu-0.2.5.tgz#098a5ede6456f6066bb608dabe72b5c297e9a704"
+  integrity sha512-cZpq7xGRC/fiJB1du+hR0jN0TX0oy8hF/kxEqOzcC0jzSNOtKlZuja4MW2aJPzg/LlflNy1L3KUpDYyWUdl1IA==
 
 react-native-elements@^2.3.2:
   version "2.3.2"
@@ -5941,10 +6003,34 @@ react-native-gesture-handler@1.7.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-grading@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-grading/-/react-native-grading-1.0.3.tgz#5d62ee2c46ba1013e0f6aca504191038ff57bd20"
+  integrity sha1-XWLuLEa6EBPg9qylBBkQOP9XvSA=
+
+react-native-input-xg@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-input-xg/-/react-native-input-xg-0.0.2.tgz#9e5ee284db3c61df8fba0587f3d62943b8c23e27"
+  integrity sha1-nl7ihNs8Yd+PugWH89YpQ7jCPic=
+  dependencies:
+    react-native-stylesheet-xg "^1.1.0"
+
 react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
+
+react-native-label-select@^1.0.10:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-label-select/-/react-native-label-select-1.1.0.tgz#9bc7f78acf196b14f69c10d72ce68a02b6889538"
+  integrity sha1-m8f3is8ZaxT2nBDXLOaKAraIlTg=
+
+react-native-link-xg@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-link-xg/-/react-native-link-xg-0.0.1.tgz#8504ce4e6557ee8308f1056edad905322ca0c5bd"
+  integrity sha1-hQTOTmVX7oMI8QVu2tkFMiygxb0=
+  dependencies:
+    react-native-stylesheet-xg "^1.1.0"
 
 react-native-modal@^11.5.6:
   version "11.5.6"
@@ -6003,6 +6089,11 @@ react-native-status-bar-height@^2.5.0:
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.5.0.tgz#bc0fb85230603850aab9667ee8111a62954de90c"
   integrity sha512-sYBCPYA/NapBSHkdm/IVL4ID3LLlIuLqINi2FBDyMkc2BU9pfSGOtkz9yfxoK39mYJuTrlTOQ7mManARUsYDSA==
 
+react-native-stylesheet-xg@^1.0.3, react-native-stylesheet-xg@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-stylesheet-xg/-/react-native-stylesheet-xg-1.1.0.tgz#d9f6b200c1aaf64378c97607488082b3d5e68c87"
+  integrity sha1-2fayAMGq9kN4yXYHSICCs9XmjIc=
+
 react-native-svg@^12.1.0:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.0.tgz#acfe48c35cd5fca3d5fd767abae0560c36cfc03d"
@@ -6010,6 +6101,32 @@ react-native-svg@^12.1.0:
   dependencies:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
+
+react-native-tab-xg@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-tab-xg/-/react-native-tab-xg-0.0.1.tgz#86340a784969501f25b3a762d8debdd3fa47228c"
+  integrity sha1-hjQKeElpUB8ls6di2N690/pHIow=
+  dependencies:
+    react-native-stylesheet-xg "^1.1.0"
+
+react-native-ui-xg@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/react-native-ui-xg/-/react-native-ui-xg-0.0.6.tgz#abbe72cb56a555e4a443c19a58e89d18bf8b3a2e"
+  integrity sha1-q75yy1alVeSkQ8GaWOidGL+LOi4=
+  dependencies:
+    react-native-accordion-xg "^0.0.1"
+    react-native-action-sheet-xg "^0.0.1"
+    react-native-buttons "^0.0.4"
+    react-native-confirm "^0.0.1"
+    react-native-datepicker "^1.4.4"
+    react-native-drawer-menu "^0.2.3"
+    react-native-grading "^1.0.3"
+    react-native-input-xg "^0.0.2"
+    react-native-label-select "^1.0.10"
+    react-native-link-xg "^0.0.1"
+    react-native-stylesheet-xg "^1.1.0"
+    react-native-tab-xg "^0.0.1"
+    react-native-zoom-image "^0.1.1"
 
 react-native-unordered-list@^1.0.4:
   version "1.0.4"
@@ -6065,6 +6182,11 @@ react-native-youtube@^2.0.1:
   integrity sha512-CVzJyynKoEEMXHv/Nx+s8HdovnfVIZs0DIUjWUQsgEd+kbBubXJZTguCKj4WigI8SI1LJ0thF8SEGbdqW8oJkw==
   dependencies:
     prop-types "^15.5.0"
+
+react-native-zoom-image@^0.1.1:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-zoom-image/-/react-native-zoom-image-0.1.2.tgz#33c26744ba47ed5e0637925b92a7bf1e1c8c4515"
+  integrity sha512-4UrLf9mu9qM5ooNd5oQM+w7C0udxhSLwaMMyaFb+uzJyYV4Z1h88KurnqXLT7xeaQjktDMY0z16cNJyHgVcieQ==
 
 react-native@^0.63.3:
   version "0.63.3"
