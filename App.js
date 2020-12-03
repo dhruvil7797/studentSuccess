@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
 //import Icon from "react-native-vector-icons/FontAwesome";
 import { NavigationContainer } from "@react-navigation/native";
@@ -42,8 +42,9 @@ import BookAppointment from "./Views/CateogoryPages/BookAppointment";
 import Notification from "./Views/CateogoryPages/Notification";
 import ViewSingleNotification from "./Views/CateogoryPages/ViewSingleNotification";
 import ModalTest from "./Views/CateogoryPages/modalTest"
+import ViewCalandar from "./Views/CateogoryPages/ViewCalendar"
 
-const Stack = createStackNavigator(); 
+const Stack = createStackNavigator();
 class App extends Component {
   render() {
     return (
@@ -51,16 +52,22 @@ class App extends Component {
 
       <NavigationContainer>
         <Stack.Navigator>
-        
-        <Stack.Screen
+          <Stack.Screen
+            name="ViewCalandar"
+            component={ViewCalandar}
+            options={{
+              headerShown: true,
+            }}
+          />
+          <Stack.Screen
             name="ModalTest"
             component={ModalTest}
             options={{
               headerShown: true,
             }}
           />
-        
-        <Stack.Screen
+
+          <Stack.Screen
             name="Login"
             component={Login}
             options={{
@@ -83,7 +90,7 @@ class App extends Component {
             }}
           />
 
-          
+
 
           <Stack.Screen
             name="BookAppointment"
