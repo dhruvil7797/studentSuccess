@@ -1,6 +1,7 @@
 import "react-native-gesture-handler";
 import React, {Component} from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
+//import Icon from "react-native-vector-icons/FontAwesome";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./Views/CateogoryPages/Login";

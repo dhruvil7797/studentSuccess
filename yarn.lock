@@ -1362,6 +1362,13 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
+"@react-native-community/datetimepicker@~2.3.0":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/datetimepicker/-/datetimepicker-2.3.2.tgz#c4dfc503ed260c7c93ce838f60e707dbba179452"
+  integrity sha512-BbDmWVIaSYoYK2x5tRRuy/UWUVS6WtZ+3D210zYZgyD47yEVcTbaLFL9zFw7VxNMb8c/6BFcEpC6k18WTYplwA==
+  dependencies:
+    invariant "^2.2.4"
+
 "@react-native-community/masked-view@0.1.10":
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
@@ -2728,6 +2735,11 @@ csstype@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.3.tgz#2b410bbeba38ba9633353aff34b05d9755d065f8"
   integrity sha512-jPl+wbWPOWJ7SXsWyqGRk3lGecbar0Cb0OvZF/r/ZU011R4YqiRehgkQ9p4eQfo9DSDLqLL3wHwfxeJiuIsNag==
+
+dateutils@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/dateutils/-/dateutils-0.5.1.tgz#284574f334df73ee0e653a020db4a8d975a66928"
+  integrity sha512-ntxKxWBACpK4mXsPKGSSy9oCEVio/58YnA+0Prgq6P+DsIj3ewgik4h14HcOL81MFfPzxnfhIRsLpUy+7KPfnw==
 
 dayjs@^1.8.15:
   version "1.9.1"
@@ -5088,7 +5100,11 @@ mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "^1.2.5"
 
+<<<<<<< HEAD
 moment@^2.29.1:
+=======
+moment@^2.24.0, moment@^2.29.1:
+>>>>>>> 83468d1febf307c43aefdaf4716a965daf1dd9df
   version "2.29.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
@@ -5714,7 +5730,7 @@ promise@^8.0.3:
   dependencies:
     asap "~2.0.6"
 
-prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -6028,6 +6044,15 @@ react-native-web@~0.13.12:
     normalize-css-color "^1.0.2"
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
+
+react-native-weekly-calendar@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-weekly-calendar/-/react-native-weekly-calendar-0.2.0.tgz#74e247fb7bdae56229b5045d531662352dfbb14e"
+  integrity sha512-F8nGekXSsKln+QbSSNFr5h1Qwz+m88baP8zu85gKzo0gkvOkj4TJoDHpa2/tI87RyUL/B1FahnK15r/F0WMbBA==
+  dependencies:
+    "@react-native-community/datetimepicker" "~2.3.0"
+    moment "^2.24.0"
+    prop-types "^15.5.7"
 
 react-native-wrapped-text@^1.2.2:
   version "1.2.2"
@@ -7479,6 +7504,11 @@ xcode@^3.0.0:
   dependencies:
     simple-plist "^1.1.0"
     uuid "^7.0.3"
+
+xdate@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/xdate/-/xdate-0.8.2.tgz#d7b033c00485d02695baf0044f4eacda3fc961a3"
+  integrity sha1-17AzwASF0CaVuvAET06s2j/JYaM=
 
 xml-js@^1.6.11:
   version "1.6.11"
