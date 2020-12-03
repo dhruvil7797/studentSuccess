@@ -41,8 +41,7 @@ import TestingPage from "./Views/TestPage";
 import BookAppointment from "./Views/CateogoryPages/BookAppointment";
 import Notification from "./Views/CateogoryPages/Notification";
 import ViewSingleNotification from "./Views/CateogoryPages/ViewSingleNotification";
-import ViewCalendar from "./Views/CateogoryPages/ViewCalendar";
-import { Icon } from 'react-native-elements';
+import ModalTest from "./Views/CateogoryPages/modalTest"
 
 const Stack = createStackNavigator(); 
 class App extends Component {
@@ -54,20 +53,13 @@ class App extends Component {
         <Stack.Navigator>
         
         <Stack.Screen
-            name="ViewCalendar"
-            component={ViewCalendar}
+            name="ModalTest"
+            component={ModalTest}
             options={{
               headerShown: true,
-              // headerTitle:'Calender',
-              /*
-              headerRight: () => (
-                  <Icon
-                    name="add"
-                    
-                  />
-                  )*/
             }}
           />
+        
         <Stack.Screen
             name="Login"
             component={Login}
