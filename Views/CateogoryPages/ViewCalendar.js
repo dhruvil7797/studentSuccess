@@ -1,56 +1,139 @@
-import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { Component, useEffect } from 'react';
+import { StyleSheet, View, AsyncStorage, Text } from 'react-native';
 import WeeklyCalendar from 'react-native-weekly-calendar';
-import { Icon,Button } from 'react-native-elements';
+import { Icon, Button } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Server_Url } from "../../Globaldata";
+import CalStyle from 'react-native-weekly-calendar/src/Style'
+import moment from 'moment';
+
 export default class ViewCalendar extends Component {
-    
-    
-  static navigationOptions = ({ navigation }) => {
+    async componentDidMount() {
+        const value = await AsyncStorage.getItem('studentId');
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                studentNumber: "8683186",
+                taskTitle: "",
+                taskDescription: ""
 
-    return {
+            })
+        };
+        var callingURL = '/getAllTask';
+        fetch(Server_Url + callingURL, requestOptions)
+            .then((response) => response.json())
+            .then((json) => {
+                var dataObject = json['upcomingData'];
+                var convertData = []
+                for(var i = 0; i<dataObject.length; i++){
+                    convertData.push(
+                        {
+                            'start':this.convertDate(new Date(dataObject[i].startDate)),
+                            'end':this.endDateConvert(new Date(dataObject[i].endDate)),
+                            'title':dataObject[i].taskTitle,
+                            'description':dataObject[i].taskDescription
+                        }
+                    )
+                }
+                this.setState({
+                    data: convertData,
+                })
+            });
+    }
+    constructor() {
+        super();
+    }
 
-      title: navigation.getParam('Title', 'Default Title'),
+    state = {
+        data: [],
+    }
 
-      headerStyle: {
- 
-            backgroundColor: navigation.getParam('BackgroundColor', '#E040FB'),
-       
-          },
+    endDateConvert(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+    }
 
-      headerTintColor: navigation.getParam('HeaderTintColor', '#fff')
 
-    };
-  };
-   
+    convertDate(date_ob) {
+
+        let date = ("0" + date_ob.getDate()).slice(-2);
+        let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+        let year = date_ob.getFullYear();
+        var hours = date_ob.getHours();
+        var minutes = date_ob.getMinutes();
+
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        var strTime = hours + ':' + minutes + ':00';
+
+
+        var finalDate = year + "-" + month + "-" + date + " " + strTime;
+        return finalDate;
+    }
+
+
+
     render() {
-        const sampleEvents = [
-            { 'start': '2020-03-23 09:00:00', 'duration': '00:20:00', 'note': 'Walk my dog' },
-            { 'start': '2020-03-24 14:00:00', 'duration': '01:00:00', 'note': 'Doctor\'s appointment' },
-            { 'start': '2020-03-25 08:00:00', 'duration': '00:30:00', 'note': 'Morning exercise' },
-            { 'start': '2020-03-25 14:00:00', 'duration': '02:00:00', 'note': 'Meeting with client' },
-            { 'start': '2020-03-25 19:00:00', 'duration': '01:00:00', 'note': 'Dinner with family' },
-            { 'start': '2020-03-26 09:30:00', 'duration': '01:00:00', 'note': 'Schedule 1' },
-            { 'start': '2020-03-26 09:30:00', 'duration': '01:00:00', 'note': 'Testing' },
-            { 'start': '2020-03-26 11:00:00', 'duration': '02:00:00', 'note': 'Schedule 2' },
-            { 'start': '2020-03-26 15:00:00', 'duration': '01:30:00', 'note': 'Schedule 3' },
-            { 'start': '2020-03-26 18:00:00', 'duration': '02:00:00', 'note': 'Schedule 4' },
-            { 'start': '2020-03-26 22:00:00', 'duration': '01:00:00', 'note': 'Schedule 5' }
-        ]
+
 
         return (
-            <View style={styles.container}>
-                <WeeklyCalendar events={sampleEvents} style={{ height: '85%' , marginBottom:'10%' }} />
-                <Button style={styles.appButtonContainer} title="Add task"></Button>
+            <View style={styles2.container}>
+                {
+                    this.state.data.length===0 ? null :
+                
+                <WeeklyCalendar
+
+                    events={this.state.data}
+                    style={{ height: '85%', marginBottom: '10%' }}
+                    renderEvent={(event, j) => {
+
+                        let startTime = moment(event.start).format('LT').toString()
+                        
+                        let endTime = event.end;
+                        
+                        return (
+                            <View key={j}>
+                                <View style={CalStyle.event}>
+                                    <View style={CalStyle.eventDuration}>
+                                        <View style={CalStyle.durationContainer}>
+                                            <View style={CalStyle.durationDot} />
+                                            <Text style={CalStyle.durationText}>{startTime}</Text>
+                                        </View>
+                                        <View style={{ paddingTop: 10 }} />
+                                        <View style={CalStyle.durationContainer}>
+                                            <View style={CalStyle.durationDot} />
+                                            <Text style={CalStyle.durationText}>{endTime}</Text>
+                                        </View>
+                                        <View style={CalStyle.durationDotConnector} />
+                                    </View>
+                                    <View style={[CalStyle.eventNote, { width: '70%' }]}>
+                                        <Text style={[CalStyle.eventText, { fontWeight: 'bold', marginTop: 5 }]}>{event.title}</Text>
+                                        <Text style={[CalStyle.eventText, { color: 'grey', marginTop: 5 }]}>{event.description}</Text>
+                                    </View>
+                                </View>
+                                <View style={CalStyle.lineSeparator} />
+                            </View>
+                        )
+                    }}
+                />
+                }
+                <Button style={styles2.appButtonContainer} title="Add task"></Button>
             </View>
-             
+
         );
-       
+
     }
 }
 //export default ViewCalendar;
 
-const styles = StyleSheet.create({
+const styles2 = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
@@ -59,8 +142,8 @@ const styles = StyleSheet.create({
     },
     appButtonContainer: {
         alignSelf: 'center',
-        marginBottom:'10%',
-         width:'90%'
+        marginBottom: '10%',
+        width: '90%'
 
     },
 });

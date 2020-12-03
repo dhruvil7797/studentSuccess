@@ -26,7 +26,7 @@ import Unorderedlist from "react-native-unordered-list";
 import RowNotification from "./RowNotification";
 import { Server_Url } from "../../Globaldata";
 
-export default class MyWellness extends Component {
+export default class Notification extends Component {
   async componentDidMount() {
     console.log("Fetching Notifications");
     const value = await AsyncStorage.getItem('studentId');
