@@ -52,20 +52,23 @@ class App extends Component {
 
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
+        
+        <Stack.Screen
             name="ViewCalandar"
             component={ViewCalandar}
             options={{
               headerShown: true,
             }}
           />
-          <Stack.Screen
+        <Stack.Screen
             name="ModalTest"
             component={ModalTest}
             options={{
               headerShown: true,
             }}
           />
+          
+          
 
           <Stack.Screen
             name="Login"
