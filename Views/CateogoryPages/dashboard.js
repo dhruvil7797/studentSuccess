@@ -177,6 +177,16 @@ export default class dashboard extends React.Component {
             <Card.Cover style={styles.cardCover} source={require('../../assets/res/bookAppointment.jpg')} />
             <Card.Title style={styles.cardTitle} title="Book an Appointment" />
           </Card>
+
+          {/*Calendar Card*/}
+          <Card
+            style={styles.card}
+            onPress={() => { this.props.navigation.navigate('ViewCalandar'); }}
+          >
+            <Card.Cover style={styles.cardCover} source={require('../../assets/res/calendar.jpg')} />
+            <Card.Title style={styles.cardTitle} title="View Upcoming Events" />
+          </Card>
+          
           {/*LogOut Card*/}
           <Card
             style={[styles.card, { height: 80, marginBottom: 100 }]}

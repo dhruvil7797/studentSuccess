@@ -52,7 +52,15 @@ class App extends Component {
 
       <NavigationContainer>
         <Stack.Navigator>
-        
+
+        <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              headerShown: true,
+            }}
+          />
+
         <Stack.Screen
             name="ViewCalandar"
             component={ViewCalandar}
@@ -60,6 +68,7 @@ class App extends Component {
               headerShown: true,
             }}
           />
+                
         <Stack.Screen
             name="ModalTest"
             component={ModalTest}
@@ -69,14 +78,6 @@ class App extends Component {
           />
           
           
-
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{
-              headerShown: true,
-            }}
-          />
           <Stack.Screen
             name="Notification"
             component={Notification}
